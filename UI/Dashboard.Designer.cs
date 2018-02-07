@@ -39,7 +39,7 @@
             this.pMenuBar = new System.Windows.Forms.Panel();
             this.btnMenuHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.lblTyperatings = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelExamCenter = new System.Windows.Forms.Panel();
             this.panelExamPage = new System.Windows.Forms.Panel();
             this.lblClockText = new System.Windows.Forms.Label();
             this.lblCountTime = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.Loading = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.pMenuBar.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelExamCenter.SuspendLayout();
             this.panelExamPage.SuspendLayout();
             this.panelFinishExam.SuspendLayout();
             this.SuspendLayout();
@@ -137,12 +137,13 @@
             // btnMenuHome
             // 
             this.btnMenuHome.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnMenuHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnMenuHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btnMenuHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMenuHome.BorderRadius = 0;
-            this.btnMenuHome.ButtonText = "Home";
+            this.btnMenuHome.ButtonText = "Take Your Exams";
             this.btnMenuHome.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenuHome.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMenuHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuHome.Iconcolor = System.Drawing.Color.Transparent;
             this.btnMenuHome.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMenuHome.Iconimage")));
             this.btnMenuHome.Iconimage_right = null;
@@ -163,10 +164,11 @@
             this.btnMenuHome.selected = false;
             this.btnMenuHome.Size = new System.Drawing.Size(238, 48);
             this.btnMenuHome.TabIndex = 0;
-            this.btnMenuHome.Text = "Home";
+            this.btnMenuHome.Text = "Take Your Exams";
             this.btnMenuHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuHome.Textcolor = System.Drawing.Color.White;
             this.btnMenuHome.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuHome.Click += new System.EventHandler(this.btnMenuHome_Click);
             // 
             // lblTyperatings
             // 
@@ -182,23 +184,23 @@
             this.lblTyperatings.TabIndex = 97;
             this.lblTyperatings.Text = "Typeratings";
             // 
-            // panel2
+            // panelExamCenter
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panelExamCenter.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.Controls.Add(this.panelExamPage);
-            this.panel2.Controls.Add(this.fpRank);
-            this.panel2.Controls.Add(this.fpQualifications);
-            this.panel2.Controls.Add(this.lblRank);
-            this.panel2.Controls.Add(this.lblQualifications);
-            this.panel2.Controls.Add(this.lblTyperatings);
-            this.panel2.Controls.Add(this.fpTyperatings);
-            this.panel2.Location = new System.Drawing.Point(226, 122);
-            this.panel2.Name = "panel2";
-            this.panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panel2.Size = new System.Drawing.Size(931, 535);
-            this.panel2.TabIndex = 98;
+            this.panelExamCenter.Controls.Add(this.panelExamPage);
+            this.panelExamCenter.Controls.Add(this.fpRank);
+            this.panelExamCenter.Controls.Add(this.fpQualifications);
+            this.panelExamCenter.Controls.Add(this.lblRank);
+            this.panelExamCenter.Controls.Add(this.lblQualifications);
+            this.panelExamCenter.Controls.Add(this.lblTyperatings);
+            this.panelExamCenter.Controls.Add(this.fpTyperatings);
+            this.panelExamCenter.Location = new System.Drawing.Point(226, 122);
+            this.panelExamCenter.Name = "panelExamCenter";
+            this.panelExamCenter.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.panelExamCenter.Size = new System.Drawing.Size(931, 535);
+            this.panelExamCenter.TabIndex = 98;
             // 
             // panelExamPage
             // 
@@ -459,7 +461,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1169, 694);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panelExamCenter);
             this.Controls.Add(this.lblClock);
             this.Controls.Add(this.pMenuBar);
             this.Controls.Add(this.panel1);
@@ -473,8 +475,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pMenuBar.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.panelExamCenter.ResumeLayout(false);
+            this.panelExamCenter.PerformLayout();
             this.panelExamPage.ResumeLayout(false);
             this.panelExamPage.PerformLayout();
             this.panelFinishExam.ResumeLayout(false);
@@ -495,7 +497,7 @@
         private System.Windows.Forms.Panel pMenuBar;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuHome;
         private Bunifu.Framework.UI.BunifuCustomLabel lblTyperatings;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelExamCenter;
         private Bunifu.Framework.UI.BunifuCustomLabel lblRank;
         private Bunifu.Framework.UI.BunifuCustomLabel lblQualifications;
         private System.Windows.Forms.FlowLayoutPanel fpRank;

@@ -707,10 +707,13 @@ namespace ExamCenterTSZ.UI
 
         private void E_OnAnswerSelected(object sender, int selected)
         {
-
             questionSelected = selected;
-
-
         }
+
+        private void btnMenuHome_Click(object sender, EventArgs e)
+        {
+            panelExamCenter.Visible = true;
+        }
+
     }
 }
