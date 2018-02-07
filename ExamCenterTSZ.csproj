@@ -80,12 +80,6 @@
     </Compile>
     <Compile Include="UI\ExamCenterComponents\Exam.cs" />
     <Compile Include="UI\ExamCenterComponents\ExamCenter.cs" />
-    <Compile Include="UI\ExamCenterComponents\ExamFinishedCtrl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\ExamCenterComponents\ExamFinishedCtrl.Designer.cs">
-      <DependentUpon>ExamFinishedCtrl.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\ExamCenterComponents\QuestionCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,9 +107,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExamCenterComponents\AnswerCtrl.resx">
       <DependentUpon>AnswerCtrl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\ExamCenterComponents\ExamFinishedCtrl.resx">
-      <DependentUpon>ExamFinishedCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExamCenterComponents\QuestionCtrl.resx">
       <DependentUpon>QuestionCtrl.cs</DependentUpon>

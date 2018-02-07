@@ -41,20 +41,25 @@
             this.lblTyperatings = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelExamPage = new System.Windows.Forms.Panel();
+            this.lblClockText = new System.Windows.Forms.Label();
+            this.lblCountTime = new System.Windows.Forms.Label();
             this.btnFinish = new Bunifu.Framework.UI.BunifuTileButton();
             this.lblCountQuestions = new System.Windows.Forms.Label();
             this.btnNext = new Bunifu.Framework.UI.BunifuTileButton();
-            this.panelFinishExam = new System.Windows.Forms.Panel();
-            this.examFinishedCtrl1 = new ExamCenterTSZ.UI.ExamCenterComponents.ExamFinishedCtrl();
             this.btnPrevious = new Bunifu.Framework.UI.BunifuTileButton();
             this.qstControl = new ExamCenterTSZ.UI.ExamCenterComponents.QuestionCtrl();
             this.fpRank = new System.Windows.Forms.FlowLayoutPanel();
             this.fpQualifications = new System.Windows.Forms.FlowLayoutPanel();
             this.lblRank = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblQualifications = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.lblCountTime = new System.Windows.Forms.Label();
-            this.lblClockText = new System.Windows.Forms.Label();
+            this.panelFinishExam = new System.Windows.Forms.Panel();
+            this.btnCntFinishExam = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.LoadingBar = new System.Windows.Forms.ProgressBar();
             this.ChronomiterTimer = new System.Windows.Forms.Timer(this.components);
+            this.Loading = new System.Windows.Forms.Timer(this.components);
+            this.txtLoadingStandby = new System.Windows.Forms.TextBox();
+            this.lblFinishRejected = new System.Windows.Forms.Label();
+            this.lblFinishApproved = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.pMenuBar.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -202,14 +207,37 @@
             this.panelExamPage.Controls.Add(this.btnFinish);
             this.panelExamPage.Controls.Add(this.lblCountQuestions);
             this.panelExamPage.Controls.Add(this.btnNext);
-            this.panelExamPage.Controls.Add(this.panelFinishExam);
             this.panelExamPage.Controls.Add(this.btnPrevious);
             this.panelExamPage.Controls.Add(this.qstControl);
-            this.panelExamPage.Location = new System.Drawing.Point(0, 0);
+            this.panelExamPage.Location = new System.Drawing.Point(3, 3);
             this.panelExamPage.Name = "panelExamPage";
             this.panelExamPage.Size = new System.Drawing.Size(931, 532);
             this.panelExamPage.TabIndex = 99;
             this.panelExamPage.Visible = false;
+            // 
+            // lblClockText
+            // 
+            this.lblClockText.AutoSize = true;
+            this.lblClockText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblClockText.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblClockText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblClockText.Location = new System.Drawing.Point(654, 15);
+            this.lblClockText.Name = "lblClockText";
+            this.lblClockText.Size = new System.Drawing.Size(104, 16);
+            this.lblClockText.TabIndex = 103;
+            this.lblClockText.Text = "Time to finish:";
+            // 
+            // lblCountTime
+            // 
+            this.lblCountTime.AutoSize = true;
+            this.lblCountTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblCountTime.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblCountTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblCountTime.Location = new System.Drawing.Point(754, 15);
+            this.lblCountTime.Name = "lblCountTime";
+            this.lblCountTime.Size = new System.Drawing.Size(64, 16);
+            this.lblCountTime.TabIndex = 102;
+            this.lblCountTime.Text = "00:00:00";
             // 
             // btnFinish
             // 
@@ -263,27 +291,6 @@
             this.btnNext.Size = new System.Drawing.Size(107, 48);
             this.btnNext.TabIndex = 7;
             this.btnNext.Click += new System.EventHandler(this.btnNextQuestion_Click);
-            // 
-            // panelFinishExam
-            // 
-            this.panelFinishExam.Controls.Add(this.examFinishedCtrl1);
-            this.panelFinishExam.Location = new System.Drawing.Point(180, 95);
-            this.panelFinishExam.Name = "panelFinishExam";
-            this.panelFinishExam.Size = new System.Drawing.Size(542, 278);
-            this.panelFinishExam.TabIndex = 100;
-            this.panelFinishExam.Visible = false;
-            this.panelFinishExam.VisibleChanged += new System.EventHandler(this.panelFinishExam_VisibleChanged);
-            // 
-            // examFinishedCtrl1
-            // 
-            this.examFinishedCtrl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.examFinishedCtrl1.Location = new System.Drawing.Point(66, 15);
-            this.examFinishedCtrl1.Name = "examFinishedCtrl1";
-            this.examFinishedCtrl1.Size = new System.Drawing.Size(415, 248);
-            this.examFinishedCtrl1.TabIndex = 0;
-            this.examFinishedCtrl1.Visible = false;
             // 
             // btnPrevious
             // 
@@ -361,34 +368,109 @@
             this.lblQualifications.TabIndex = 99;
             this.lblQualifications.Text = "Qualifications";
             // 
-            // lblCountTime
+            // panelFinishExam
             // 
-            this.lblCountTime.AutoSize = true;
-            this.lblCountTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblCountTime.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblCountTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCountTime.Location = new System.Drawing.Point(754, 15);
-            this.lblCountTime.Name = "lblCountTime";
-            this.lblCountTime.Size = new System.Drawing.Size(64, 16);
-            this.lblCountTime.TabIndex = 102;
-            this.lblCountTime.Text = "00:00:00";
+            this.panelFinishExam.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelFinishExam.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelFinishExam.Controls.Add(this.lblFinishApproved);
+            this.panelFinishExam.Controls.Add(this.lblFinishRejected);
+            this.panelFinishExam.Controls.Add(this.txtLoadingStandby);
+            this.panelFinishExam.Controls.Add(this.btnCntFinishExam);
+            this.panelFinishExam.Controls.Add(this.LoadingBar);
+            this.panelFinishExam.Location = new System.Drawing.Point(410, 230);
+            this.panelFinishExam.Name = "panelFinishExam";
+            this.panelFinishExam.Size = new System.Drawing.Size(542, 278);
+            this.panelFinishExam.TabIndex = 100;
+            this.panelFinishExam.Visible = false;
+            this.panelFinishExam.VisibleChanged += new System.EventHandler(this.panelFinishExam_VisibleChanged);
             // 
-            // lblClockText
+            // btnCntFinishExam
             // 
-            this.lblClockText.AutoSize = true;
-            this.lblClockText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblClockText.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblClockText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblClockText.Location = new System.Drawing.Point(654, 15);
-            this.lblClockText.Name = "lblClockText";
-            this.lblClockText.Size = new System.Drawing.Size(104, 16);
-            this.lblClockText.TabIndex = 103;
-            this.lblClockText.Text = "Time to finish:";
+            this.btnCntFinishExam.ActiveBorderThickness = 1;
+            this.btnCntFinishExam.ActiveCornerRadius = 20;
+            this.btnCntFinishExam.ActiveFillColor = System.Drawing.Color.SeaGreen;
+            this.btnCntFinishExam.ActiveForecolor = System.Drawing.Color.White;
+            this.btnCntFinishExam.ActiveLineColor = System.Drawing.Color.SeaGreen;
+            this.btnCntFinishExam.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCntFinishExam.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCntFinishExam.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCntFinishExam.BackgroundImage")));
+            this.btnCntFinishExam.ButtonText = "Continue";
+            this.btnCntFinishExam.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCntFinishExam.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCntFinishExam.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnCntFinishExam.IdleBorderThickness = 1;
+            this.btnCntFinishExam.IdleCornerRadius = 20;
+            this.btnCntFinishExam.IdleFillColor = System.Drawing.Color.White;
+            this.btnCntFinishExam.IdleForecolor = System.Drawing.Color.SeaGreen;
+            this.btnCntFinishExam.IdleLineColor = System.Drawing.Color.SeaGreen;
+            this.btnCntFinishExam.Location = new System.Drawing.Point(189, 169);
+            this.btnCntFinishExam.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCntFinishExam.Name = "btnCntFinishExam";
+            this.btnCntFinishExam.Size = new System.Drawing.Size(181, 41);
+            this.btnCntFinishExam.TabIndex = 5;
+            this.btnCntFinishExam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCntFinishExam.Visible = false;
+            this.btnCntFinishExam.Click += new System.EventHandler(this.btnCntFinishExam_Click);
+            // 
+            // LoadingBar
+            // 
+            this.LoadingBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LoadingBar.Location = new System.Drawing.Point(90, 129);
+            this.LoadingBar.Name = "LoadingBar";
+            this.LoadingBar.Size = new System.Drawing.Size(378, 23);
+            this.LoadingBar.TabIndex = 3;
             // 
             // ChronomiterTimer
             // 
             this.ChronomiterTimer.Interval = 1000;
             this.ChronomiterTimer.Tick += new System.EventHandler(this.ChronomiterTimer_Tick);
+            // 
+            // Loading
+            // 
+            this.Loading.Interval = 50;
+            this.Loading.Tick += new System.EventHandler(this.Loading_Tick);
+            // 
+            // txtLoadingStandby
+            // 
+            this.txtLoadingStandby.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.txtLoadingStandby.ForeColor = System.Drawing.Color.Green;
+            this.txtLoadingStandby.Location = new System.Drawing.Point(3, 83);
+            this.txtLoadingStandby.Name = "txtLoadingStandby";
+            this.txtLoadingStandby.ReadOnly = true;
+            this.txtLoadingStandby.Size = new System.Drawing.Size(532, 26);
+            this.txtLoadingStandby.TabIndex = 7;
+            this.txtLoadingStandby.Text = "Your exam is being reviewed";
+            this.txtLoadingStandby.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lblFinishRejected
+            // 
+            this.lblFinishRejected.AutoSize = true;
+            this.lblFinishRejected.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFinishRejected.ForeColor = System.Drawing.Color.Red;
+            this.lblFinishRejected.Location = new System.Drawing.Point(236, 89);
+            this.lblFinishRejected.Name = "lblFinishRejected";
+            this.lblFinishRejected.Size = new System.Drawing.Size(86, 20);
+            this.lblFinishRejected.TabIndex = 8;
+            this.lblFinishRejected.Text = "Rejected!";
+            this.lblFinishRejected.Visible = false;
+            // 
+            // lblFinishApproved
+            // 
+            this.lblFinishApproved.AutoSize = true;
+            this.lblFinishApproved.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblFinishApproved.ForeColor = System.Drawing.Color.Green;
+            this.lblFinishApproved.Location = new System.Drawing.Point(234, 86);
+            this.lblFinishApproved.Name = "lblFinishApproved";
+            this.lblFinishApproved.Size = new System.Drawing.Size(90, 20);
+            this.lblFinishApproved.TabIndex = 9;
+            this.lblFinishApproved.Text = "Approved!";
+            this.lblFinishApproved.Visible = false;
             // 
             // Dashboard
             // 
@@ -400,6 +482,7 @@
             this.Controls.Add(this.pMenuBar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblWelcome);
+            this.Controls.Add(this.panelFinishExam);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -413,6 +496,7 @@
             this.panelExamPage.ResumeLayout(false);
             this.panelExamPage.PerformLayout();
             this.panelFinishExam.ResumeLayout(false);
+            this.panelFinishExam.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,9 +525,14 @@
         private Bunifu.Framework.UI.BunifuTileButton btnFinish;
         private System.Windows.Forms.Panel panelFinishExam;
         private System.Windows.Forms.Label lblCountQuestions;
-        private ExamCenterComponents.ExamFinishedCtrl examFinishedCtrl1;
         private System.Windows.Forms.Label lblClockText;
         private System.Windows.Forms.Label lblCountTime;
         private System.Windows.Forms.Timer ChronomiterTimer;
+        private System.Windows.Forms.ProgressBar LoadingBar;
+        private System.Windows.Forms.Timer Loading;
+        private Bunifu.Framework.UI.BunifuThinButton2 btnCntFinishExam;
+        private System.Windows.Forms.Label lblFinishApproved;
+        private System.Windows.Forms.Label lblFinishRejected;
+        private System.Windows.Forms.TextBox txtLoadingStandby;
     }
 }
