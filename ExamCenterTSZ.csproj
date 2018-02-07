@@ -32,8 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\Documents\Visual Studio 2017\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,17 +51,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Functions\Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="UI\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginFrm.Designer.cs">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DashboardComponents\ButtonTyperating.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\DashboardComponents\ButtonTyperating.Designer.cs">
+      <DependentUpon>ButtonTyperating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\AnswerCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\AnswerCtrl.Designer.cs">
+      <DependentUpon>AnswerCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\Exam.cs" />
+    <Compile Include="UI\ExamCenterComponents\ExamCenter.cs" />
+    <Compile Include="UI\ExamCenterComponents\ExamFinishedCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ExamFinishedCtrl.Designer.cs">
+      <DependentUpon>ExamFinishedCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\QuestionCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\QuestionCtrl.Designer.cs">
+      <DependentUpon>QuestionCtrl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -64,7 +100,26 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginFrm.resx">
+      <DependentUpon>LoginFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DashboardComponents\ButtonTyperating.resx">
+      <DependentUpon>ButtonTyperating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterComponents\AnswerCtrl.resx">
+      <DependentUpon>AnswerCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterComponents\ExamFinishedCtrl.resx">
+      <DependentUpon>ExamFinishedCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterComponents\QuestionCtrl.resx">
+      <DependentUpon>QuestionCtrl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -77,6 +132,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\red.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\green.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

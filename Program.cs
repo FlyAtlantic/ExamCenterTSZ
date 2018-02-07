@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ExamCenterTSZ.Functions;
+using ExamCenterTSZ.UI;
 
 namespace ExamCenterTSZ
 {
@@ -16,7 +18,7 @@ namespace ExamCenterTSZ
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginFrm());
         }
     }
 }
