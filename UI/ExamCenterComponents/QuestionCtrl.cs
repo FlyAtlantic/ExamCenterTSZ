@@ -12,22 +12,46 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 {
     public partial class QuestionCtrl : UserControl
     {
-        public List<Answer> Answers
+        int questionSelected;
+
+        public Question Question
         { get; private set; }
 
         public QuestionCtrl()
         {
             InitializeComponent();
-        }
 
+        }
+        public delegate void AnswerSelected(object sender, int selected);
+        public event AnswerSelected OnAnswerSelected;
         public void Update(Question question)
         {
             txtQuestion.Text = question.Text;
-            Answers = question.Answers;
-
+            this.Question = question;
+            
             fpAnswers.Controls.Clear();
-            foreach (Answer a in Answers)
-                fpAnswers.Controls.Add(new AnswerCtrl(a));
+            foreach (Answer a in Question.Answers)
+            {
+                AnswerCtrl e = new AnswerCtrl(a);
+
+                e.OnAnswerCorrect += E_OnAnswerSelected;
+
+                fpAnswers.Controls.Add(e);
+            }
+
+        }
+
+        private void E_OnAnswerSelected(object sender, bool correct, int selected )
+        {
+
+            questionSelected = selected;
+
+            Question.IsSelectedAnswerCorrect = correct;
+
+            checkBox1.Checked = Question.IsSelectedAnswerCorrect;
+
+            if (OnAnswerSelected != null)
+                OnAnswerSelected(this, questionSelected);
         }
     }
 }

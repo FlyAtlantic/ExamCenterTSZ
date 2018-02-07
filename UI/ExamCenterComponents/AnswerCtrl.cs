@@ -12,25 +12,30 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 {
     public partial class AnswerCtrl : UserControl
     {
+        Answer answerBool;
+
         public AnswerCtrl(Answer answer)
         {
-            InitializeComponent();
+            InitializeComponent();           
 
             Update(answer);
         }
 
         public void Update(Answer answer)
         {
+
             cboxAnswer.Text = answer.Text;
+            answerBool = answer;
         }
 
-        public delegate void AnswerSelected(object sender, EventArgs e);
-        public event AnswerSelected OnAnswerSelected;
+        public delegate void AnswerCorrect(object sender, bool correct, int selected);
+        public event AnswerCorrect OnAnswerCorrect;
 
-        private void chkSelected_CheckedChanged(object sender, EventArgs e)
+        private void cboxAnswer_CheckedChanged(object sender, EventArgs e)
         {
-            if (OnAnswerSelected != null)
-                OnAnswerSelected(this, e);
+            if (OnAnswerCorrect != null)
+                OnAnswerCorrect(this, answerBool.Correct, cboxAnswer.TabIndex);
+
         }
     }
 }

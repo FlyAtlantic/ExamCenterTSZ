@@ -36,6 +36,7 @@ namespace ExamCenterTSZ.UI
 
         FinishExam f;
 
+
         public class ExamsByPilot
         {
             public bool TakeExamButton
@@ -60,7 +61,7 @@ namespace ExamCenterTSZ.UI
             { get; set; }
 
         }
-
+        int questionSelected;
         public void Actions()
         {            
             PilotInformations();
@@ -527,7 +528,8 @@ namespace ExamCenterTSZ.UI
         }
 
         private void btnPreviousQuestion_Click(object sender, EventArgs e)
-        {
+        {         
+
             btnNext.Enabled = true;
             btnNext.Visible = true;
             btnFinish.Visible = false;
@@ -545,6 +547,8 @@ namespace ExamCenterTSZ.UI
 
         private void btnNextQuestion_Click(object sender, EventArgs e)
         {
+
+
             btnPrevious.Enabled = true;
 
             CurrentQuestion++;
@@ -558,6 +562,7 @@ namespace ExamCenterTSZ.UI
             }
 
             lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), CurrentExam.Questions.Count.ToString());
+
         }
 
         public void GetQuestions(int examID)
@@ -581,6 +586,8 @@ namespace ExamCenterTSZ.UI
                 panelFinishExam.BringToFront();
                 panelFinishExam.Visible = true;
                 Loading.Start();
+
+
             }          
         }
 
@@ -698,5 +705,12 @@ namespace ExamCenterTSZ.UI
             panelExamPage.Enabled = true;
         }
 
+        private void E_OnAnswerSelected(object sender, int selected)
+        {
+
+            questionSelected = selected;
+
+
+        }
     }
 }

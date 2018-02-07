@@ -45,10 +45,12 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         { get; set; }
 
         public bool IsSelectedAnswerCorrect
-        { get { return Answers[SelectedAnswer].Correct; } }
+        { get; set; }
 
         public Question(string Text, List<Answer> Answers)
         {
+            IsSelectedAnswerCorrect = false;
+            SelectedAnswer = -1;
             this.Text = Text;
             this.Answers = Answers;
         }
