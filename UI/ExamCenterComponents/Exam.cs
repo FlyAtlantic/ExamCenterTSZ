@@ -66,47 +66,41 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         }
     }
 
-    public class Exam
+    public static class Exam
     {
-        public string Text
+        public static string Text
         { get; set; }
 
-        public List<Question> Questions
+        public static List<Question> Questions
         { get; set; }
-
-        public Exam(string Text, List<Question> Questions)
-        {
-            this.Text = Text;
-            this.Questions = Questions;
-        }
 
         /// <summary>
         /// Isto é só porque não quero saber da parte do SQL
         /// </summary>
         /// <returns></returns>
-        public static Exam GetExample()
-        {
-            return new Exam("Exame Exemplo", new List<Question>()
-            {
-                new Question("Questão 1, a primeira opção é a correcta", new List<Answer>()
-                {
-                    new Answer("Resposta Certa", true),
-                    new Answer("Resposta Errada", false)
-                }),
-                new Question("Questão 2, a segunda opção é a correcta", new List<Answer>()
-                {
-                    new Answer("Resposta Errada", false),
-                    new Answer("Resposta Certa", true)
-                })
-            });
-        }
+        //public static void GetExample()
+        //{
+        //    return new Exam("Exame Exemplo", new List<Question>()
+        //    {
+        //        new Question("Questão 1, a primeira opção é a correcta", new List<Answer>()
+        //        {
+        //            new Answer("Resposta Certa", true),
+        //            new Answer("Resposta Errada", false)
+        //        }),
+        //        new Question("Questão 2, a segunda opção é a correcta", new List<Answer>()
+        //        {
+        //            new Answer("Resposta Errada", false),
+        //            new Answer("Resposta Certa", true)
+        //        })
+        //    });
+        //}
 
         /// <summary>
         /// colocas aqui código para ir buscar os dados ao mysql
         /// e devolver um new Answer(...)
         /// </summary>
         /// <param name=""></param>
-        public static Exam FromSQL(int ID)
+        public static void FromSQL(int ID)
         {
             string sqlPilotInformations = "SELECT * from exam_questions where examby=@ExamID";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
@@ -136,8 +130,8 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
                                 new Answer((string)sqlCmdRes[8], (correctAnswer == 4))
                             }));
                     }
-                return new Exam(Text, Questions);
-
+                Exam.Text = Text;
+                Exam.Questions = Questions;
             }
             catch (Exception crap)
             {

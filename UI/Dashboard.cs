@@ -16,8 +16,6 @@ namespace ExamCenterTSZ.UI
 {
     public partial class Dashboard : Form
     {
-        public Exam CurrentExam
-        { get; set; }
 
         public int CurrentQuestion
         { get; set; }
@@ -508,23 +506,22 @@ namespace ExamCenterTSZ.UI
 
         }
 
-        public void StartExam(Exam exam)
+        public void StartExam()
         {
             btnNext.Visible = true;
             btnFinish.Visible = false;
 
             ChronometerStart();
 
-            CurrentExam = exam;
             CurrentQuestion = 0;          
 
-            qstControl.Update(CurrentExam.Questions[CurrentQuestion]);
+            qstControl.Update(CurrentQuestion);
 
             CountQuestions = CurrentQuestion + 1;
-            if (CurrentExam.Questions.Count > 1)
+            if (Exam.Questions.Count > 1)
                 btnNext.Enabled = true;
 
-            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), CurrentExam.Questions.Count.ToString());
+            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), Exam.Questions.Count.ToString());
         }
 
         private void btnPreviousQuestion_Click(object sender, EventArgs e)
@@ -535,13 +532,13 @@ namespace ExamCenterTSZ.UI
             btnFinish.Visible = false;
 
             CurrentQuestion--;
-            qstControl.Update(CurrentExam.Questions[CurrentQuestion]);
+            qstControl.Update(CurrentQuestion);
 
             CountQuestions = CurrentQuestion + 1;
             if (CurrentQuestion == 0)
                 btnPrevious.Enabled = false;
 
-            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), CurrentExam.Questions.Count.ToString());
+            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), Exam.Questions.Count.ToString());
 
         }
 
@@ -552,16 +549,16 @@ namespace ExamCenterTSZ.UI
             btnPrevious.Enabled = true;
 
             CurrentQuestion++;
-            qstControl.Update(CurrentExam.Questions[CurrentQuestion]);
+            qstControl.Update(CurrentQuestion);
 
             CountQuestions = CurrentQuestion + 1;
-            if (CurrentQuestion == CurrentExam.Questions.Count - 1)
+            if (CurrentQuestion == Exam.Questions.Count - 1)
             {
                 btnNext.Visible = false;
                 btnFinish.Visible = true;
             }
 
-            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), CurrentExam.Questions.Count.ToString());
+            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), Exam.Questions.Count.ToString());
 
         }
 
@@ -569,8 +566,8 @@ namespace ExamCenterTSZ.UI
         {
             btnNext.Enabled = false;
             btnPrevious.Enabled = false;
-
-            StartExam(Exam.FromSQL(Convert.ToInt32(examID)));
+            Exam.FromSQL(Convert.ToInt32(examID));
+            StartExam();
         }
 
         private void btnFinish_Click(object sender, EventArgs e)

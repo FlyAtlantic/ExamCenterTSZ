@@ -9,18 +9,18 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 {
     class ExamCenter : ApplicationContext
     {
-        public Exam CurrentExam
-        { get; set; }
+        //public Exam CurrentExam
+        //{ get; set; }
 
         //public ExamFrmCtrl UI
         //{ get; set; }
 
-        public ExamCenter()
-        {
-            //UI = new ExamForm();
+        //public ExamCenter()
+        //{
+        //    UI = new ExamForm();
 
-            //UI.Show();
-            //UI.StartExam(Exam.FromSQL(0));
-        }
+        //    UI.Show();
+        //    UI.StartExam(Exam.FromSQL(0));
+        //}
     }
 }

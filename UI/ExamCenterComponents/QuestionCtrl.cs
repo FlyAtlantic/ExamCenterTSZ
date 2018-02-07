@@ -24,13 +24,13 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         }
         public delegate void AnswerSelected(object sender, int selected);
         public event AnswerSelected OnAnswerSelected;
-        public void Update(Question question)
+        public void Update(int question)
         {
-            txtQuestion.Text = question.Text;
-            this.Question = question;
+            txtQuestion.Text = Exam.Questions[question].Text;
+            this.Question = Exam.Questions[question];
             
             fpAnswers.Controls.Clear();
-            foreach (Answer a in Question.Answers)
+            foreach (Answer a in Exam.Questions[question].Answers)
             {
                 AnswerCtrl e = new AnswerCtrl(a);
 
