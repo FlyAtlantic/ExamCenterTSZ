@@ -578,8 +578,6 @@ namespace ExamCenterTSZ.UI
             {                
 
                 ChronomiterTimer.Stop();
-                f = new FinishExam();
-                f.Show();
                 panelFinishExam.BringToFront();
                 panelFinishExam.Visible = true;
                 Loading.Start();
@@ -589,7 +587,7 @@ namespace ExamCenterTSZ.UI
         }
 
         private void panelFinishExam_VisibleChanged(object sender, EventArgs e)
-        {
+        { 
             Loading.Start();
             panelExamPage.Enabled = false;
 

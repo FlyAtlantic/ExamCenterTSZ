@@ -100,6 +100,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         /// e devolver um new Answer(...)
         /// </summary>
         /// <param name=""></param>
+        /// 
         public static void FromSQL(int ID)
         {
             string sqlPilotInformations = "SELECT * from exam_questions where examby=@ExamID";
@@ -142,6 +143,19 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
                 conn.Close();
             }
+        }
+
+        public static double CalculateScore()
+        {
+            int score = 0;
+
+            foreach(Question q in Exam.Questions)
+            {
+                if (q.IsSelectedAnswerCorrect)
+                    score += 1;
+            }
+
+            return (100 * score) / Questions.Count;
         }
     }
     

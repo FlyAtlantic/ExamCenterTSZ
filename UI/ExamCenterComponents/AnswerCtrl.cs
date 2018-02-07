@@ -26,16 +26,18 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
             cboxAnswer.Text = answer.Text;
             answerBool = answer;
+            
         }
 
-        public delegate void AnswerCorrect(object sender, bool correct, int selected);
+        public delegate void AnswerCorrect(object sender, bool correct);
         public event AnswerCorrect OnAnswerCorrect;
 
         private void cboxAnswer_CheckedChanged(object sender, EventArgs e)
         {
             if (OnAnswerCorrect != null)
-                OnAnswerCorrect(this, answerBool.Correct, cboxAnswer.TabIndex);
+                OnAnswerCorrect(this, answerBool.Correct && cboxAnswer.Checked);
 
         }
+
     }
 }
