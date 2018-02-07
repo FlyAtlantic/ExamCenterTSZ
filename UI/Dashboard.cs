@@ -505,6 +505,8 @@ namespace ExamCenterTSZ.UI
 
         public void StartExam(Exam exam)
         {
+            ChronometerStart();
+
             CurrentExam = exam;
             CurrentQuestion = 0;          
 
@@ -572,6 +574,72 @@ namespace ExamCenterTSZ.UI
         private void panelFinishExam_VisibleChanged(object sender, EventArgs e)
         {
                 examFinishedCtrl1.Visible = true;
+
+        }
+
+        int h;
+        int m;
+        int s;
+        int sBar;
+        int MaxBar;
+
+        public void ChronometerStart()
+        {
+            h = 1;
+            m = 0;
+            s = 0;
+
+            sBar = 0;
+            MaxBar = 3600;
+
+            ChronomiterTimer.Start();
+        }
+
+        public void ChronometerStop()
+        {
+            ChronomiterTimer.Stop();
+        }
+
+        private void ChronomiterTimer_Tick(object sender, EventArgs e)
+        {
+            s = s - 1;
+
+            sBar = sBar + 1;
+
+            if (s == -1)
+            {
+                m = m - 1;
+                s = 59;
+            }
+
+            if (m == -1)
+            {
+                h = h - 1;
+                m = 59;
+            }
+
+            if (h == 0 && m == 0 && s == 0)
+            {
+                ChronomiterTimer.Stop();
+
+                //END of Time
+
+
+            }
+
+            string hh = Convert.ToString(h);
+            string mm = Convert.ToString(m);
+            string ss = Convert.ToString(s);
+            int ssBar = (sBar * 100) / 3600;
+
+            if(h == 0)
+                lblCountTime.Text = String.Format("0{0}:{1}:{2}", hh, mm, ss);
+            if (h == 0 && m < 0)
+                lblCountTime.Text = String.Format("0{0}:0{1}:{2}", hh, mm, ss);
+            if (h == 0 && m < 10 && s < 10)
+                lblCountTime.Text = String.Format("0{0}:0{1}:0{2}", hh, mm, ss);
+            if (s < 10)
+                lblCountTime.Text = String.Format("{0}:{1}:0{2}", hh, mm, ss);
 
         }
     }

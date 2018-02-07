@@ -52,6 +52,9 @@
             this.fpQualifications = new System.Windows.Forms.FlowLayoutPanel();
             this.lblRank = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.lblQualifications = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.lblCountTime = new System.Windows.Forms.Label();
+            this.lblClockText = new System.Windows.Forms.Label();
+            this.ChronomiterTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.pMenuBar.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -83,6 +86,7 @@
             // Clock
             // 
             this.Clock.Interval = 1000;
+            this.Clock.Tick += new System.EventHandler(this.Clock_Tick);
             // 
             // fpTyperatings
             // 
@@ -193,6 +197,8 @@
             // 
             // panelExamPage
             // 
+            this.panelExamPage.Controls.Add(this.lblClockText);
+            this.panelExamPage.Controls.Add(this.lblCountTime);
             this.panelExamPage.Controls.Add(this.btnFinish);
             this.panelExamPage.Controls.Add(this.lblCountQuestions);
             this.panelExamPage.Controls.Add(this.btnNext);
@@ -219,7 +225,7 @@
             this.btnFinish.ImageZoom = 50;
             this.btnFinish.LabelPosition = 33;
             this.btnFinish.LabelText = "Send";
-            this.btnFinish.Location = new System.Drawing.Point(270, 468);
+            this.btnFinish.Location = new System.Drawing.Point(295, 465);
             this.btnFinish.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(106, 48);
@@ -251,7 +257,7 @@
             this.btnNext.ImageZoom = 50;
             this.btnNext.LabelPosition = 36;
             this.btnNext.LabelText = "Next >>";
-            this.btnNext.Location = new System.Drawing.Point(154, 468);
+            this.btnNext.Location = new System.Drawing.Point(179, 465);
             this.btnNext.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(107, 48);
@@ -293,7 +299,7 @@
             this.btnPrevious.ImageZoom = 50;
             this.btnPrevious.LabelPosition = 36;
             this.btnPrevious.LabelText = "<< Previous";
-            this.btnPrevious.Location = new System.Drawing.Point(18, 468);
+            this.btnPrevious.Location = new System.Drawing.Point(43, 465);
             this.btnPrevious.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(107, 48);
@@ -355,6 +361,35 @@
             this.lblQualifications.TabIndex = 99;
             this.lblQualifications.Text = "Qualifications";
             // 
+            // lblCountTime
+            // 
+            this.lblCountTime.AutoSize = true;
+            this.lblCountTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblCountTime.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblCountTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblCountTime.Location = new System.Drawing.Point(754, 15);
+            this.lblCountTime.Name = "lblCountTime";
+            this.lblCountTime.Size = new System.Drawing.Size(64, 16);
+            this.lblCountTime.TabIndex = 102;
+            this.lblCountTime.Text = "00:00:00";
+            // 
+            // lblClockText
+            // 
+            this.lblClockText.AutoSize = true;
+            this.lblClockText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblClockText.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblClockText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblClockText.Location = new System.Drawing.Point(654, 15);
+            this.lblClockText.Name = "lblClockText";
+            this.lblClockText.Size = new System.Drawing.Size(104, 16);
+            this.lblClockText.TabIndex = 103;
+            this.lblClockText.Text = "Time to finish:";
+            // 
+            // ChronomiterTimer
+            // 
+            this.ChronomiterTimer.Interval = 1000;
+            this.ChronomiterTimer.Tick += new System.EventHandler(this.ChronomiterTimer_Tick);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,5 +442,8 @@
         private System.Windows.Forms.Panel panelFinishExam;
         private System.Windows.Forms.Label lblCountQuestions;
         private ExamCenterComponents.ExamFinishedCtrl examFinishedCtrl1;
+        private System.Windows.Forms.Label lblClockText;
+        private System.Windows.Forms.Label lblCountTime;
+        private System.Windows.Forms.Timer ChronomiterTimer;
     }
 }
