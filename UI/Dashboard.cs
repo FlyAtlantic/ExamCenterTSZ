@@ -674,6 +674,7 @@ namespace ExamCenterTSZ.UI
                 t = 100;
 
                 LoadingBar.Value = t;
+
             }
             else
                 LoadingBar.Value = t;
@@ -683,6 +684,8 @@ namespace ExamCenterTSZ.UI
         {
             panelFinishExam.Visible = false;
             panelExamPage.Visible = false;
+            panelExamPage.Enabled = true;
         }
+
     }
 }
