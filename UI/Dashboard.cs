@@ -34,14 +34,10 @@ namespace ExamCenterTSZ.UI
 
         ExamsByPilot result = new ExamsByPilot();
 
+        FinishExam f;
+
         public class ExamsByPilot
         {
-            public bool RedSignal
-            { get; set; }
-            public bool BlueSignal
-            { get; set; }
-            public bool GreenSignal
-            { get; set; }
             public bool TakeExamButton
             { get; set; }
             public int ExamID
@@ -66,13 +62,21 @@ namespace ExamCenterTSZ.UI
         }
 
         public void Actions()
-        {
-            fpTyperatings.Controls.Clear();
+        {            
             PilotInformations();
             VerifyExamsForPilotTyperatings();
             VerifyExamsForPilotQualifications();
             VerifyExamsForPilotRanks();
             NextRank();
+        }
+
+        public void resetExamFinishPage()
+        {
+            lblFinishApproved.Visible = false;
+            lblFinishRejected.Visible = false;
+            txtLoadingStandby.Visible = true;
+            Loading.Stop();
+            t = 0;
         }
 
         public void PilotInformations()
@@ -505,6 +509,9 @@ namespace ExamCenterTSZ.UI
 
         public void StartExam(Exam exam)
         {
+            btnNext.Visible = true;
+            btnFinish.Visible = false;
+
             ChronometerStart();
 
             CurrentExam = exam;
@@ -567,9 +574,13 @@ namespace ExamCenterTSZ.UI
                     "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
                     MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {                
-                panelFinishExam.Visible = true;
-                panelFinishExam.BringToFront();
+
                 ChronomiterTimer.Stop();
+                f = new FinishExam();
+                f.Show();
+                panelFinishExam.BringToFront();
+                panelFinishExam.Visible = true;
+                Loading.Start();
             }          
         }
 
@@ -656,14 +667,14 @@ namespace ExamCenterTSZ.UI
                 Loading.Stop();
 
                 txtLoadingStandby.Visible = false;
-                btnCntFinishExam.Visible = true;
+                btnCntFinish.Visible = true;
 
                 //Exam True or False
 
                 lblFinishApproved.Visible = true;
 
 
-                //lblFinishRejected.Visible = true;
+                //lblFinishRejected.Visible = true;                
 
             }
 

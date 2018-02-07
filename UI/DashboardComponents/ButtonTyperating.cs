@@ -36,7 +36,7 @@ namespace ExamCenterTSZ.UI.DashboardComponents
 
         private void btnTyperating_Click(object sender, EventArgs e)
         {
-
+            DBoard.resetExamFinishPage();
             DBoard.panelExamPage.Visible = true;
             DBoard.GetQuestions(Convert.ToInt32(btnTyperating.Tag));
 
