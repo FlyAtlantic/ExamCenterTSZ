@@ -19,31 +19,36 @@ namespace ExamCenterTSZ.UI.DashboardComponents
 
         bool panel = false;
 
-        public ButtonTyperating(string typerating, int examid, Dashboard d)
+        int eps = 0;
+
+        public ButtonTyperating(string typerating, int examid, Dashboard d, int eps)
         {
             InitializeComponent();
 
-            Update(typerating, examid);
+            Update(typerating, examid, eps);
 
             DBoard = d;
         }
 
-        public void Update(string typerating, int examid)
+        public void Update(string typerating, int examid, int eps)
         {
             btnTyperating.Text = typerating.ToString();
             btnTyperating.Tag = examid;
+
+            this.eps = eps;
         }
+
+
 
         private void btnTyperating_Click(object sender, EventArgs e)
         {
-            DBoard.resetExamFinishPage();
-            DBoard.panelExamPage.Visible = true;
-            DBoard.GetQuestions(Convert.ToInt32(btnTyperating.Tag));
-
-            panel = true;
-
-            DBoard.OpenExamPanel(panel);
             
+            DBoard.GetQuestions(Convert.ToInt32(btnTyperating.Tag), eps);
+
+            DBoard.epsConfirm.Show();
+
+            DBoard.panelExamPage.Visible = true;
+
         }
     }
 }

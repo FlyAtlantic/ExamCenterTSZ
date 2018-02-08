@@ -32,8 +32,7 @@ namespace ExamCenterTSZ.UI
 
         ExamsByPilot result = new ExamsByPilot();
 
-        FinishExam f;
-
+        EpsConfirm k;
 
         public class ExamsByPilot
         {
@@ -67,15 +66,6 @@ namespace ExamCenterTSZ.UI
             VerifyExamsForPilotQualifications();
             VerifyExamsForPilotRanks();
             NextRank();
-        }
-
-        public void resetExamFinishPage()
-        {
-            lblFinishApproved.Visible = false;
-            lblFinishRejected.Visible = false;
-            txtLoadingStandby.Visible = true;
-            Loading.Stop();
-            t = 0;
         }
 
         public void PilotInformations()
@@ -235,7 +225,7 @@ namespace ExamCenterTSZ.UI
         {
             VerifyPilotTypeRatings();
 
-            string sqlVerifyExamsForPilotTyperatings = "SELECT exam_assigns.exam_id, exams.type, name FROM exam_assigns left join utilizadores on exam_assigns.idpilot = utilizadores.user_id left join exams on exam_assigns.exam_id = exams.exam_id left join typeratingsname on exams.type = typeratingsname.id where user_email=@PilotId and type is not null";
+            string sqlVerifyExamsForPilotTyperatings = "SELECT exam_assigns.exam_id, exams.type, name, typeratingsname.eps FROM exam_assigns left join utilizadores on exam_assigns.idpilot = utilizadores.user_id left join exams on exam_assigns.exam_id = exams.exam_id left join typeratingsname on exams.type = typeratingsname.id where user_email=@PilotId and type is not null";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
 
             try
@@ -251,52 +241,54 @@ namespace ExamCenterTSZ.UI
                     {
                         result.ExamID = (int)sqlCmdRes[0];
                         result.Name = (string)sqlCmdRes[2];
+                        result.Eps = (int)sqlCmdRes[3];
+
                         switch ((int)sqlCmdRes[1])
                         {
                             case 1:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 5:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 6:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 7:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 8:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 9:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 11:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 12:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 13:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 14:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 15:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 16:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 17:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 18:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 19:
-                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpTyperatings.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
 
 
@@ -319,7 +311,7 @@ namespace ExamCenterTSZ.UI
         public void VerifyExamsForPilotQualifications()
         {
 
-            string VerifyExamsForPilotQualifications = "SELECT exam_assigns.exam_id, exams.qual, name FROM exam_assigns left join utilizadores on exam_assigns.idpilot = utilizadores.user_id left join exams on exam_assigns.exam_id = exams.exam_id left join qualificationsname on exams.qual = qualificationsname.id where user_email=@PilotId and qual is not null";
+            string VerifyExamsForPilotQualifications = "SELECT exam_assigns.exam_id, exams.qual, name, qualificationsname.eps FROM exam_assigns left join utilizadores on exam_assigns.idpilot = utilizadores.user_id left join exams on exam_assigns.exam_id = exams.exam_id left join qualificationsname on exams.qual = qualificationsname.id where user_email=@PilotId and qual is not null";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
 
             try
@@ -336,17 +328,18 @@ namespace ExamCenterTSZ.UI
                     {
                         result.ExamID = (int)sqlCmdRes[0];
                         result.Name = (string)sqlCmdRes[2];
+                        result.Eps = (int)sqlCmdRes[3];
 
                         switch ((int)sqlCmdRes[1])
                         {
                             case 1:
-                                fpQualifications.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpQualifications.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 4:
-                                fpQualifications.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpQualifications.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
                             case 6:
-                                fpQualifications.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpQualifications.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, result.Eps));
                                 break;
 
                             default:                               
@@ -394,22 +387,22 @@ namespace ExamCenterTSZ.UI
                         switch ((int)sqlCmdRes[0])
                         {
                             case 2:
-                                fpRank.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpRank.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, 0));
                                 break;
                             case 3:
-                                fpRank.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpRank.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, 0));
                                 break;
                             case 4:
-                                fpRank.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpRank.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, 0));
                                 break;
                             case 5:
-                                fpRank.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpRank.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, 0));
                                 break;
                             case 6:
-                                fpRank.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpRank.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, 0));
                                 break;
                             case 7:
-                                fpRank.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this));
+                                fpRank.Controls.Add(new ButtonTyperating(result.Name, result.ExamID, this, 0));
                                 break;
 
                             default:
@@ -498,13 +491,7 @@ namespace ExamCenterTSZ.UI
             {
                 Application.Exit();
             }
-        }
-       
-        public void OpenExamPanel(bool panel)
-        {
-            panelExamPage.Visible = panel;
-
-        }
+        }            
 
         public void StartExam()
         {
@@ -562,12 +549,16 @@ namespace ExamCenterTSZ.UI
 
         }
 
-        public void GetQuestions(int examID)
+        public void GetQuestions(int examID, int eps)
         {
             btnNext.Enabled = false;
             btnPrevious.Enabled = false;
+
             Exam.FromSQL(Convert.ToInt32(examID));
             StartExam();
+
+            epsConfirm.GetEps(eps);
+
         }
 
         private void btnFinish_Click(object sender, EventArgs e)
@@ -578,11 +569,10 @@ namespace ExamCenterTSZ.UI
             {                
 
                 ChronomiterTimer.Stop();
-                panelFinishExam.BringToFront();
-                panelFinishExam.Visible = true;
                 Loading.Start();
 
-
+                processExam.Start();
+                processExam.Show();
             }          
         }
 
@@ -660,42 +650,8 @@ namespace ExamCenterTSZ.UI
 
         }
 
-        private void Loading_Tick(object sender, EventArgs e)
-        {
-            t = t + 1;
-
-            if (t == 100)
-            {
-                Loading.Stop();
-
-                txtLoadingStandby.Visible = false;
-                btnCntFinish.Visible = true;
-
-                //Exam True or False
-
-                lblFinishApproved.Visible = true;
-
-
-                //lblFinishRejected.Visible = true;                
-
-            }
-
-            string tt = Convert.ToString(t);
-
-            if(t > 100)
-            {
-                t = 100;
-
-                LoadingBar.Value = t;
-
-            }
-            else
-                LoadingBar.Value = t;
-        }
-
         private void btnCntFinishExam_Click(object sender, EventArgs e)
         {
-            panelFinishExam.Visible = false;
             panelExamPage.Visible = false;
             panelExamPage.Enabled = true;
         }

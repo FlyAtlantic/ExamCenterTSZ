@@ -78,13 +78,19 @@
     <Compile Include="UI\ExamCenterComponents\AnswerCtrl.Designer.cs">
       <DependentUpon>AnswerCtrl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\ExamCenterComponents\Exam.cs" />
-    <Compile Include="UI\ExamCenterComponents\ExamCenter.cs" />
-    <Compile Include="UI\ExamCenterComponents\FinishExam.cs">
+    <Compile Include="UI\ExamCenterComponents\EpsConfirm.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\ExamCenterComponents\FinishExam.Designer.cs">
-      <DependentUpon>FinishExam.cs</DependentUpon>
+    <Compile Include="UI\ExamCenterComponents\EpsConfirm.Designer.cs">
+      <DependentUpon>EpsConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\Exam.cs" />
+    <Compile Include="UI\ExamCenterComponents\ExamCenter.cs" />
+    <Compile Include="UI\ExamCenterComponents\ProcessExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ProcessExam.Designer.cs">
+      <DependentUpon>ProcessExam.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ExamCenterComponents\QuestionCtrl.cs">
       <SubType>UserControl</SubType>
@@ -114,8 +120,11 @@
     <EmbeddedResource Include="UI\ExamCenterComponents\AnswerCtrl.resx">
       <DependentUpon>AnswerCtrl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\ExamCenterComponents\FinishExam.resx">
-      <DependentUpon>FinishExam.cs</DependentUpon>
+    <EmbeddedResource Include="UI\ExamCenterComponents\EpsConfirm.resx">
+      <DependentUpon>EpsConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterComponents\ProcessExam.resx">
+      <DependentUpon>ProcessExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExamCenterComponents\QuestionCtrl.resx">
       <DependentUpon>QuestionCtrl.cs</DependentUpon>
