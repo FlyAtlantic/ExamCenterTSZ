@@ -49,9 +49,15 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         public void Actions()
         {
             //PilotInformations();
+            fpTyperatings.Controls.Clear();
+            fpQualifications.Controls.Clear();
+            fpRank.Controls.Clear();
+
             VerifyExamsForPilotTyperatings();
             VerifyExamsForPilotQualifications();
             VerifyExamsForPilotRanks();
+
+
         }
        
         public void VerifyPilotTypeRatings()

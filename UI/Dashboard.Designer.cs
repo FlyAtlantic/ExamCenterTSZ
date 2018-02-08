@@ -43,6 +43,7 @@
             this.examPage = new ExamCenterTSZ.UI.ExamCenterComponents.ExamPage();
             this.processExam = new ExamCenterTSZ.UI.ExamCenterComponents.ProcessExam();
             this.examCenterCtrl = new ExamCenterTSZ.UI.ExamCenterComponents.ExamCenterCtrl();
+            this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
             this.panel1.SuspendLayout();
             this.pMenuBar.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +98,7 @@
             // pMenuBar
             // 
             this.pMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.pMenuBar.Controls.Add(this.bunifuTileButton1);
             this.pMenuBar.Controls.Add(this.btnMenuHome);
             this.pMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pMenuBar.Location = new System.Drawing.Point(0, 77);
@@ -106,8 +108,8 @@
             // 
             // btnMenuHome
             // 
-            this.btnMenuHome.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnMenuHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnMenuHome.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.btnMenuHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btnMenuHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMenuHome.BorderRadius = 0;
             this.btnMenuHome.ButtonText = "Take Your Exams";
@@ -126,10 +128,10 @@
             this.btnMenuHome.IconVisible = true;
             this.btnMenuHome.IconZoom = 90D;
             this.btnMenuHome.IsTab = false;
-            this.btnMenuHome.Location = new System.Drawing.Point(3, 12);
+            this.btnMenuHome.Location = new System.Drawing.Point(0, 106);
             this.btnMenuHome.Name = "btnMenuHome";
-            this.btnMenuHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnMenuHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnMenuHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnMenuHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
             this.btnMenuHome.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMenuHome.selected = false;
             this.btnMenuHome.Size = new System.Drawing.Size(238, 48);
@@ -179,6 +181,26 @@
             this.examCenterCtrl.Size = new System.Drawing.Size(655, 463);
             this.examCenterCtrl.TabIndex = 106;
             // 
+            // bunifuTileButton1
+            // 
+            this.bunifuTileButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton1.Image = ((System.Drawing.Image)(resources.GetObject("bunifuTileButton1.Image")));
+            this.bunifuTileButton1.ImagePosition = 0;
+            this.bunifuTileButton1.ImageZoom = 100;
+            this.bunifuTileButton1.LabelPosition = 0;
+            this.bunifuTileButton1.LabelText = "";
+            this.bunifuTileButton1.Location = new System.Drawing.Point(66, 15);
+            this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton1.Name = "bunifuTileButton1";
+            this.bunifuTileButton1.Size = new System.Drawing.Size(74, 64);
+            this.bunifuTileButton1.TabIndex = 1;
+            this.bunifuTileButton1.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,5 +242,6 @@
         public ExamCenterComponents.ExamPage examPage;
         public ExamCenterComponents.ProcessExam processExam;
         public ExamCenterComponents.ExamCenterCtrl examCenterCtrl;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
     }
 }

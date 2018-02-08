@@ -94,10 +94,10 @@ namespace ExamCenterTSZ.UI
             lblClock.Text = DateTime.UtcNow.ToString();
         }
 
-        //private void btnRefresh_Click(object sender, EventArgs e)
-        //{
-        //    Actions();
-        //}
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+           examCenterCtrl.Actions();
+        }
 
         private void quitToolStripMenuItem_Click(object sender, EventArgs e)
         {
