@@ -66,10 +66,10 @@
     <Compile Include="LoginFrm.Designer.cs">
       <DependentUpon>LoginFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\DashboardComponents\ButtonTyperating.cs">
+    <Compile Include="UI\ExamCenterComponents\ButtonTyperating.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\DashboardComponents\ButtonTyperating.Designer.cs">
+    <Compile Include="UI\ExamCenterComponents\ButtonTyperating.Designer.cs">
       <DependentUpon>ButtonTyperating.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ExamCenterComponents\AnswerCtrl.cs">
@@ -86,6 +86,18 @@
     </Compile>
     <Compile Include="UI\ExamCenterComponents\Exam.cs" />
     <Compile Include="UI\ExamCenterComponents\ExamCenter.cs" />
+    <Compile Include="UI\ExamCenterComponents\ExamCenterCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ExamCenterCtrl.Designer.cs">
+      <DependentUpon>ExamCenterCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ExamPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ExamPage.Designer.cs">
+      <DependentUpon>ExamPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ExamCenterComponents\ProcessExam.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,7 +126,7 @@
     <EmbeddedResource Include="LoginFrm.resx">
       <DependentUpon>LoginFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\DashboardComponents\ButtonTyperating.resx">
+    <EmbeddedResource Include="UI\ExamCenterComponents\ButtonTyperating.resx">
       <DependentUpon>ButtonTyperating.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExamCenterComponents\AnswerCtrl.resx">
@@ -122,6 +134,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExamCenterComponents\EpsConfirm.resx">
       <DependentUpon>EpsConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterComponents\ExamCenterCtrl.resx">
+      <DependentUpon>ExamCenterCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterComponents\ExamPage.resx">
+      <DependentUpon>ExamPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExamCenterComponents\ProcessExam.resx">
       <DependentUpon>ProcessExam.cs</DependentUpon>
@@ -150,6 +168,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\green.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\DashboardComponents\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

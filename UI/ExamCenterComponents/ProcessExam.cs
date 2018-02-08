@@ -65,14 +65,15 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             else
                 LoadingBar.Value = t;
         }
+
         public void Start()
         {
             Loading.Start();
 
             var parent = this.Parent as Dashboard;
 
-            parent.panelExamPage.Enabled = false;
         }
+
         private void btnCntFinish_Click(object sender, EventArgs e)
         {           
 
@@ -80,7 +81,6 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
             var parent = this.Parent as Dashboard;
 
-            parent.panelExamPage.Visible = false;
 
             Hide();
 

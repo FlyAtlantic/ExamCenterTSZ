@@ -14,20 +14,17 @@ namespace ExamCenterTSZ.UI.DashboardComponents
     public partial class ButtonTyperating : UserControl
     {
 
-        Dashboard DBoard
-        { get; set; }
 
         bool panel = false;
 
         int eps = 0;
 
-        public ButtonTyperating(string typerating, int examid, Dashboard d, int eps)
+        public ButtonTyperating(string typerating, int examid, int eps)
         {
             InitializeComponent();
 
             Update(typerating, examid, eps);
 
-            DBoard = d;
         }
 
         public void Update(string typerating, int examid, int eps)
@@ -38,16 +35,23 @@ namespace ExamCenterTSZ.UI.DashboardComponents
             this.eps = eps;
         }
 
-
+        public delegate void ClickButtonExam(int buttonValue, int eps);
+        public event ClickButtonExam OnClickButtonExam;
 
         private void btnTyperating_Click(object sender, EventArgs e)
         {
-            
-            DBoard.GetQuestions(Convert.ToInt32(btnTyperating.Tag), eps);
+            if (OnClickButtonExam != null)
+                OnClickButtonExam(Convert.ToInt32(btnTyperating.Tag), eps);
 
-            DBoard.epsConfirm.Show();
+            //var DBoard = this.Parent as ExamCenter;
 
-            DBoard.panelExamPage.Visible = true;
+            //DBoard.examPage.GetQuestions(Convert.ToInt32(btnTyperating.Tag), eps);
+
+            //DBoard.epsConfirm.Show();
+
+            //DBoard.examPage.Show();
+
+            Hide();
 
         }
     }
