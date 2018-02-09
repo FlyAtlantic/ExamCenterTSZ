@@ -23,6 +23,7 @@ namespace ExamCenterTSZ.UI
             InitializeComponent();
             Clock.Start();
             PilotInformations();
+            ShowInTaskbar = false;
         }
 
         ExamsByPilot result = new ExamsByPilot();

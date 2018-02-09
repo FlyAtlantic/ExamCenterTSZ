@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginFrm));
-            this.chkRemember = new System.Windows.Forms.CheckBox();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -38,16 +37,6 @@
             this.imgBanner = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgBanner)).BeginInit();
             this.SuspendLayout();
-            // 
-            // chkRemember
-            // 
-            this.chkRemember.AutoSize = true;
-            this.chkRemember.Location = new System.Drawing.Point(183, 204);
-            this.chkRemember.Name = "chkRemember";
-            this.chkRemember.Size = new System.Drawing.Size(77, 17);
-            this.chkRemember.TabIndex = 17;
-            this.chkRemember.Text = "Remember";
-            this.chkRemember.UseVisualStyleBackColor = true;
             // 
             // lblPassword
             // 
@@ -132,7 +121,6 @@
             this.Controls.Add(this.imgBanner);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.chkRemember);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblEmail);
@@ -148,8 +136,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckBox chkRemember;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblEmail;
         private Bunifu.Framework.UI.BunifuMetroTextbox txtEmail;

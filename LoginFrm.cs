@@ -14,14 +14,15 @@ namespace ExamCenterTSZ.UI
 {
     public partial class LoginFrm : Form
     {
-        
-        Dashboard d = new Dashboard();
+              
 
         public LoginFrm()
         {
             InitializeComponent();
 
             this.AcceptButton = btnLogin;
+
+            ShowInTaskbar = false;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -30,6 +31,7 @@ namespace ExamCenterTSZ.UI
             {
                 if (Login.ValidateLogin(txtEmail.Text, txtPassword.Text))
                 {
+                    Dashboard d = new Dashboard();
                     //login correto
                     d.Show();
                     this.Hide();
@@ -40,18 +42,8 @@ namespace ExamCenterTSZ.UI
                     MessageBox.Show("Login Failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-                if (chkRemember.Checked == true)
-                {
-                    Properties.Settings.Default.Email = txtEmail.Text;
-                    Properties.Settings.Default.Password = txtPassword.Text;
-                    Properties.Settings.Default.Remember = true;
-                }
-                else
-                {
-                    Properties.Settings.Default.Email = null;
-                    Properties.Settings.Default.Password = null;
-                    Properties.Settings.Default.Remember = false;
-                }
+                Properties.Settings.Default.Email = txtEmail.Text;
+                Properties.Settings.Default.Password = txtPassword.Text;
 
                 Properties.Settings.Default.Save();
 
@@ -66,7 +58,7 @@ namespace ExamCenterTSZ.UI
         {
             Properties.Settings.Default.Reload();
             txtEmail.Text = Properties.Settings.Default.Email;
-            chkRemember.Checked = Properties.Settings.Default.Remember;
+            txtPassword.Text = Properties.Settings.Default.Password;
         }
     }
 }
