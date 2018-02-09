@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.fpImgQuestions = new System.Windows.Forms.FlowLayoutPanel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.fpAnswers = new System.Windows.Forms.FlowLayoutPanel();
             this.txtQuestion = new System.Windows.Forms.TextBox();
             this.lblQuestion = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.fpImgQuestions.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,6 +43,16 @@
             this.fpImgQuestions.Name = "fpImgQuestions";
             this.fpImgQuestions.Size = new System.Drawing.Size(288, 175);
             this.fpImgQuestions.TabIndex = 25;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(3, 3);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // fpAnswers
             // 
@@ -71,16 +81,6 @@
             this.lblQuestion.TabIndex = 22;
             this.lblQuestion.Text = "Q:";
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(3, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // QuestionCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,9 +101,9 @@
         #endregion
 
         private System.Windows.Forms.FlowLayoutPanel fpImgQuestions;
-        private System.Windows.Forms.FlowLayoutPanel fpAnswers;
         private System.Windows.Forms.TextBox txtQuestion;
         private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.FlowLayoutPanel fpAnswers;
     }
 }

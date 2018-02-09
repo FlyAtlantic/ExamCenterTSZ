@@ -168,7 +168,7 @@
         XTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxS
         fNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+
         tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/
-        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALEgAACxIB0t1+/AAA9UFJREFUeF7snQd4VVXW
+        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALEAAACxABrSO9dQAA9UFJREFUeF7snQd4VVXW
         /pn5vvnm+8+MUtUZx2n2Qu/2MnalSC9SRKVaUERFEem99xY6AULvnSQQEtKBhBQgoXe708u3/u+79tn3
         nntzEnIBBTNXn/fZ557cFO7ZZ7+/tfba+5QSkcvS0pXL/uO0bOWKUstXrSi1YtXKUiuhVWtWlVq1djXa
         1aVWr11Tas36taXWrl9Xah21YX2pdRvXl1q/aX2pDZs2ot1YasPmjaU2bd5UatOWTaU2Qmw3bNqA967T
@@ -5267,6 +5267,6 @@
     <value>229, 24</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>78</value>
   </metadata>
 </root>

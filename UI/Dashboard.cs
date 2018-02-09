@@ -37,9 +37,7 @@ namespace ExamCenterTSZ.UI
             public string UserSurname
             { get; set; }
             public string Rank
-            { get; set; }
-            public int RankID
-            { get; set; }      
+            { get; set; }    
             
         }
 
@@ -63,7 +61,6 @@ namespace ExamCenterTSZ.UI
                         result.UserName = (string)sqlCmdRes[0];
                         result.UserSurname = (string)sqlCmdRes[1];
                         result.Rank = (string)sqlCmdRes[3];
-                        result.RankID = (int)sqlCmdRes[2];
                         result.UserID = (int)sqlCmdRes[4];
                     }
 
@@ -79,20 +76,10 @@ namespace ExamCenterTSZ.UI
             }
         }       
 
-        private void ExamCenter_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (MessageBox.Show("Do you really want to close me?",
-                    "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
-                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
-
         private void Clock_Tick(object sender, EventArgs e)
         {
             lblClock.Text = DateTime.UtcNow.ToString();
-        }
+        }            
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
@@ -109,10 +96,26 @@ namespace ExamCenterTSZ.UI
             }
         }                               
 
+        private void ExamCenter_FormClosed(object sender, FormClosedEventArgs e)
+                {
+                    if (MessageBox.Show("Do you really want to close me?",
+                            "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
+                            MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                    {
+                        Application.Exit();
+                    }
+                } 
+
+        /// Menu Bar
         private void btnMenuHome_Click(object sender, EventArgs e)
         {
+            examCenterCtrl.Actions();
             examCenterCtrl.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pMenuBar.Width = 50;
+        }
     }
 }

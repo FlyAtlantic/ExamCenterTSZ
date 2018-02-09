@@ -14,6 +14,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
     {
         Answer answerBool;
 
+
         public AnswerCtrl(Answer answer)
         {
             InitializeComponent();           
@@ -25,17 +26,19 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         {
 
             cboxAnswer.Text = answer.Text;
-            answerBool = answer;
-            
+            answerBool = answer;          
         }
 
-        public delegate void AnswerCorrect(object sender, bool correct);
+        public delegate void AnswerCorrect(object sender, bool correct, int IDChk);
         public event AnswerCorrect OnAnswerCorrect;
 
         private void cboxAnswer_CheckedChanged(object sender, EventArgs e)
         {
-            if (OnAnswerCorrect != null)
-                OnAnswerCorrect(this, answerBool.Correct && cboxAnswer.Checked);
+            if (cboxAnswer.Checked)
+            {
+                if (OnAnswerCorrect != null)
+                    OnAnswerCorrect(this, answerBool.Correct && cboxAnswer.Checked, cboxAnswer.TabIndex);
+            }
 
         }
 

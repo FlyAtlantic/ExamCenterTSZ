@@ -58,6 +58,6 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox cboxAnswer;
+        public System.Windows.Forms.CheckBox cboxAnswer;
     }
 }

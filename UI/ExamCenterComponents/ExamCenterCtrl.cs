@@ -57,7 +57,6 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             VerifyExamsForPilotQualifications();
             VerifyExamsForPilotRanks();
 
-
         }
        
         public void VerifyPilotTypeRatings()
@@ -440,7 +439,6 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
             DBoard.epsConfirm.Show();
 
-            DBoard.examPage.Show();
         }
     }
 }

@@ -16,6 +16,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         public bool Correct
         { get; set; }
 
+
         public Answer(string Text, bool Correct)
         {
             this.Text = Text;
@@ -50,7 +51,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         public Question(string Text, List<Answer> Answers)
         {
             IsSelectedAnswerCorrect = false;
-            SelectedAnswer = -1;
+            SelectedAnswer = 0;
             this.Text = Text;
             this.Answers = Answers;
         }
