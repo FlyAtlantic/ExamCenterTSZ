@@ -42,7 +42,7 @@
             this.cboxAnswer.TabIndex = 15;
             this.cboxAnswer.Text = "Awnser 1";
             this.cboxAnswer.UseVisualStyleBackColor = true;
-            this.cboxAnswer.CheckedChanged += new System.EventHandler(this.cboxAnswer_CheckedChanged);
+            this.cboxAnswer.Click += new System.EventHandler(this.cboxAnswer_Click);
             // 
             // AnswerCtrl
             // 

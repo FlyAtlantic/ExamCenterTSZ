@@ -32,15 +32,13 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         public delegate void AnswerCorrect(object sender, bool correct, int IDChk);
         public event AnswerCorrect OnAnswerCorrect;
 
-        private void cboxAnswer_CheckedChanged(object sender, EventArgs e)
+        private void cboxAnswer_Click(object sender, EventArgs e)
         {
             if (cboxAnswer.Checked)
             {
                 if (OnAnswerCorrect != null)
                     OnAnswerCorrect(this, answerBool.Correct && cboxAnswer.Checked, cboxAnswer.TabIndex);
             }
-
         }
-
     }
 }

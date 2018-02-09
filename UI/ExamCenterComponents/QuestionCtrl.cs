@@ -63,7 +63,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         public event AnswerSelected OnAnswerSelected;
 
         int IDQuest = 0;
-        
+
         public void Update(int question)
         {
 
@@ -94,6 +94,12 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
                 {
                     e.cboxAnswer.Checked = true;
                 }
+                else
+                {
+                    e.cboxAnswer.Checked = false;
+                }
+
+
                 if (IDQuest == 4)
                     IDQuest = 0;
 
@@ -108,6 +114,9 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             Exam.Questions[question].IsSelectedAnswerCorrect = correct;
 
             Exam.Questions[question].SelectedAnswer = IDCheck;
+
+            Update(question);
+
         }
     }
 }
