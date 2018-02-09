@@ -121,6 +121,7 @@
             this.Controls.Add(this.txtEpsInfo);
             this.Name = "EpsConfirm";
             this.Size = new System.Drawing.Size(539, 260);
+            this.Load += new System.EventHandler(this.EpsConfirm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

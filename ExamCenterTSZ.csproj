@@ -172,5 +172,11 @@
   <ItemGroup>
     <Folder Include="UI\DashboardComponents\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refreshImg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

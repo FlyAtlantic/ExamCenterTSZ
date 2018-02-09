@@ -23,12 +23,21 @@ namespace ExamCenterTSZ.UI
             InitializeComponent();
             Clock.Start();
             PilotInformations();
+
+            if (result.AdminLevel <= 2)
+            {
+                btnAdminPanel.Visible = true;
+                btnInstructor.Visible = true;
+            }
+
             ShowInTaskbar = false;
+
+            lblClock.Text = DateTime.UtcNow.ToString();
         }
 
-        ExamsByPilot result = new ExamsByPilot();
+        UserInformations result = new UserInformations();
 
-        public class ExamsByPilot
+        public class UserInformations
         {
           
             public int UserID
@@ -38,14 +47,16 @@ namespace ExamCenterTSZ.UI
             public string UserSurname
             { get; set; }
             public string Rank
-            { get; set; }    
-            
+            { get; set; }
+            public int AdminLevel
+            { get; set; }
+
         }
 
         public void PilotInformations()
         {
 
-            string sqlPilotInformations = "SELECT user_nome, user_apelido, utilizadores.rank, ranks.rank, utilizadores.user_id from utilizadores left join ranks on utilizadores.rank = ranks.rankid where user_email=@PilotId";
+            string sqlPilotInformations = "SELECT user_nome, user_apelido, utilizadores.rank, ranks.rank, utilizadores.user_id, utilizadores.levelid from utilizadores left join ranks on utilizadores.rank = ranks.rankid where user_email=@PilotId";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
 
             try
@@ -63,6 +74,7 @@ namespace ExamCenterTSZ.UI
                         result.UserSurname = (string)sqlCmdRes[1];
                         result.Rank = (string)sqlCmdRes[3];
                         result.UserID = (int)sqlCmdRes[4];
+                        result.AdminLevel = (int)sqlCmdRes[5];
                     }
 
                 lblWelcome.Text = String.Format("Have a nice {0},{1} {2} {3}", DateTime.UtcNow.DayOfWeek.ToString(), result.Rank, result.UserName, result.UserSurname);
@@ -107,6 +119,18 @@ namespace ExamCenterTSZ.UI
                     }
                 } 
 
+        ///
+        ///Special Buttons
+        private void btnAdminPanel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnInstructor_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /// Menu Bar
         private void btnMenuHome_Click(object sender, EventArgs e)
         {
@@ -114,9 +138,6 @@ namespace ExamCenterTSZ.UI
             examCenterCtrl.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            pMenuBar.Width = 50;
-        }
+        
     }
 }

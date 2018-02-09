@@ -37,10 +37,13 @@
             this.btnNext = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnPrevious = new Bunifu.Framework.UI.BunifuTileButton();
             this.ChronomiterTimer = new System.Windows.Forms.Timer(this.components);
+            this.pBarProgress = new Bunifu.Framework.UI.BunifuProgressBar();
             this.SuspendLayout();
             // 
             // qstControl
             // 
+            this.qstControl.CheckBoxSelected = null;
+            this.qstControl.CheckPossibleSelect = null;
             this.qstControl.Location = new System.Drawing.Point(12, 46);
             this.qstControl.Name = "qstControl";
             this.qstControl.Size = new System.Drawing.Size(800, 330);
@@ -52,9 +55,9 @@
             this.lblCountQuestions.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountQuestions.Location = new System.Drawing.Point(14, 12);
             this.lblCountQuestions.Name = "lblCountQuestions";
-            this.lblCountQuestions.Size = new System.Drawing.Size(52, 18);
+            this.lblCountQuestions.Size = new System.Drawing.Size(142, 18);
             this.lblCountQuestions.TabIndex = 102;
-            this.lblCountQuestions.Text = "label1";
+            this.lblCountQuestions.Text = "Question 20 of 20";
             // 
             // lblClockText
             // 
@@ -149,10 +152,23 @@
             this.ChronomiterTimer.Interval = 1000;
             this.ChronomiterTimer.Tick += new System.EventHandler(this.ChronomiterTimer_Tick);
             // 
+            // pBarProgress
+            // 
+            this.pBarProgress.BackColor = System.Drawing.Color.Silver;
+            this.pBarProgress.BorderRadius = 5;
+            this.pBarProgress.Location = new System.Drawing.Point(204, 12);
+            this.pBarProgress.MaximumValue = 100;
+            this.pBarProgress.Name = "pBarProgress";
+            this.pBarProgress.ProgressColor = System.Drawing.Color.Teal;
+            this.pBarProgress.Size = new System.Drawing.Size(450, 18);
+            this.pBarProgress.TabIndex = 109;
+            this.pBarProgress.Value = 0;
+            // 
             // ExamPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pBarProgress);
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
@@ -177,5 +193,6 @@
         private Bunifu.Framework.UI.BunifuTileButton btnNext;
         private Bunifu.Framework.UI.BunifuTileButton btnPrevious;
         private System.Windows.Forms.Timer ChronomiterTimer;
+        private Bunifu.Framework.UI.BunifuProgressBar pBarProgress;
     }
 }

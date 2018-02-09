@@ -30,12 +30,20 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             var DBoard = this.Parent as Dashboard;
 
             DBoard.examPage.Show();
+            DBoard.examPage.ChronometerStart();
             Hide();
         }
 
         private void btnNo_Click(object sender, EventArgs e)
         {
             Hide();
+        }
+
+        private void EpsConfirm_Load(object sender, EventArgs e)
+        {
+            var DBoard = this.Parent as Dashboard;
+
+            DBoard.examPage.ChronometerStop();
         }
     }
 }

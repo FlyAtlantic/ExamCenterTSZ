@@ -17,7 +17,6 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         int m;
         int s;
         int sBar;
-        int MaxBar;
         int t = 0;
 
         public int CurrentQuestion
@@ -128,7 +127,6 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             s = 0;
 
             sBar = 0;
-            MaxBar = 3600;
 
             ChronomiterTimer.Start();
         }
@@ -162,7 +160,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
                 //END of Time
 
-
+                
             }
 
             string hh = Convert.ToString(h);
@@ -176,10 +174,25 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
                 lblCountTime.Text = String.Format("0{0}:0{1}:{2}", hh, mm, ss);
             if (h == 0 && m < 10 && s < 10)
                 lblCountTime.Text = String.Format("0{0}:0{1}:0{2}", hh, mm, ss);
-            if (s < 10)
-                lblCountTime.Text = String.Format("{0}:{1}:0{2}", hh, mm, ss);
+            if (h == 0 && s < 10)
+                lblCountTime.Text = String.Format("0{0}:{1}:0{2}", hh, mm, ss);
+
+            pBarProgress.Value = ssBar;
 
         }
 
+        public void EndOfTime()
+        {
+            Hide();
+
+            var DBoard = this.Parent as Dashboard;
+
+            ChronomiterTimer.Stop();
+
+            DBoard.processExam.Start();
+
+            DBoard.processExam.Show();
+
+        }
     }
 }
