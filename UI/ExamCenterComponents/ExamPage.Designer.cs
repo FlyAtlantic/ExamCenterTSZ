@@ -145,6 +145,7 @@
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(107, 48);
             this.btnPrevious.TabIndex = 106;
+            this.btnPrevious.Visible = false;
             this.btnPrevious.Click += new System.EventHandler(this.btnPreviousQuestion_Click);
             // 
             // ChronomiterTimer

@@ -59,7 +59,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
             CountQuestions = CurrentQuestion + 1;
             if (CurrentQuestion == 0)
-                btnPrevious.Enabled = false;
+                btnPrevious.Visible = false;
 
             lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), Exam.Questions.Count.ToString());
 
@@ -79,6 +79,10 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             {
                 btnNext.Visible = false;
                 btnFinish.Visible = true;
+            }
+            else
+            {
+                btnPrevious.Visible = true;
             }
 
             lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), Exam.Questions.Count.ToString());
