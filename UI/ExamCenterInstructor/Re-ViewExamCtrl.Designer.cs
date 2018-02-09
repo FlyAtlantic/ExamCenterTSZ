@@ -35,7 +35,7 @@
             this.lblClockText = new System.Windows.Forms.Label();
             this.lblCountTime = new System.Windows.Forms.Label();
             this.lblCountQuestions = new System.Windows.Forms.Label();
-            this.qstControl = new ExamCenterTSZ.UI.ExamCenterComponents.QuestionCtrl();
+            this.lastQuestionCtrl = new ExamCenterTSZ.UI.ExamCenterInstructor.LastQuestionCtrl();
             this.SuspendLayout();
             // 
             // pBarProgress
@@ -70,6 +70,7 @@
             this.btnFinish.Size = new System.Drawing.Size(106, 48);
             this.btnFinish.TabIndex = 116;
             this.btnFinish.Visible = false;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // btnNext
             // 
@@ -90,6 +91,7 @@
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(107, 48);
             this.btnNext.TabIndex = 115;
+            this.btnNext.Click += new System.EventHandler(this.btnNextQuestion_Click);
             // 
             // btnPrevious
             // 
@@ -110,6 +112,7 @@
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(107, 48);
             this.btnPrevious.TabIndex = 114;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPreviousQuestion_Click);
             // 
             // lblClockText
             // 
@@ -145,19 +148,20 @@
             this.lblCountQuestions.TabIndex = 111;
             this.lblCountQuestions.Text = "Question 20 of 20";
             // 
-            // qstControl
+            // lastQuestionCtrl
             // 
-            this.qstControl.CheckBoxSelected = null;
-            this.qstControl.CheckPossibleSelect = null;
-            this.qstControl.Location = new System.Drawing.Point(3, 50);
-            this.qstControl.Name = "qstControl";
-            this.qstControl.Size = new System.Drawing.Size(800, 330);
-            this.qstControl.TabIndex = 110;
+            this.lastQuestionCtrl.CheckBoxSelected = null;
+            this.lastQuestionCtrl.CheckPossibleSelect = null;
+            this.lastQuestionCtrl.Location = new System.Drawing.Point(8, 55);
+            this.lastQuestionCtrl.Name = "lastQuestionCtrl";
+            this.lastQuestionCtrl.Size = new System.Drawing.Size(796, 325);
+            this.lastQuestionCtrl.TabIndex = 118;
             // 
             // Re_ViewExamCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lastQuestionCtrl);
             this.Controls.Add(this.pBarProgress);
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.btnNext);
@@ -165,7 +169,6 @@
             this.Controls.Add(this.lblClockText);
             this.Controls.Add(this.lblCountTime);
             this.Controls.Add(this.lblCountQuestions);
-            this.Controls.Add(this.qstControl);
             this.Name = "Re_ViewExamCtrl";
             this.Size = new System.Drawing.Size(879, 443);
             this.ResumeLayout(false);
@@ -183,5 +186,6 @@
         private System.Windows.Forms.Label lblCountTime;
         private System.Windows.Forms.Label lblCountQuestions;
         private ExamCenterComponents.QuestionCtrl qstControl;
+        private LastQuestionCtrl lastQuestionCtrl;
     }
 }

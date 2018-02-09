@@ -1,6 +1,6 @@
 ﻿namespace ExamCenterTSZ.UI.ExamCenterInstructor
 {
-    partial class ExamInstructorCtrl
+    partial class LastAnswerCtrl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,41 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.findExam1 = new ExamCenterTSZ.UI.ExamCenterInstructor.FindExam();
-            this.re_ViewExamCtrl = new ExamCenterTSZ.UI.ExamCenterInstructor.Re_ViewExamCtrl();
+            this.cboxAnswer = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // findExam1
+            // cboxAnswer
             // 
-            this.findExam1.Location = new System.Drawing.Point(109, 3);
-            this.findExam1.Name = "findExam1";
-            this.findExam1.Size = new System.Drawing.Size(223, 42);
-            this.findExam1.TabIndex = 0;
+            this.cboxAnswer.AutoSize = true;
+            this.cboxAnswer.Enabled = false;
+            this.cboxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.cboxAnswer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cboxAnswer.Location = new System.Drawing.Point(3, 3);
+            this.cboxAnswer.Name = "cboxAnswer";
+            this.cboxAnswer.Size = new System.Drawing.Size(84, 19);
+            this.cboxAnswer.TabIndex = 16;
+            this.cboxAnswer.Text = "Awnser 1";
+            this.cboxAnswer.UseVisualStyleBackColor = true;
             // 
-            // re_ViewExamCtrl
-            // 
-            this.re_ViewExamCtrl.CurrentQuestion = 0;
-            this.re_ViewExamCtrl.Location = new System.Drawing.Point(3, 51);
-            this.re_ViewExamCtrl.Name = "re_ViewExamCtrl";
-            this.re_ViewExamCtrl.Size = new System.Drawing.Size(879, 440);
-            this.re_ViewExamCtrl.TabIndex = 1;
-            this.re_ViewExamCtrl.Visible = false;
-            // 
-            // ExamInstructorCtrl
+            // LastAnswerCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.re_ViewExamCtrl);
-            this.Controls.Add(this.findExam1);
-            this.Name = "ExamInstructorCtrl";
-            this.Size = new System.Drawing.Size(882, 494);
+            this.Controls.Add(this.cboxAnswer);
+            this.Name = "LastAnswerCtrl";
+            this.Size = new System.Drawing.Size(660, 27);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private FindExam findExam1;
-        public Re_ViewExamCtrl re_ViewExamCtrl;
+        public System.Windows.Forms.CheckBox cboxAnswer;
     }
 }

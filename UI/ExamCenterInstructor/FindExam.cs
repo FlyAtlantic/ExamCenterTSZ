@@ -16,5 +16,15 @@ namespace ExamCenterTSZ.UI.ExamCenterInstructor
         {
             InitializeComponent();
         }
+
+        private void btnFindExam_Click(object sender, EventArgs e)
+        {
+            var EInstructor = this.Parent as ExamInstructorCtrl;
+
+            EInstructor.re_ViewExamCtrl.Show();
+
+            //passa assignID
+            EInstructor.re_ViewExamCtrl.GetQuestions(12);
+        }
     }
 }

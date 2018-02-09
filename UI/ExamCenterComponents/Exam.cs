@@ -23,15 +23,24 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             this.Correct = Correct;
         }
 
-        /// <summary>
-        /// colocas aqui código para ir buscar os dados ao mysql
-        /// e devolver um new Answer(...)
-        /// </summary>
-        /// <param name=""></param>
-        public static Answer FromSQL(int ID)
+    }
+
+    public class LastAnswer
+    {
+        public string Text
+        { get; set; }
+
+        public bool Correct
+        { get; set; }
+
+        public int Selected
+        { get; set; }
+
+        public LastAnswer(string Text)
         {
-            return new Answer("Answer 1", false);
+            this.Text = Text;
         }
+
     }
 
     public class Question
@@ -56,15 +65,30 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             this.Answers = Answers;
         }
 
-        /// <summary>
-        /// colocas aqui código para ir buscar os dados ao mysql
-        /// e devolver um new Answer(...)
-        /// </summary>
-        /// <param name=""></param>
-        public static Question FromSQL(int ID)
+    }
+
+    public class LastQuestion
+    {
+        public string Text
+        { get; set; }
+
+        public List<LastAnswer> LastAnswers
+        { get; set; }
+
+        public int SelectedAnswer
+        { get; set; }
+
+        public int IsSelectedAnswerCorrect
+        { get; set; }
+
+        public LastQuestion(string Text, int Selected, int CorrectAnswer, List<LastAnswer> LastAnswers)
         {
-            return new Question("Question 1", new List<Answer>());
+            IsSelectedAnswerCorrect = CorrectAnswer;
+            SelectedAnswer = Selected;
+            this.Text = Text;
+            this.LastAnswers = LastAnswers;
         }
+
     }
 
     public static class Exam
@@ -159,5 +183,61 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             return (100 * score) / Questions.Count;
         }
     }
-    
+
+    public static class LastExam
+    {
+        public static string Text
+        { get; set; }
+
+        public static List<LastQuestion> LastQuestions
+        { get; set; }
+
+        
+        public static void LastExamFromSQL(int ID)
+        {
+            string sqlPilotInformations = "SELECT * from exam_answers left join exam_questions on exam_answers.question1 = exam_questions.question_id left join exam_assigns on exam_questions.examby = exam_assigns.exam_id where assignid=@AssignID";
+            MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
+
+            try
+            {
+                conn.Open();
+
+                MySqlCommand sqlCmd = new MySqlCommand(sqlPilotInformations, conn);
+                sqlCmd.Parameters.AddWithValue("@AssignID", ID);
+
+                string Text = "";
+                List<LastQuestion> LastQuestions = new List<LastQuestion>();
+
+                MySqlDataReader sqlCmdRes = sqlCmd.ExecuteReader();
+                if (sqlCmdRes.HasRows)
+                    while (sqlCmdRes.Read())
+                    {
+                        int correctAnswer = Convert.ToInt32(sqlCmdRes[14]);
+                        LastQuestions.Add(new LastQuestion(
+                            (string)sqlCmdRes[8],
+                            (int)sqlCmdRes[3],
+                            (int)sqlCmdRes[14],
+                            new List<LastAnswer>()
+                            {
+                                new LastAnswer((string)sqlCmdRes[10]),
+                                new LastAnswer((string)sqlCmdRes[11]),
+                                new LastAnswer((string)sqlCmdRes[12]),
+                                new LastAnswer((string)sqlCmdRes[13])
+                            }));
+                    }
+                LastExam.Text = Text;
+                LastExam.LastQuestions = LastQuestions;
+            }
+            catch (Exception crap)
+            {
+                throw new ApplicationException("Failed to load exam @Exam.FromSQL()", crap);
+            }
+            finally
+            {
+
+                conn.Close();
+            }
+        }      
+    }
 }
+

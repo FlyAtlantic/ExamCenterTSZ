@@ -292,7 +292,7 @@
             // 
             this.examInstructorCtrl.Location = new System.Drawing.Point(234, 131);
             this.examInstructorCtrl.Name = "examInstructorCtrl";
-            this.examInstructorCtrl.Size = new System.Drawing.Size(882, 460);
+            this.examInstructorCtrl.Size = new System.Drawing.Size(882, 534);
             this.examInstructorCtrl.TabIndex = 108;
             this.examInstructorCtrl.Visible = false;
             // 

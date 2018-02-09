@@ -128,6 +128,18 @@
     <Compile Include="UI\ExamCenterInstructor\FindExam.Designer.cs">
       <DependentUpon>FindExam.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ExamCenterInstructor\LastAnswerCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterInstructor\LastAnswerCtrl.Designer.cs">
+      <DependentUpon>LastAnswerCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExamCenterInstructor\LastQuestionCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterInstructor\LastQuestionCtrl.Designer.cs">
+      <DependentUpon>LastQuestionCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ExamCenterInstructor\Re-ViewExamCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -179,6 +191,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExamCenterInstructor\FindExam.resx">
       <DependentUpon>FindExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterInstructor\LastAnswerCtrl.resx">
+      <DependentUpon>LastAnswerCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterInstructor\LastQuestionCtrl.resx">
+      <DependentUpon>LastQuestionCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExamCenterInstructor\Re-ViewExamCtrl.resx">
       <DependentUpon>Re-ViewExamCtrl.cs</DependentUpon>

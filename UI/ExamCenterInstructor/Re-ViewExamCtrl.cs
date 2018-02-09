@@ -39,26 +39,23 @@ namespace ExamCenterTSZ.UI.ExamCenterInstructor
 
             CurrentQuestion = 0;
 
-            qstControl.Update(CurrentQuestion);
+            lastQuestionCtrl.Update(CurrentQuestion);
 
             CountQuestions = CurrentQuestion + 1;
-            if (Exam.Questions.Count > 1)
+            if (LastExam.LastQuestions.Count > 1)
                 btnNext.Enabled = true;
 
-            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), Exam.Questions.Count.ToString());
+            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), LastExam.LastQuestions.Count.ToString());
         }
 
-        public void GetQuestions(int examID, int eps)
+        public void GetQuestions(int examID)
         {
 
             btnNext.Enabled = false;
             btnPrevious.Enabled = false;
 
-            Exam.FromSQL(Convert.ToInt32(examID));
+            LastExam.LastExamFromSQL(Convert.ToInt32(examID));
             StartExam();
-
-            var DBoard = this.Parent as Dashboard;
-            DBoard.epsConfirm.GetEps(eps);
 
         }
 
@@ -123,12 +120,56 @@ namespace ExamCenterTSZ.UI.ExamCenterInstructor
 
         }
 
-        private void ExamPage_Load(object sender, EventArgs e)
+        private void btnPreviousQuestion_Click(object sender, EventArgs e)
         {
-            var DBoard = this.Parent as Dashboard;
 
-            DBoard.btnExitApp.Enabled = false;
+            btnNext.Enabled = true;
+            btnNext.Visible = true;
+            btnFinish.Visible = false;
 
+            CurrentQuestion--;
+            lastQuestionCtrl.Update(CurrentQuestion);
+
+            CountQuestions = CurrentQuestion + 1;
+            if (CurrentQuestion == 0)
+                btnPrevious.Enabled = false;
+
+            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), LastExam.LastQuestions.Count.ToString());
+
+        }
+
+        private void btnNextQuestion_Click(object sender, EventArgs e)
+        {
+
+
+            btnPrevious.Enabled = true;
+
+            CurrentQuestion++;
+            lastQuestionCtrl.Update(CurrentQuestion);
+
+            CountQuestions = CurrentQuestion + 1;
+            if (CurrentQuestion == LastExam.LastQuestions.Count - 1)
+            {
+                btnNext.Visible = false;
+                btnFinish.Visible = true;
+            }
+
+            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), LastExam.LastQuestions.Count.ToString());
+
+        }
+
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you really want to close me?",
+                    "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
+                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                
+
+                Hide();
+
+
+            }
         }
     }
 }
