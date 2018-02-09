@@ -38,7 +38,7 @@
             this.pMenuBar = new System.Windows.Forms.Panel();
             this.btnRefresh = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnInstructor = new Bunifu.Framework.UI.BunifuTileButton();
-            this.btnMenuHome = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.btnMenuExam = new Bunifu.Framework.UI.BunifuFlatButton();
             this.examCenterCtrl = new ExamCenterTSZ.UI.ExamCenterComponents.ExamCenterCtrl();
             this.examPage = new ExamCenterTSZ.UI.ExamCenterComponents.ExamPage();
             this.processExam = new ExamCenterTSZ.UI.ExamCenterComponents.ProcessExam();
@@ -123,7 +123,7 @@
             this.pMenuBar.Controls.Add(this.btnRefresh);
             this.pMenuBar.Controls.Add(this.btnInstructor);
             this.pMenuBar.Controls.Add(this.btnAdminPanel);
-            this.pMenuBar.Controls.Add(this.btnMenuHome);
+            this.pMenuBar.Controls.Add(this.btnMenuExam);
             this.pMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pMenuBar.Location = new System.Drawing.Point(0, 77);
             this.pMenuBar.Name = "pMenuBar";
@@ -171,41 +171,41 @@
             this.btnInstructor.Visible = false;
             this.btnInstructor.Click += new System.EventHandler(this.btnInstructor_Click);
             // 
-            // btnMenuHome
+            // btnMenuExam
             // 
-            this.btnMenuHome.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
-            this.btnMenuHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.btnMenuHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnMenuHome.BorderRadius = 0;
-            this.btnMenuHome.ButtonText = "Take Your Exams";
-            this.btnMenuHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenuHome.DisabledColor = System.Drawing.Color.Gray;
-            this.btnMenuHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuHome.Iconcolor = System.Drawing.Color.Transparent;
-            this.btnMenuHome.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMenuHome.Iconimage")));
-            this.btnMenuHome.Iconimage_right = null;
-            this.btnMenuHome.Iconimage_right_Selected = null;
-            this.btnMenuHome.Iconimage_Selected = null;
-            this.btnMenuHome.IconMarginLeft = 0;
-            this.btnMenuHome.IconMarginRight = 0;
-            this.btnMenuHome.IconRightVisible = true;
-            this.btnMenuHome.IconRightZoom = 0D;
-            this.btnMenuHome.IconVisible = true;
-            this.btnMenuHome.IconZoom = 90D;
-            this.btnMenuHome.IsTab = false;
-            this.btnMenuHome.Location = new System.Drawing.Point(0, 106);
-            this.btnMenuHome.Name = "btnMenuHome";
-            this.btnMenuHome.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.btnMenuHome.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
-            this.btnMenuHome.OnHoverTextColor = System.Drawing.Color.White;
-            this.btnMenuHome.selected = false;
-            this.btnMenuHome.Size = new System.Drawing.Size(238, 48);
-            this.btnMenuHome.TabIndex = 0;
-            this.btnMenuHome.Text = "Take Your Exams";
-            this.btnMenuHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuHome.Textcolor = System.Drawing.Color.White;
-            this.btnMenuHome.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuHome.Click += new System.EventHandler(this.btnMenuHome_Click);
+            this.btnMenuExam.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.btnMenuExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnMenuExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenuExam.BorderRadius = 0;
+            this.btnMenuExam.ButtonText = "Take Your Exams";
+            this.btnMenuExam.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenuExam.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMenuExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuExam.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMenuExam.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMenuExam.Iconimage")));
+            this.btnMenuExam.Iconimage_right = null;
+            this.btnMenuExam.Iconimage_right_Selected = null;
+            this.btnMenuExam.Iconimage_Selected = null;
+            this.btnMenuExam.IconMarginLeft = 0;
+            this.btnMenuExam.IconMarginRight = 0;
+            this.btnMenuExam.IconRightVisible = true;
+            this.btnMenuExam.IconRightZoom = 0D;
+            this.btnMenuExam.IconVisible = true;
+            this.btnMenuExam.IconZoom = 90D;
+            this.btnMenuExam.IsTab = false;
+            this.btnMenuExam.Location = new System.Drawing.Point(0, 106);
+            this.btnMenuExam.Name = "btnMenuExam";
+            this.btnMenuExam.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnMenuExam.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.btnMenuExam.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnMenuExam.selected = false;
+            this.btnMenuExam.Size = new System.Drawing.Size(238, 48);
+            this.btnMenuExam.TabIndex = 0;
+            this.btnMenuExam.Text = "Take Your Exams";
+            this.btnMenuExam.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuExam.Textcolor = System.Drawing.Color.White;
+            this.btnMenuExam.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuExam.Click += new System.EventHandler(this.btnMenuExam_Click);
             // 
             // examCenterCtrl
             // 
@@ -282,7 +282,6 @@
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ExamCenter_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pMenuBar.ResumeLayout(false);
@@ -296,7 +295,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel pMenuBar;
-        private Bunifu.Framework.UI.BunifuFlatButton btnMenuHome;
+        private Bunifu.Framework.UI.BunifuFlatButton btnMenuExam;
         private Bunifu.Framework.UI.BunifuTileButton btnRefresh;
         public ExamCenterComponents.ExamCenterCtrl examCenterCtrl;
         public ExamCenterComponents.ExamPage examPage;

@@ -14,7 +14,8 @@ namespace ExamCenterTSZ.UI
 {
     public partial class LoginFrm : Form
     {
-              
+
+        StartImage InitialImg = new StartImage();
 
         public LoginFrm()
         {
@@ -23,6 +24,10 @@ namespace ExamCenterTSZ.UI
             this.AcceptButton = btnLogin;
 
             ShowInTaskbar = false;
+
+            InitialImg.Show();
+        
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -33,6 +38,7 @@ namespace ExamCenterTSZ.UI
                 {
                     Dashboard d = new Dashboard();
                     //login correto
+                    InitialImg.Hide();
                     d.Show();
                     this.Hide();
 

@@ -92,32 +92,7 @@ namespace ExamCenterTSZ.UI
         private void Clock_Tick(object sender, EventArgs e)
         {
             lblClock.Text = DateTime.UtcNow.ToString();
-        }            
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-           examCenterCtrl.Actions();
-        }
-
-        private void quitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Do you really want to close me?",
-                    "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
-                    MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }                               
-
-        private void ExamCenter_FormClosed(object sender, FormClosedEventArgs e)
-                {
-                    if (MessageBox.Show("Do you really want to close me?",
-                            "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
-                            MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-                    {
-                        Application.Exit();
-                    }
-                } 
+        }                                         
 
         ///
         ///Special Buttons
@@ -132,7 +107,7 @@ namespace ExamCenterTSZ.UI
         }
 
         /// Menu Bar
-        private void btnMenuHome_Click(object sender, EventArgs e)
+        private void btnMenuExam_Click(object sender, EventArgs e)
         {
             examCenterCtrl.Actions();
             examCenterCtrl.Show();
@@ -140,9 +115,19 @@ namespace ExamCenterTSZ.UI
 
 
         //Other Buttons
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+           examCenterCtrl.Actions();
+        }  
+
         private void btnExitApp_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Do you really want to close me?",
+                     "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation,
+                     MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }
