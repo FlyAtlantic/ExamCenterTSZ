@@ -63,6 +63,16 @@ namespace ExamCenterTSZ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2000px_Oxygen480_actions_system_shutdown_svg {
+            get {
+                object obj = ResourceManager.GetObject("2000px-Oxygen480-actions-system-shutdown.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap admin_icon {
             get {
                 object obj = ResourceManager.GetObject("admin-icon", resourceCulture);

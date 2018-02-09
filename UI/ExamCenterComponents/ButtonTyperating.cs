@@ -43,14 +43,6 @@ namespace ExamCenterTSZ.UI.DashboardComponents
             if (OnClickButtonExam != null)
                 OnClickButtonExam(Convert.ToInt32(btnTyperating.Tag), eps);
 
-            //var DBoard = this.Parent as ExamCenter;
-
-            //DBoard.examPage.GetQuestions(Convert.ToInt32(btnTyperating.Tag), eps);
-
-            //DBoard.epsConfirm.Show();
-
-            //DBoard.examPage.Show();
-
             Hide();
 
         }

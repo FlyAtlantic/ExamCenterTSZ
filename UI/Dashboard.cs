@@ -138,6 +138,11 @@ namespace ExamCenterTSZ.UI
             examCenterCtrl.Show();
         }
 
-        
+
+        //Other Buttons
+        private void btnExitApp_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

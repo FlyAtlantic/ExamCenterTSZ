@@ -194,5 +194,13 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             DBoard.processExam.Show();
 
         }
+
+        private void ExamPage_Load(object sender, EventArgs e)
+        {
+            var DBoard = this.Parent as Dashboard;
+
+            DBoard.btnExitApp.Enabled = false;
+
+        }
     }
 }

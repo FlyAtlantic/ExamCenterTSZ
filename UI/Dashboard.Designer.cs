@@ -32,10 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.Clock = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExitApp = new Bunifu.Framework.UI.BunifuTileButton();
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAdminPanel = new Bunifu.Framework.UI.BunifuTileButton();
             this.pMenuBar = new System.Windows.Forms.Panel();
             this.btnRefresh = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnInstructor = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnMenuHome = new Bunifu.Framework.UI.BunifuFlatButton();
             this.examCenterCtrl = new ExamCenterTSZ.UI.ExamCenterComponents.ExamCenterCtrl();
             this.examPage = new ExamCenterTSZ.UI.ExamCenterComponents.ExamPage();
@@ -43,7 +45,6 @@
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lblClock = new System.Windows.Forms.Label();
             this.epsConfirm = new ExamCenterTSZ.UI.ExamCenterComponents.EpsConfirm();
-            this.btnInstructor = new Bunifu.Framework.UI.BunifuTileButton();
             this.panel1.SuspendLayout();
             this.pMenuBar.SuspendLayout();
             this.SuspendLayout();
@@ -56,12 +57,33 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.panel1.Controls.Add(this.btnExitApp);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1165, 77);
             this.panel1.TabIndex = 95;
+            // 
+            // btnExitApp
+            // 
+            this.btnExitApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnExitApp.color = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnExitApp.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnExitApp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExitApp.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnExitApp.ForeColor = System.Drawing.Color.White;
+            this.btnExitApp.Image = global::ExamCenterTSZ.Properties.Resources._2000px_Oxygen480_actions_system_shutdown_svg;
+            this.btnExitApp.ImagePosition = 0;
+            this.btnExitApp.ImageZoom = 100;
+            this.btnExitApp.LabelPosition = 0;
+            this.btnExitApp.LabelText = "";
+            this.btnExitApp.Location = new System.Drawing.Point(1085, 6);
+            this.btnExitApp.Margin = new System.Windows.Forms.Padding(6);
+            this.btnExitApp.Name = "btnExitApp";
+            this.btnExitApp.Size = new System.Drawing.Size(62, 58);
+            this.btnExitApp.TabIndex = 4;
+            this.btnExitApp.Click += new System.EventHandler(this.btnExitApp_Click);
             // 
             // lblTitle
             // 
@@ -127,6 +149,27 @@
             this.btnRefresh.Size = new System.Drawing.Size(74, 64);
             this.btnRefresh.TabIndex = 1;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnInstructor
+            // 
+            this.btnInstructor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnInstructor.color = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnInstructor.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnInstructor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInstructor.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnInstructor.ForeColor = System.Drawing.Color.White;
+            this.btnInstructor.Image = ((System.Drawing.Image)(resources.GetObject("btnInstructor.Image")));
+            this.btnInstructor.ImagePosition = 0;
+            this.btnInstructor.ImageZoom = 100;
+            this.btnInstructor.LabelPosition = 0;
+            this.btnInstructor.LabelText = "";
+            this.btnInstructor.Location = new System.Drawing.Point(6, 21);
+            this.btnInstructor.Margin = new System.Windows.Forms.Padding(6);
+            this.btnInstructor.Name = "btnInstructor";
+            this.btnInstructor.Size = new System.Drawing.Size(62, 58);
+            this.btnInstructor.TabIndex = 3;
+            this.btnInstructor.Visible = false;
+            this.btnInstructor.Click += new System.EventHandler(this.btnInstructor_Click);
             // 
             // btnMenuHome
             // 
@@ -222,27 +265,6 @@
             this.epsConfirm.TabIndex = 107;
             this.epsConfirm.Visible = false;
             // 
-            // btnInstructor
-            // 
-            this.btnInstructor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.btnInstructor.color = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.btnInstructor.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
-            this.btnInstructor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInstructor.Font = new System.Drawing.Font("Century Gothic", 15.75F);
-            this.btnInstructor.ForeColor = System.Drawing.Color.White;
-            this.btnInstructor.Image = ((System.Drawing.Image)(resources.GetObject("btnInstructor.Image")));
-            this.btnInstructor.ImagePosition = 0;
-            this.btnInstructor.ImageZoom = 100;
-            this.btnInstructor.LabelPosition = 0;
-            this.btnInstructor.LabelText = "";
-            this.btnInstructor.Location = new System.Drawing.Point(6, 21);
-            this.btnInstructor.Margin = new System.Windows.Forms.Padding(6);
-            this.btnInstructor.Name = "btnInstructor";
-            this.btnInstructor.Size = new System.Drawing.Size(62, 58);
-            this.btnInstructor.TabIndex = 3;
-            this.btnInstructor.Visible = false;
-            this.btnInstructor.Click += new System.EventHandler(this.btnInstructor_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,5 +306,6 @@
         public ExamCenterComponents.EpsConfirm epsConfirm;
         private Bunifu.Framework.UI.BunifuTileButton btnAdminPanel;
         private Bunifu.Framework.UI.BunifuTileButton btnInstructor;
+        public Bunifu.Framework.UI.BunifuTileButton btnExitApp;
     }
 }

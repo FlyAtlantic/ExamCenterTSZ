@@ -178,6 +178,7 @@
             this.Controls.Add(this.qstControl);
             this.Name = "ExamPage";
             this.Size = new System.Drawing.Size(882, 441);
+            this.Load += new System.EventHandler(this.ExamPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

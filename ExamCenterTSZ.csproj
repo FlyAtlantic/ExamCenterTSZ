@@ -178,5 +178,8 @@
   <ItemGroup>
     <None Include="Resources\admin-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2000px-Oxygen480-actions-system-shutdown.svg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

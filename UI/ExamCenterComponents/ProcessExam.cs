@@ -78,9 +78,13 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         {           
 
             t = 0;
+            Dashboard a = new Dashboard();
+            var DBoard = this.Parent as Dashboard;
 
-            var parent = this.Parent as Dashboard;
+            DBoard.btnExitApp.Enabled = true;
 
+            a.Show();
+            a.examCenterCtrl.Actions();
 
             Hide();
 
