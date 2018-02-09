@@ -106,9 +106,18 @@ namespace ExamCenterTSZ.UI
 
         }
 
+        private void CtrlsHides()
+        {
+            examInstructorCtrl.Hide();
+            examCenterCtrl.Hide();
+
+        }
+
         /// Menu Bar
         private void btnMenuExam_Click(object sender, EventArgs e)
         {
+            CtrlsHides();
+
             examCenterCtrl.Actions();
             examCenterCtrl.Show();
         }
@@ -128,6 +137,13 @@ namespace ExamCenterTSZ.UI
             {
                 Application.Exit();
             }
+        }
+
+        private void bunifuTileButton1_Click(object sender, EventArgs e)
+        {
+            CtrlsHides();
+
+            examInstructorCtrl.Show();           
         }
     }
 }

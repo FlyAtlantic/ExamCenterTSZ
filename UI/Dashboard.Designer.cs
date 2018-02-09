@@ -39,12 +39,14 @@
             this.btnRefresh = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnInstructor = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnMenuExam = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.lblWelcome = new System.Windows.Forms.Label();
+            this.lblClock = new System.Windows.Forms.Label();
             this.examCenterCtrl = new ExamCenterTSZ.UI.ExamCenterComponents.ExamCenterCtrl();
             this.examPage = new ExamCenterTSZ.UI.ExamCenterComponents.ExamPage();
             this.processExam = new ExamCenterTSZ.UI.ExamCenterComponents.ProcessExam();
-            this.lblWelcome = new System.Windows.Forms.Label();
-            this.lblClock = new System.Windows.Forms.Label();
             this.epsConfirm = new ExamCenterTSZ.UI.ExamCenterComponents.EpsConfirm();
+            this.bunifuTileButton1 = new Bunifu.Framework.UI.BunifuTileButton();
+            this.examInstructorCtrl = new ExamCenterTSZ.UI.ExamCenterInstructor.ExamInstructorCtrl();
             this.panel1.SuspendLayout();
             this.pMenuBar.SuspendLayout();
             this.SuspendLayout();
@@ -120,6 +122,7 @@
             // pMenuBar
             // 
             this.pMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.pMenuBar.Controls.Add(this.bunifuTileButton1);
             this.pMenuBar.Controls.Add(this.btnRefresh);
             this.pMenuBar.Controls.Add(this.btnInstructor);
             this.pMenuBar.Controls.Add(this.btnAdminPanel);
@@ -207,6 +210,27 @@
             this.btnMenuExam.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuExam.Click += new System.EventHandler(this.btnMenuExam_Click);
             // 
+            // lblWelcome
+            // 
+            this.lblWelcome.AutoSize = true;
+            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWelcome.Location = new System.Drawing.Point(231, 92);
+            this.lblWelcome.Name = "lblWelcome";
+            this.lblWelcome.Size = new System.Drawing.Size(73, 17);
+            this.lblWelcome.TabIndex = 93;
+            this.lblWelcome.Text = "Welcome";
+            // 
+            // lblClock
+            // 
+            this.lblClock.AutoSize = true;
+            this.lblClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClock.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblClock.Location = new System.Drawing.Point(971, 89);
+            this.lblClock.Name = "lblClock";
+            this.lblClock.Size = new System.Drawing.Size(176, 20);
+            this.lblClock.TabIndex = 90;
+            this.lblClock.Text = "2011-01-07 14:04:25";
+            // 
             // examCenterCtrl
             // 
             this.examCenterCtrl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -235,27 +259,6 @@
             this.processExam.TabIndex = 105;
             this.processExam.Visible = false;
             // 
-            // lblWelcome
-            // 
-            this.lblWelcome.AutoSize = true;
-            this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(231, 92);
-            this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(73, 17);
-            this.lblWelcome.TabIndex = 93;
-            this.lblWelcome.Text = "Welcome";
-            // 
-            // lblClock
-            // 
-            this.lblClock.AutoSize = true;
-            this.lblClock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClock.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblClock.Location = new System.Drawing.Point(971, 89);
-            this.lblClock.Name = "lblClock";
-            this.lblClock.Size = new System.Drawing.Size(176, 20);
-            this.lblClock.TabIndex = 90;
-            this.lblClock.Text = "2011-01-07 14:04:25";
-            // 
             // epsConfirm
             // 
             this.epsConfirm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -265,11 +268,40 @@
             this.epsConfirm.TabIndex = 107;
             this.epsConfirm.Visible = false;
             // 
+            // bunifuTileButton1
+            // 
+            this.bunifuTileButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.bunifuTileButton1.color = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.bunifuTileButton1.colorActive = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.bunifuTileButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTileButton1.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.bunifuTileButton1.ForeColor = System.Drawing.Color.White;
+            this.bunifuTileButton1.Image = global::ExamCenterTSZ.Properties.Resources.refreshImg;
+            this.bunifuTileButton1.ImagePosition = 0;
+            this.bunifuTileButton1.ImageZoom = 95;
+            this.bunifuTileButton1.LabelPosition = 0;
+            this.bunifuTileButton1.LabelText = "";
+            this.bunifuTileButton1.Location = new System.Drawing.Point(68, 276);
+            this.bunifuTileButton1.Margin = new System.Windows.Forms.Padding(6);
+            this.bunifuTileButton1.Name = "bunifuTileButton1";
+            this.bunifuTileButton1.Size = new System.Drawing.Size(74, 64);
+            this.bunifuTileButton1.TabIndex = 4;
+            this.bunifuTileButton1.Click += new System.EventHandler(this.bunifuTileButton1_Click);
+            // 
+            // examInstructorCtrl
+            // 
+            this.examInstructorCtrl.Location = new System.Drawing.Point(234, 131);
+            this.examInstructorCtrl.Name = "examInstructorCtrl";
+            this.examInstructorCtrl.Size = new System.Drawing.Size(882, 460);
+            this.examInstructorCtrl.TabIndex = 108;
+            this.examInstructorCtrl.Visible = false;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1165, 694);
+            this.Controls.Add(this.examInstructorCtrl);
             this.Controls.Add(this.epsConfirm);
             this.Controls.Add(this.lblClock);
             this.Controls.Add(this.pMenuBar);
@@ -297,14 +329,16 @@
         private System.Windows.Forms.Panel pMenuBar;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuExam;
         private Bunifu.Framework.UI.BunifuTileButton btnRefresh;
-        public ExamCenterComponents.ExamCenterCtrl examCenterCtrl;
-        public ExamCenterComponents.ExamPage examPage;
-        public ExamCenterComponents.ProcessExam processExam;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.Label lblClock;
-        public ExamCenterComponents.EpsConfirm epsConfirm;
         private Bunifu.Framework.UI.BunifuTileButton btnAdminPanel;
         private Bunifu.Framework.UI.BunifuTileButton btnInstructor;
         public Bunifu.Framework.UI.BunifuTileButton btnExitApp;
+        public ExamCenterComponents.EpsConfirm epsConfirm;
+        public ExamCenterComponents.ExamPage examPage;
+        public ExamCenterComponents.ProcessExam processExam;
+        public ExamCenterComponents.ExamCenterCtrl examCenterCtrl;
+        private Bunifu.Framework.UI.BunifuTileButton bunifuTileButton1;
+        private ExamCenterInstructor.ExamInstructorCtrl examInstructorCtrl;
     }
 }
