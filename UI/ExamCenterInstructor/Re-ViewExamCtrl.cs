@@ -44,15 +44,18 @@ namespace ExamCenterTSZ.UI.ExamCenterInstructor
                 btnNext.Enabled = true;
 
             lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), LastExam.LastQuestions.Count.ToString());
-
-            lblPilotText.Text = LastExam.LastQuestions[CurrentQuestion].Name + " " + LastExam.LastQuestions[CurrentQuestion].Surname;
-
-            lblResultTxt.Text = LastExam.LastQuestions[CurrentQuestion].Result + "%";
+          
 
             pBarProgress.MaximumValue = LastExam.LastQuestions.Count;
 
             if (LastExam.LastQuestions.Count != 0)
+            {
                 pBarProgress.Value = CountQuestions;
+
+                lblPilotText.Text = LastExam.LastQuestions[CurrentQuestion].Name + " " + LastExam.LastQuestions[CurrentQuestion].Surname;
+
+                lblResultTxt.Text = LastExam.LastQuestions[CurrentQuestion].Result + "%";
+            }               
         }
 
         public void GetQuestions(int examID)
