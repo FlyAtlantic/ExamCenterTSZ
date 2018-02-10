@@ -229,7 +229,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
                 if (sqlCmdRes.HasRows)
                     while (sqlCmdRes.Read())
                     {
-                        int correctAnswer = Convert.ToInt32(sqlCmdRes[14]);
+                        int correctAnswer = Convert.ToInt32(sqlCmdRes[5]);
                         LastQuestions.Add(new LastQuestion(
                             (string)sqlCmdRes[0],
                             (int)sqlCmdRes[9],
