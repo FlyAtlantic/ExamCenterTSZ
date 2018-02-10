@@ -34,6 +34,7 @@
             // cboxAnswer
             // 
             this.cboxAnswer.AutoSize = true;
+            this.cboxAnswer.Enabled = false;
             this.cboxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cboxAnswer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cboxAnswer.Location = new System.Drawing.Point(3, 3);

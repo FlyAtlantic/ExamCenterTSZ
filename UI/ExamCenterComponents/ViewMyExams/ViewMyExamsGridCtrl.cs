@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using ExamCenterTSZ.Functions;
+using ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams;
 
 namespace ExamCenterTSZ.UI.ExamCenterComponents
 {
@@ -19,6 +20,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             InitializeComponent();
 
             FillMyExams();
+
         }
 
         private void FillMyExams()
@@ -51,7 +53,17 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
         private void gridViewExams_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnViewExam.Tag = gridViewExams.Rows[e.RowIndex].Cells["Exam ID"].Value;
+            btnViewExam.TabIndex = Convert.ToInt32(gridViewExams.Rows[e.RowIndex].Cells["Exam ID"].Value);
+        }
+
+        private void btnViewExam_Click(object sender, EventArgs e)
+        {
+            if (btnViewExam.TabIndex != 0) {
+                var MyExamPage = this.Parent as MyExamsCtrl;
+                MyExamPage.viewMyExamPageCtrl.Show();
+                MyExamPage.viewMyExamPageCtrl.GetQuestions(Convert.ToInt32(btnViewExam.TabIndex));
+                Hide();
+            }
         }
     }
 }

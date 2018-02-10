@@ -52,10 +52,16 @@
             this.btnViewExam.Margin = new System.Windows.Forms.Padding(6);
             this.btnViewExam.Name = "btnViewExam";
             this.btnViewExam.Size = new System.Drawing.Size(62, 58);
-            this.btnViewExam.TabIndex = 4;
+            this.btnViewExam.TabIndex = 0;
+            this.btnViewExam.Tag = "";
+            this.btnViewExam.Click += new System.EventHandler(this.btnViewExam_Click);
             // 
             // gridViewExams
             // 
+            this.gridViewExams.AllowUserToAddRows = false;
+            this.gridViewExams.AllowUserToDeleteRows = false;
+            this.gridViewExams.AllowUserToResizeColumns = false;
+            this.gridViewExams.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gridViewExams.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridViewExams.BackgroundColor = System.Drawing.Color.Gainsboro;
@@ -71,6 +77,7 @@
             this.gridViewExams.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridViewExams.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridViewExams.DoubleBuffered = true;
+            this.gridViewExams.EnableHeadersVisualStyles = false;
             this.gridViewExams.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.gridViewExams.HeaderBgColor = System.Drawing.Color.White;
             this.gridViewExams.HeaderForeColor = System.Drawing.Color.Blue;

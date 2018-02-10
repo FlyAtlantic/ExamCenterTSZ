@@ -123,6 +123,12 @@
       <DependentUpon>MyAnswer.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ExamCenterComponents\ViewMyExams\MyExams.cs" />
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\MyExamsCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\MyExamsCtrl.Designer.cs">
+      <DependentUpon>MyExamsCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ExamCenterComponents\ViewMyExams\MyQuestionCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExamCenterComponents\ViewMyExams\MyAnswer.resx">
       <DependentUpon>MyAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterComponents\ViewMyExams\MyExamsCtrl.resx">
+      <DependentUpon>MyExamsCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExamCenterComponents\ViewMyExams\MyQuestionCtrl.resx">
       <DependentUpon>MyQuestionCtrl.cs</DependentUpon>

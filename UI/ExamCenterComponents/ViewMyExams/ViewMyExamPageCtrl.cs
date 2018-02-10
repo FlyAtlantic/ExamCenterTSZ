@@ -35,20 +35,22 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams
 
             CurrentQuestion = 0;
 
-            qstControl.Update(CurrentQuestion);
+            myQuestionCtrl.Update(CurrentQuestion);
 
             CountQuestions = CurrentQuestion + 1;
-            if (LastExam.LastQuestions.Count > 1)
+            if (MyExams.LastQuestions.Count > 1)
                 btnNext.Enabled = true;
 
-            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), LastExam.LastQuestions.Count.ToString());
+            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), MyExams.LastQuestions.Count.ToString());
 
 
-            pBarProgress.MaximumValue = LastExam.LastQuestions.Count;
+            pBarProgress.MaximumValue = MyExams.LastQuestions.Count;
 
-            if (LastExam.LastQuestions.Count != 0)
+            if (MyExams.LastQuestions.Count != 0)
             {
                 pBarProgress.Value = CountQuestions;
+
+                lblResultTxt.Text = MyExams.LastQuestions[CurrentQuestion].Result + "%";
 
             }
         }
@@ -59,7 +61,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams
             btnNext.Enabled = false;
             btnPrevious.Enabled = false;
 
-            LastExam.LastExamFromSQL(Convert.ToInt32(examID));
+            MyExams.LastExamFromSQL(Convert.ToInt32(examID));
             StartExam();
 
         }
@@ -73,13 +75,13 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams
             btnFinish.Visible = false;
 
             CurrentQuestion--;
-            qstControl.Update(CurrentQuestion);
+            myQuestionCtrl.Update(CurrentQuestion);
 
             CountQuestions = CurrentQuestion + 1;
             if (CurrentQuestion == 0)
                 btnPrevious.Visible = false;
 
-            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), LastExam.LastQuestions.Count.ToString());
+            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), MyExams.LastQuestions.Count.ToString());
             pBarProgress.Value = CountQuestions--;
 
         }
@@ -91,10 +93,10 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams
             btnPrevious.Enabled = true;
 
             CurrentQuestion++;
-            qstControl.Update(CurrentQuestion);
+            myQuestionCtrl.Update(CurrentQuestion);
 
             CountQuestions = CurrentQuestion + 1;
-            if (CurrentQuestion == LastExam.LastQuestions.Count - 1)
+            if (CurrentQuestion == MyExams.LastQuestions.Count - 1)
             {
                 btnNext.Visible = false;
                 btnFinish.Visible = true;
@@ -104,7 +106,8 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams
                 btnPrevious.Visible = true;
             }
 
-            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), LastExam.LastQuestions.Count.ToString());
+            lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), MyExams.LastQuestions.Count.ToString());            
+
             pBarProgress.Value = CountQuestions++;
         }
 
@@ -115,7 +118,9 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams
                     MessageBoxDefaultButton.Button2) == DialogResult.Yes)
             {
 
+                var myExamsPage = this.Parent as MyExamsCtrl;
 
+                myExamsPage.viewMyExamsGridCtrl.Show();
                 Hide();
 
 

@@ -88,10 +88,17 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams
                 if (fpAnswers.TabIndex == MyExams.LastQuestions[question].SelectedAnswer)
                 {
                     e.cboxAnswer.Checked = true;
+
+                    e.cboxAnswer.BackColor = Color.Orange;
                 }
                 else
                 {
                     e.cboxAnswer.Checked = false;
+                }
+
+                if (fpAnswers.TabIndex == MyExams.LastQuestions[question].IsSelectedAnswerCorrect)
+                {
+                    e.cboxAnswer.BackColor = Color.Green;
                 }
 
 

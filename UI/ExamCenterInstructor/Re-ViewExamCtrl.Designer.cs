@@ -65,7 +65,7 @@
             this.btnFinish.ImagePosition = 16;
             this.btnFinish.ImageZoom = 50;
             this.btnFinish.LabelPosition = 33;
-            this.btnFinish.LabelText = "Send";
+            this.btnFinish.LabelText = "Close";
             this.btnFinish.Location = new System.Drawing.Point(270, 388);
             this.btnFinish.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnFinish.Name = "btnFinish";
