@@ -78,6 +78,8 @@ namespace ExamCenterTSZ.UI
                     }
 
                 lblWelcome.Text = String.Format("Have a nice {0},{1} {2} {3}", DateTime.UtcNow.DayOfWeek.ToString(), result.Rank, result.UserName, result.UserSurname);
+
+                PilotInfo.PilotInfos(result.UserID);
             }
             catch (Exception crap)
             {

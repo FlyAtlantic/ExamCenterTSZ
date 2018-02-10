@@ -15,7 +15,7 @@ namespace ExamCenterTSZ.Functions
             get
             {
                 return String.Format(
-                    "server={0};uid={1};pwd={2};database={3};Connection Timeout=60;",
+                    "server={0};uid={1};pwd={2};database={3};Connection Timeout=60; convert zero datetime=True",
                     Properties.Settings.Default.Server,
                     Properties.Settings.Default.Dbuser,
                     Properties.Settings.Default.Dbpass,

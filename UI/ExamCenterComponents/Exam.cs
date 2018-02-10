@@ -8,6 +8,18 @@ using MySql.Data.MySqlClient;
 
 namespace ExamCenterTSZ.UI.ExamCenterComponents
 {
+    public static class PilotInfo
+    {
+        public static int ID
+        { get; set; }
+
+        public static void PilotInfos(int UserID)
+        {
+            ID = UserID;
+        }
+
+    }
+
     public class Answer
     {
         public string Text
@@ -115,12 +127,17 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         public static string Text
         { get; set; }
 
+        public static int AssignID
+        { get; set; }
+
         public static List<Question> Questions
         { get; set; }
  
-        public static void FromSQL(int ID)
+        public static void FromSQL(int ID, int assignID)
         {
             ExamID = ID;
+
+            AssignID = assignID; 
 
             string sqlPilotInformations = "SELECT * from exam_questions where examby=@ExamID";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
@@ -242,18 +259,42 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
     {
         public static void LastExamFromSQL()
         {
-            string sqlSendExamtoDatabase = "INSERT INTO `exam_answers` (`assignid` , `question1` , `pilotanswer`) VALUES(@Discription, @Code, @Discount , @MaxDiscount)";
+            string sqlResultExamtoDatabase = "INSERT INTO `exam_results` (`examassigned` , `pilotid`, `date`, `result`, `state`) VALUES(@ExamID, @PilotID, NOW(), @Result , @State)";
+            string sqlSendAnswerstoDatabase = "INSERT INTO `exam_answers` (`assignid` , `question1` , `pilotanswer`) VALUES(@AssignID, @Question, @Answer)";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
-
+            
             try
             {
                 conn.Open();
 
-                //MySqlCommand sqlCmd = new MySqlCommand(sqlPilotInformations, conn);
-                //sqlCmd.Parameters.AddWithValue("@AssignID", Exam.ExamID);
-                //sqlCmd.Parameters.AddWithValue("@Question", Exam.ExamID);
+                foreach (Question a in Exam.Questions)
+                {
 
-                //sqlCmd.ExecuteNonQuery();
+                    MySqlCommand sqlCmd = new MySqlCommand(sqlSendAnswerstoDatabase, conn);
+                    sqlCmd.Parameters.AddWithValue("@AssignID", Exam.AssignID);
+                    sqlCmd.Parameters.AddWithValue("@Question", a.QuestionID);
+                    sqlCmd.Parameters.AddWithValue("@Answer", a.SelectedAnswer);
+
+                    sqlCmd.ExecuteNonQuery();
+                }
+
+                int FinalResult = Convert.ToInt32(Exam.CalculateScore());
+
+                MySqlCommand sqlCmd1 = new MySqlCommand(sqlResultExamtoDatabase, conn);                
+                sqlCmd1.Parameters.AddWithValue("@ExamID", Exam.AssignID);
+                sqlCmd1.Parameters.AddWithValue("@PilotID", PilotInfo.ID);
+                sqlCmd1.Parameters.AddWithValue("@Result", FinalResult.ToString());
+
+                if (FinalResult >= 75)
+                {
+                    sqlCmd1.Parameters.AddWithValue("@State", "Approved");
+                }
+                else
+                {
+                    sqlCmd1.Parameters.AddWithValue("@State", "Rejected");
+                }
+
+                sqlCmd1.ExecuteNonQuery();
 
             }
             catch (Exception crap)

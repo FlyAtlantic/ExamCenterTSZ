@@ -31,7 +31,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             {
                 conn.Open();
 
-                string sqlLogbook = "SELECT examassigned as `Exam ID`, date as Date, result as Result from exam_results left join utilizadores on exam_results.pilotid = utilizadores.user_id where user_email=@Email";
+                string sqlLogbook = "SELECT examassigned as `Exam ID`, date as Date, result as `Result %` from exam_results left join utilizadores on exam_results.pilotid = utilizadores.user_id where user_email=@Email";
 
                 MySqlCommand sqlCmd = new MySqlCommand(sqlLogbook, conn);
                 sqlCmd.Parameters.AddWithValue("@Email", Properties.Settings.Default.Email);

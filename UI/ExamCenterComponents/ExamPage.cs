@@ -89,13 +89,13 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
         }
 
-        public void GetQuestions(int examID, int eps)
+        public void GetQuestions(int examID, int eps, int assignID)
         {
 
             btnNext.Enabled = false;
             btnPrevious.Enabled = false;
 
-            Exam.FromSQL(Convert.ToInt32(examID));
+            Exam.FromSQL(Convert.ToInt32(examID), assignID);
             StartExam();
 
             var DBoard = this.Parent as Dashboard;
