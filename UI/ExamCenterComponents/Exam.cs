@@ -130,14 +130,19 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         public static int AssignID
         { get; set; }
 
+        public static int AssignFor
+        { get; set; }
+
         public static List<Question> Questions
         { get; set; }
  
-        public static void FromSQL(int ID, int assignID)
+        public static void FromSQL(int ID, int assignID, int assignFor)
         {
             ExamID = ID;
 
-            AssignID = assignID; 
+            AssignID = assignID;
+
+            AssignFor = assignFor;
 
             string sqlPilotInformations = "SELECT * from exam_questions where examby=@ExamID";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
@@ -296,6 +301,42 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
                 sqlCmd1.ExecuteNonQuery();
 
+                //ranks
+                if (FinalResult >= 75 && Exam.ExamID <=7)
+                {
+                    string sqlUpdateRank = "UPDATE utilizadores SET rank=@Rank WHERE user_id=@UserID";
+
+                    MySqlCommand sqlCmd2 = new MySqlCommand(sqlUpdateRank, conn);
+                    sqlCmd2.Parameters.AddWithValue("@Rank", Exam.AssignFor);
+                    sqlCmd2.Parameters.AddWithValue("@UserID", PilotInfo.ID);
+
+                    sqlCmd2.ExecuteNonQuery();
+                }
+
+                //Typeratings
+                if (FinalResult >= 75 && Exam.ExamID >= 8 && Exam.ExamID <= 22)
+                {
+                    string sqlInsertTyperating = "INSERT INTO `typeratings` ( `typerating` , `pilot` , `validity` , `expire` ) VALUES(@Typerating, @UserID, NOW() , NOW()+INTERVAL 3 MONTH)";
+
+                    MySqlCommand sqlCmd2 = new MySqlCommand(sqlInsertTyperating, conn);
+                    sqlCmd2.Parameters.AddWithValue("@Typerating", Exam.AssignFor);
+                    sqlCmd2.Parameters.AddWithValue("@UserID", PilotInfo.ID);
+
+                    sqlCmd2.ExecuteNonQuery();
+                }
+
+                //Qualifications
+                if (FinalResult >= 75 && Exam.ExamID >= 8 && Exam.ExamID <= 22)
+                {
+                    string sqlInsertQualification = "INSERT INTO `qualifications` ( `qualification` , `pilot` , `validity` , `expire` ) VALUES(@Qualification, @UserID, NOW() , NOW()+INTERVAL 3 MONTH)";
+
+                    MySqlCommand sqlCmd2 = new MySqlCommand(sqlInsertQualification, conn);
+                    sqlCmd2.Parameters.AddWithValue("@Qualification", Exam.AssignFor);
+                    sqlCmd2.Parameters.AddWithValue("@UserID", PilotInfo.ID);
+
+                    sqlCmd2.ExecuteNonQuery();
+                }
+
             }
             catch (Exception crap)
             {
@@ -303,7 +344,6 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             }
             finally
             {
-
                 conn.Close();
             }
         }

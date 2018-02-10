@@ -89,13 +89,13 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
         }
 
-        public void GetQuestions(int examID, int eps, int assignID)
+        public void GetQuestions(int examID, int eps, int assignID, int assignFor)
         {
 
             btnNext.Enabled = false;
             btnPrevious.Enabled = false;
 
-            Exam.FromSQL(Convert.ToInt32(examID), assignID);
+            Exam.FromSQL(Convert.ToInt32(examID), assignID, assignFor);
             StartExam();
 
             var DBoard = this.Parent as Dashboard;
@@ -164,9 +164,17 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             {
                 ChronomiterTimer.Stop();
 
-                //END of Time
+                //END of Time               
+                Hide();
 
-                
+                var DBoard = this.Parent as Dashboard;
+
+                DBoard.processExam.Start();
+
+                DBoard.processExam.Show();
+
+                SendExam.LastExamFromSQL();
+
             }
 
             string hh = Convert.ToString(h);
@@ -176,12 +184,19 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
             if (h == 0)
                 lblCountTime.Text = String.Format("0{0}:{1}:{2}", hh, mm, ss);
+
             if (h == 0 && m < 0)
-                lblCountTime.Text = String.Format("0{0}:0{1}:{2}", hh, mm, ss);
-            if (h == 0 && m < 10 && s < 10)
-                lblCountTime.Text = String.Format("0{0}:0{1}:0{2}", hh, mm, ss);
+                lblCountTime.Text = String.Format("0{0}:0{1}:{2}", hh, mm, ss);          
+
             if (h == 0 && s < 10)
                 lblCountTime.Text = String.Format("0{0}:{1}:0{2}", hh, mm, ss);
+
+            if (h == 0 && m < 10)
+                lblCountTime.Text = String.Format("0{0}:0{1}:{2}", hh, mm, ss);
+
+            if (h == 0 && m < 10 && s < 10)
+                lblCountTime.Text = String.Format("0{0}:0{1}:0{2}", hh, mm, ss);
+
 
             pBarProgress.Value = ssBar;
 

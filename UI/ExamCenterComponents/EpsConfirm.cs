@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using ExamCenterTSZ.Functions;
 
 namespace ExamCenterTSZ.UI.ExamCenterComponents
 {
@@ -27,6 +29,17 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
         private void btnYes_Click(object sender, EventArgs e)
         {
+            string sqlUpdatePilotAssign = "UPDATE `exam_assigns` SET `avaiable`=0 where assign_id = @AssignID";
+            MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
+
+            conn.Open();
+
+            MySqlCommand sqlCmd2 = new MySqlCommand(sqlUpdatePilotAssign, conn);
+            sqlCmd2.Parameters.AddWithValue("@AssignID", Exam.AssignID);
+
+            sqlCmd2.ExecuteNonQuery();
+            conn.Close();
+
             var DBoard = this.Parent as Dashboard;
 
             DBoard.examPage.Show();

@@ -19,31 +19,33 @@ namespace ExamCenterTSZ.UI.DashboardComponents
 
         int eps = 0;
         int assignID = 0;
+        int assignFor = 0;
 
-        public ButtonTyperating(string typerating, int examid, int eps, int assignID)
+        public ButtonTyperating(string typerating, int examid, int eps, int assignID, int assignFor)
         {
             InitializeComponent();
 
-            Update(typerating, examid, eps, assignID);
+            Update(typerating, examid, eps, assignID, assignFor);
 
         }
 
-        public void Update(string typerating, int examid, int eps, int assignID)
+        public void Update(string typerating, int examid, int eps, int assignID, int assignFor)
         {
             btnTyperating.Text = typerating.ToString();
             btnTyperating.Tag = examid;
 
             this.eps = eps;
             this.assignID = assignID;
+            this.assignFor = assignFor;
         }
 
-        public delegate void ClickButtonExam(int buttonValue, int eps, int assignID);
+        public delegate void ClickButtonExam(int buttonValue, int eps, int assignID, int assignFor);
         public event ClickButtonExam OnClickButtonExam;
 
         private void btnTyperating_Click(object sender, EventArgs e)
         {
             if (OnClickButtonExam != null)
-                OnClickButtonExam(Convert.ToInt32(btnTyperating.Tag), eps, assignID);
+                OnClickButtonExam(Convert.ToInt32(btnTyperating.Tag), eps, assignID, assignFor);
 
             Hide();
 
