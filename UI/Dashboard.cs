@@ -160,6 +160,7 @@ namespace ExamCenterTSZ.UI
         private void btnRefresh_Click(object sender, EventArgs e)
         {
            examCenterCtrl.Actions();
+           myExamsCtrl.viewMyExamsGridCtrl.FillMyExams();
         }  
 
         private void btnExitApp_Click(object sender, EventArgs e)

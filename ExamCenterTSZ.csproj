@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{2C71CB8B-1E83-4383-8471-6C4C07E887F3}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <RootNamespace>ExamCenterTSZ</RootNamespace>
     <AssemblyName>ExamCenterTSZ</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>

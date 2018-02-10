@@ -85,16 +85,16 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams
                     {
                         int correctAnswer = Convert.ToInt32(sqlCmdRes[14]);
                         LastQuestions.Add(new MyLastQuestion(
-                            (string)sqlCmdRes[8],
+                            (string)sqlCmdRes[7],
                             (int)sqlCmdRes[3],
-                            (int)sqlCmdRes[14],
-                            (string)sqlCmdRes[48],
+                            (int)sqlCmdRes[13],
+                            (string)sqlCmdRes[47],
                             new List<MyLastAnswer>()
                             {
+                                new MyLastAnswer((string)sqlCmdRes[9]),
                                 new MyLastAnswer((string)sqlCmdRes[10]),
                                 new MyLastAnswer((string)sqlCmdRes[11]),
-                                new MyLastAnswer((string)sqlCmdRes[12]),
-                                new MyLastAnswer((string)sqlCmdRes[13])
+                                new MyLastAnswer((string)sqlCmdRes[12])
                             }));
                     }
                 MyExams.Text = Text;
