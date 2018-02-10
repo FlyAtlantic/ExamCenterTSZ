@@ -28,16 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.findExam1 = new ExamCenterTSZ.UI.ExamCenterInstructor.FindExam();
             this.re_ViewExamCtrl = new ExamCenterTSZ.UI.ExamCenterInstructor.Re_ViewExamCtrl();
+            this.findExam1 = new ExamCenterTSZ.UI.ExamCenterInstructor.FindExam();
             this.SuspendLayout();
-            // 
-            // findExam1
-            // 
-            this.findExam1.Location = new System.Drawing.Point(109, 3);
-            this.findExam1.Name = "findExam1";
-            this.findExam1.Size = new System.Drawing.Size(223, 42);
-            this.findExam1.TabIndex = 0;
             // 
             // re_ViewExamCtrl
             // 
@@ -48,12 +41,19 @@
             this.re_ViewExamCtrl.TabIndex = 1;
             this.re_ViewExamCtrl.Visible = false;
             // 
+            // findExam1
+            // 
+            this.findExam1.Location = new System.Drawing.Point(69, 3);
+            this.findExam1.Name = "findExam1";
+            this.findExam1.Size = new System.Drawing.Size(338, 42);
+            this.findExam1.TabIndex = 2;
+            // 
             // ExamInstructorCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.re_ViewExamCtrl);
             this.Controls.Add(this.findExam1);
+            this.Controls.Add(this.re_ViewExamCtrl);
             this.Name = "ExamInstructorCtrl";
             this.Size = new System.Drawing.Size(882, 494);
             this.ResumeLayout(false);
@@ -61,8 +61,7 @@
         }
 
         #endregion
-
-        private FindExam findExam1;
         public Re_ViewExamCtrl re_ViewExamCtrl;
+        private FindExam findExam1;
     }
 }

@@ -45,8 +45,14 @@ namespace ExamCenterTSZ.UI.ExamCenterInstructor
 
             lblCountQuestions.Text = String.Format("Question {0} of {1}", CountQuestions.ToString(), LastExam.LastQuestions.Count.ToString());
 
+            lblPilotText.Text = LastExam.LastQuestions[CurrentQuestion].Name + " " + LastExam.LastQuestions[CurrentQuestion].Surname;
+
+            lblResultTxt.Text = LastExam.LastQuestions[CurrentQuestion].Result + "%";
+
             pBarProgress.MaximumValue = LastExam.LastQuestions.Count;
-            pBarProgress.Value = CountQuestions;
+
+            if (LastExam.LastQuestions.Count != 0)
+                pBarProgress.Value = CountQuestions;
         }
 
         public void GetQuestions(int examID)
@@ -117,6 +123,7 @@ namespace ExamCenterTSZ.UI.ExamCenterInstructor
 
             }
         }
+
     }
 }
 

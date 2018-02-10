@@ -69,6 +69,12 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
     public class LastQuestion
     {
+        public string Name
+        { get; set; }
+
+        public string Surname
+        { get; set; }
+
         public string Text
         { get; set; }
 
@@ -81,12 +87,18 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         public int IsSelectedAnswerCorrect
         { get; set; }
 
-        public LastQuestion(string Text, int Selected, int CorrectAnswer, List<LastAnswer> LastAnswers)
+        public string Result
+        { get; set; }
+
+        public LastQuestion(string Text, int Selected, int CorrectAnswer, string Name, string Surname, string Result, List<LastAnswer> LastAnswers)
         {
             IsSelectedAnswerCorrect = CorrectAnswer;
             SelectedAnswer = Selected;
             this.Text = Text;
             this.LastAnswers = LastAnswers;
+            this.Name = Name;
+            this.Surname = Surname;
+            this.Result = Result;
         }
 
     }
@@ -195,7 +207,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         
         public static void LastExamFromSQL(int ID)
         {
-            string sqlPilotInformations = "SELECT * from exam_answers left join exam_questions on exam_answers.question1 = exam_questions.question_id left join exam_assigns on exam_questions.examby = exam_assigns.exam_id where assignid=@AssignID";
+            string sqlPilotInformations = "SELECT * from exam_answers left join exam_questions on exam_answers.question1 = exam_questions.question_id left join exam_assigns on exam_answers.assignid = exam_assigns.assign_id left join utilizadores on exam_assigns.idpilot = utilizadores.user_id left join exam_results on exam_answers.assignid = exam_results.examassigned where assignid=@AssignID";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
 
             try
@@ -217,6 +229,9 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
                             (string)sqlCmdRes[8],
                             (int)sqlCmdRes[3],
                             (int)sqlCmdRes[14],
+                            (string)sqlCmdRes[26],
+                            (string)sqlCmdRes[27],
+                            (string)sqlCmdRes[48],
                             new List<LastAnswer>()
                             {
                                 new LastAnswer((string)sqlCmdRes[10]),

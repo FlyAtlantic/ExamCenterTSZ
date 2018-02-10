@@ -32,10 +32,12 @@
             this.btnFinish = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnNext = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnPrevious = new Bunifu.Framework.UI.BunifuTileButton();
-            this.lblClockText = new System.Windows.Forms.Label();
-            this.lblCountTime = new System.Windows.Forms.Label();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.lblResultTxt = new System.Windows.Forms.Label();
             this.lblCountQuestions = new System.Windows.Forms.Label();
             this.lastQuestionCtrl = new ExamCenterTSZ.UI.ExamCenterInstructor.LastQuestionCtrl();
+            this.lblPilot = new System.Windows.Forms.Label();
+            this.lblPilotText = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pBarProgress
@@ -115,29 +117,29 @@
             this.btnPrevious.Visible = false;
             this.btnPrevious.Click += new System.EventHandler(this.btnPreviousQuestion_Click);
             // 
-            // lblClockText
+            // lblResult
             // 
-            this.lblClockText.AutoSize = true;
-            this.lblClockText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblClockText.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblClockText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblClockText.Location = new System.Drawing.Point(704, 18);
-            this.lblClockText.Name = "lblClockText";
-            this.lblClockText.Size = new System.Drawing.Size(104, 16);
-            this.lblClockText.TabIndex = 113;
-            this.lblClockText.Text = "Time to finish:";
+            this.lblResult.AutoSize = true;
+            this.lblResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblResult.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblResult.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblResult.Location = new System.Drawing.Point(679, 36);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(56, 16);
+            this.lblResult.TabIndex = 113;
+            this.lblResult.Text = "Result:";
             // 
-            // lblCountTime
+            // lblResultTxt
             // 
-            this.lblCountTime.AutoSize = true;
-            this.lblCountTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblCountTime.ForeColor = System.Drawing.Color.Firebrick;
-            this.lblCountTime.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lblCountTime.Location = new System.Drawing.Point(804, 18);
-            this.lblCountTime.Name = "lblCountTime";
-            this.lblCountTime.Size = new System.Drawing.Size(64, 16);
-            this.lblCountTime.TabIndex = 112;
-            this.lblCountTime.Text = "00:00:00";
+            this.lblResultTxt.AutoSize = true;
+            this.lblResultTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblResultTxt.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblResultTxt.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblResultTxt.Location = new System.Drawing.Point(730, 36);
+            this.lblResultTxt.Name = "lblResultTxt";
+            this.lblResultTxt.Size = new System.Drawing.Size(45, 16);
+            this.lblResultTxt.TabIndex = 112;
+            this.lblResultTxt.Text = "100%";
             // 
             // lblCountQuestions
             // 
@@ -158,17 +160,43 @@
             this.lastQuestionCtrl.Size = new System.Drawing.Size(796, 325);
             this.lastQuestionCtrl.TabIndex = 118;
             // 
+            // lblPilot
+            // 
+            this.lblPilot.AutoSize = true;
+            this.lblPilot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPilot.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.lblPilot.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblPilot.Location = new System.Drawing.Point(679, 16);
+            this.lblPilot.Name = "lblPilot";
+            this.lblPilot.Size = new System.Drawing.Size(43, 16);
+            this.lblPilot.TabIndex = 120;
+            this.lblPilot.Text = "Pilot:";
+            // 
+            // lblPilotText
+            // 
+            this.lblPilotText.AutoSize = true;
+            this.lblPilotText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblPilotText.ForeColor = System.Drawing.Color.Firebrick;
+            this.lblPilotText.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.lblPilotText.Location = new System.Drawing.Point(719, 16);
+            this.lblPilotText.Name = "lblPilotText";
+            this.lblPilotText.Size = new System.Drawing.Size(105, 16);
+            this.lblPilotText.TabIndex = 119;
+            this.lblPilotText.Text = "Tiago Vicente";
+            // 
             // Re_ViewExamCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblPilot);
+            this.Controls.Add(this.lblPilotText);
             this.Controls.Add(this.lastQuestionCtrl);
             this.Controls.Add(this.pBarProgress);
             this.Controls.Add(this.btnFinish);
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
-            this.Controls.Add(this.lblClockText);
-            this.Controls.Add(this.lblCountTime);
+            this.Controls.Add(this.lblResult);
+            this.Controls.Add(this.lblResultTxt);
             this.Controls.Add(this.lblCountQuestions);
             this.Name = "Re_ViewExamCtrl";
             this.Size = new System.Drawing.Size(879, 443);
@@ -183,10 +211,12 @@
         private Bunifu.Framework.UI.BunifuTileButton btnFinish;
         private Bunifu.Framework.UI.BunifuTileButton btnNext;
         private Bunifu.Framework.UI.BunifuTileButton btnPrevious;
-        private System.Windows.Forms.Label lblClockText;
-        private System.Windows.Forms.Label lblCountTime;
+        private System.Windows.Forms.Label lblResult;
+        private System.Windows.Forms.Label lblResultTxt;
         private System.Windows.Forms.Label lblCountQuestions;
         private ExamCenterComponents.QuestionCtrl qstControl;
         private LastQuestionCtrl lastQuestionCtrl;
+        private System.Windows.Forms.Label lblPilot;
+        private System.Windows.Forms.Label lblPilotText;
     }
 }

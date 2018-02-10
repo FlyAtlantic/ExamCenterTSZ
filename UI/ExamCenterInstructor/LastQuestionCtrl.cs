@@ -70,48 +70,61 @@ namespace ExamCenterTSZ.UI.ExamCenterInstructor
 
             this.question = question;
 
-            txtQuestion.Text = LastExam.LastQuestions[question].Text;
+            if(LastExam.LastQuestions.Count != 0) { 
+                txtQuestion.Text = LastExam.LastQuestions[question].Text;
 
-            fpAnswers.Controls.Clear();
+                fpAnswers.Controls.Clear();
 
-            foreach (LastAnswer a in LastExam.LastQuestions[question].LastAnswers)
-            {
-                LastAnswerCtrl e = new LastAnswerCtrl(a);
-
-
-                fpAnswers.Controls.Add(e);
-
-                if (IDQuest <= 3)
-                    fpAnswers.TabIndex = ++IDQuest;
-                else
-                    IDQuest = 0;
-
-                e.cboxAnswer.TabIndex = IDQuest;
-
-                possibleSelect.Add(new PossibleSelect(IDQuest, question));
-
-                if (fpAnswers.TabIndex == LastExam.LastQuestions[question].SelectedAnswer)
+                foreach (LastAnswer a in LastExam.LastQuestions[question].LastAnswers)
                 {
-                    e.cboxAnswer.Checked = true;
+                    LastAnswerCtrl e = new LastAnswerCtrl(a);
 
-                    e.cboxAnswer.BackColor = Color.Orange;
+
+                    fpAnswers.Controls.Add(e);
+
+                    if (IDQuest <= 3)
+                        fpAnswers.TabIndex = ++IDQuest;
+                    else
+                        IDQuest = 0;
+
+                    e.cboxAnswer.TabIndex = IDQuest;
+
+                    possibleSelect.Add(new PossibleSelect(IDQuest, question));
+
+                    if (fpAnswers.TabIndex == LastExam.LastQuestions[question].SelectedAnswer)
+                    {
+                        e.cboxAnswer.Checked = true;
+
+                        e.cboxAnswer.BackColor = Color.Orange;
+                    }
+                    else
+                    {
+                        e.cboxAnswer.Checked = false;
+                    }
+
+                    if (fpAnswers.TabIndex == LastExam.LastQuestions[question].IsSelectedAnswerCorrect)
+                    {
+                        e.cboxAnswer.BackColor = Color.Green;
+                    }
+
+
+                    if (IDQuest == 4)
+                        IDQuest = 0;
                 }
-                else
-                {
-                    e.cboxAnswer.Checked = false;
-                }
-
-                if (fpAnswers.TabIndex == LastExam.LastQuestions[question].IsSelectedAnswerCorrect)
-                {
-                    e.cboxAnswer.BackColor = Color.Green;
-                }
-
-
-                if (IDQuest == 4)
-                    IDQuest = 0;
-
             }
+            else
+            {
+                var ReviewExam = this.Parent as Re_ViewExamCtrl;
 
+                ReviewExam.Hide();
+
+                if (MessageBox.Show("Exam ID not exist!",
+                     "Exam ID not exist!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation,
+                     MessageBoxDefaultButton.Button1) == DialogResult.OK)
+                {
+                    
+                }
+            }
 
         }
 

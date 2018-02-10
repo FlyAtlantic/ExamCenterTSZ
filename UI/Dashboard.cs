@@ -103,7 +103,9 @@ namespace ExamCenterTSZ.UI
 
         private void btnInstructor_Click(object sender, EventArgs e)
         {
+            CtrlsHides();
 
+            examInstructorCtrl.Show();
         }
 
         private void CtrlsHides()
@@ -139,11 +141,5 @@ namespace ExamCenterTSZ.UI
             }
         }
 
-        private void bunifuTileButton1_Click(object sender, EventArgs e)
-        {
-            CtrlsHides();
-
-            examInstructorCtrl.Show();           
-        }
     }
 }
