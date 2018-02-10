@@ -116,6 +116,8 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
                 Hide();
 
+                SendExam.LastExamFromSQL();
+
                 DBoard.processExam.Start();
 
                 DBoard.processExam.Show();

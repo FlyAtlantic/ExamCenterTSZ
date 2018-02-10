@@ -108,6 +108,11 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
         }
 
+        public void SendInformationsToSendExam()
+        {
+
+        }
+
         private void E_OnAnswerSelected(object sender, bool correct, int IDCheck)
         {
 

@@ -45,6 +45,9 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
     public class Question
     {
+        public int QuestionID
+        { get; set; }
+
         public string Text
         { get; set; }
 
@@ -57,12 +60,13 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         public bool IsSelectedAnswerCorrect
         { get; set; }
 
-        public Question(string Text, List<Answer> Answers)
+        public Question(string Text, int QuestionID, List<Answer> Answers)
         {
             IsSelectedAnswerCorrect = false;
             SelectedAnswer = 0;
             this.Text = Text;
             this.Answers = Answers;
+            this.QuestionID = QuestionID;
         }
 
     }
@@ -105,41 +109,19 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
     public static class Exam
     {
+        public static int ExamID
+        { get; set; }
+
         public static string Text
         { get; set; }
 
         public static List<Question> Questions
         { get; set; }
-
-        /// <summary>
-        /// Isto é só porque não quero saber da parte do SQL
-        /// </summary>
-        /// <returns></returns>
-        //public static void GetExample()
-        //{
-        //    return new Exam("Exame Exemplo", new List<Question>()
-        //    {
-        //        new Question("Questão 1, a primeira opção é a correcta", new List<Answer>()
-        //        {
-        //            new Answer("Resposta Certa", true),
-        //            new Answer("Resposta Errada", false)
-        //        }),
-        //        new Question("Questão 2, a segunda opção é a correcta", new List<Answer>()
-        //        {
-        //            new Answer("Resposta Errada", false),
-        //            new Answer("Resposta Certa", true)
-        //        })
-        //    });
-        //}
-
-        /// <summary>
-        /// colocas aqui código para ir buscar os dados ao mysql
-        /// e devolver um new Answer(...)
-        /// </summary>
-        /// <param name=""></param>
-        /// 
+ 
         public static void FromSQL(int ID)
         {
+            ExamID = ID;
+
             string sqlPilotInformations = "SELECT * from exam_questions where examby=@ExamID";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
 
@@ -160,6 +142,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
                         int correctAnswer = Convert.ToInt32(sqlCmdRes[9]);
                         Questions.Add(new Question(
                             (string)sqlCmdRes[3],
+                            (int)sqlCmdRes[0],
                             new List<Answer>()
                             {
                                 new Answer((string)sqlCmdRes[5], (correctAnswer == 1)),
@@ -253,6 +236,36 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
                 conn.Close();
             }
         }      
+    }
+
+    public static class SendExam
+    {
+        public static void LastExamFromSQL()
+        {
+            string sqlSendExamtoDatabase = "INSERT INTO `exam_answers` (`assignid` , `question1` , `pilotanswer`) VALUES(@Discription, @Code, @Discount , @MaxDiscount)";
+            MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
+
+            try
+            {
+                conn.Open();
+
+                //MySqlCommand sqlCmd = new MySqlCommand(sqlPilotInformations, conn);
+                //sqlCmd.Parameters.AddWithValue("@AssignID", Exam.ExamID);
+                //sqlCmd.Parameters.AddWithValue("@Question", Exam.ExamID);
+
+                //sqlCmd.ExecuteNonQuery();
+
+            }
+            catch (Exception crap)
+            {
+                throw new ApplicationException("Failed to load exam @Exam.FromSQL()", crap);
+            }
+            finally
+            {
+
+                conn.Close();
+            }
+        }
     }
 }
 
