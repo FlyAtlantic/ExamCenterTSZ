@@ -162,8 +162,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.lblResultTxt);
+            this.Controls.Add(this.lblResult);
             this.Controls.Add(this.myQuestionCtrl);
             this.Controls.Add(this.pBarProgress);
             this.Controls.Add(this.btnFinish);

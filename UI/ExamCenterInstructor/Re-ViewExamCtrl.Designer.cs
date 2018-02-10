@@ -188,6 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblResultTxt);
             this.Controls.Add(this.lblPilot);
             this.Controls.Add(this.lblPilotText);
             this.Controls.Add(this.lastQuestionCtrl);
@@ -196,7 +197,6 @@
             this.Controls.Add(this.btnNext);
             this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.lblResult);
-            this.Controls.Add(this.lblResultTxt);
             this.Controls.Add(this.lblCountQuestions);
             this.Name = "Re_ViewExamCtrl";
             this.Size = new System.Drawing.Size(879, 443);
