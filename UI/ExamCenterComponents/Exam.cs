@@ -212,7 +212,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         
         public static void LastExamFromSQL(int ID)
         {
-            string sqlPilotInformations = "SELECT * from exam_answers left join exam_questions on exam_answers.question1 = exam_questions.question_id left join exam_assigns on exam_answers.assignid = exam_assigns.assign_id left join utilizadores on exam_assigns.idpilot = utilizadores.user_id left join exam_results on exam_answers.assignid = exam_results.examassigned where assignid=@AssignID";
+            string sqlPilotInformations = "SELECT question, answer1, answer2, answer3, answer4, answer_correct, user_nome, user_apelido, result, pilotanswer from exam_answers left join exam_questions on exam_answers.question1 = exam_questions.question_id left join exam_assigns on exam_answers.assignid = exam_assigns.assign_id left join utilizadores on exam_assigns.idpilot = utilizadores.user_id left join exam_results on exam_answers.assignid = exam_results.examassigned where assignid=@AssignID";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
 
             try
@@ -231,18 +231,18 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
                     {
                         int correctAnswer = Convert.ToInt32(sqlCmdRes[14]);
                         LastQuestions.Add(new LastQuestion(
+                            (string)sqlCmdRes[0],
+                            (int)sqlCmdRes[9],
+                            (int)sqlCmdRes[5],
+                            (string)sqlCmdRes[6],
+                            (string)sqlCmdRes[7],
                             (string)sqlCmdRes[8],
-                            (int)sqlCmdRes[3],
-                            (int)sqlCmdRes[14],
-                            (string)sqlCmdRes[26],
-                            (string)sqlCmdRes[27],
-                            (string)sqlCmdRes[48],
                             new List<LastAnswer>()
                             {
-                                new LastAnswer((string)sqlCmdRes[10]),
-                                new LastAnswer((string)sqlCmdRes[11]),
-                                new LastAnswer((string)sqlCmdRes[12]),
-                                new LastAnswer((string)sqlCmdRes[13])
+                                new LastAnswer((string)sqlCmdRes[1]),
+                                new LastAnswer((string)sqlCmdRes[2]),
+                                new LastAnswer((string)sqlCmdRes[3]),
+                                new LastAnswer((string)sqlCmdRes[4])
                             }));
                     }
                 LastExam.Text = Text;
