@@ -31,7 +31,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             {
                 conn.Open();
 
-                string sqlLogbook = "SELECT examassigned as `Exam ID`, date as Date, result as `Result %`, state as Status from exam_results left join utilizadores on exam_results.pilotid = utilizadores.user_id where user_email=@Email";
+                string sqlLogbook = "SELECT examassigned as `Exam ID`, COALESCE(ranks.rank, typeratingsname.name, qualificationsname.name) as Exam, date as Date, result as `Result %`, state as Status from exam_results left join exam_assigns on exam_results.examassigned = exam_assigns.assign_id left join exams on exam_assigns.exam_id = exams.exam_id left join utilizadores on exam_results.pilotid = utilizadores.user_id left join ranks on exams.exam_name = ranks.rankid left join typeratingsname on exams.type = typeratingsname.id left join qualificationsname on exams.qual = qualificationsname.id where user_email=@Email";
 
                 MySqlCommand sqlCmd = new MySqlCommand(sqlLogbook, conn);
                 sqlCmd.Parameters.AddWithValue("@Email", Properties.Settings.Default.Email);
