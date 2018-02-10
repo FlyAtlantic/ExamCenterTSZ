@@ -203,7 +203,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         {
             var DBoard = this.Parent as Dashboard;
 
-            DBoard.btnExitApp.Enabled = false;
+            DBoard.DisableButtons();
 
         }
     }

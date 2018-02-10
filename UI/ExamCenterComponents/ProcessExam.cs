@@ -81,7 +81,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             Dashboard a = new Dashboard();
             var DBoard = this.Parent as Dashboard;
 
-            DBoard.btnExitApp.Enabled = true;
+            DBoard.EnableButtons();
 
             a.Show();
             a.examCenterCtrl.Actions();

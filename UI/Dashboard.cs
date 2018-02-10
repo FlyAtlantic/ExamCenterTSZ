@@ -114,6 +114,27 @@ namespace ExamCenterTSZ.UI
             examCenterCtrl.Hide();
 
         }
+        //All buttons Enabled/Disabled
+        public void EnableButtons()
+        {
+            btnExitApp.Enabled = true;
+            btnAdminPanel.Enabled = true;
+            btnInstructor.Enabled = true;
+            btnMenuExam.Enabled = true;
+            btnMenuReviewExams.Enabled = true;
+            btnRefresh.Enabled = true;
+
+        }
+
+        public void DisableButtons()
+        {
+            btnExitApp.Enabled = false;
+            btnAdminPanel.Enabled = false;
+            btnInstructor.Enabled = false;
+            btnMenuExam.Enabled = false;
+            btnMenuReviewExams.Enabled = false;
+            btnRefresh.Enabled = false;
+        }
 
         /// Menu Bar
         private void btnMenuExam_Click(object sender, EventArgs e)
@@ -141,5 +162,12 @@ namespace ExamCenterTSZ.UI
             }
         }
 
+        private void btnMenuReviewExams_Click(object sender, EventArgs e)
+        {
+            CtrlsHides();
+
+            myExamsCtrl.Show();
+
+        }
     }
 }

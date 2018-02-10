@@ -36,6 +36,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAdminPanel = new Bunifu.Framework.UI.BunifuTileButton();
             this.pMenuBar = new System.Windows.Forms.Panel();
+            this.btnMenuReviewExams = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnRefresh = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnInstructor = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnMenuExam = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -122,6 +123,7 @@
             // pMenuBar
             // 
             this.pMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.pMenuBar.Controls.Add(this.btnMenuReviewExams);
             this.pMenuBar.Controls.Add(this.btnRefresh);
             this.pMenuBar.Controls.Add(this.btnInstructor);
             this.pMenuBar.Controls.Add(this.btnAdminPanel);
@@ -131,6 +133,42 @@
             this.pMenuBar.Name = "pMenuBar";
             this.pMenuBar.Size = new System.Drawing.Size(211, 617);
             this.pMenuBar.TabIndex = 96;
+            // 
+            // btnMenuReviewExams
+            // 
+            this.btnMenuReviewExams.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.btnMenuReviewExams.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnMenuReviewExams.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnMenuReviewExams.BorderRadius = 0;
+            this.btnMenuReviewExams.ButtonText = "Review Exams";
+            this.btnMenuReviewExams.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenuReviewExams.DisabledColor = System.Drawing.Color.Gray;
+            this.btnMenuReviewExams.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuReviewExams.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnMenuReviewExams.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMenuReviewExams.Iconimage")));
+            this.btnMenuReviewExams.Iconimage_right = null;
+            this.btnMenuReviewExams.Iconimage_right_Selected = null;
+            this.btnMenuReviewExams.Iconimage_Selected = null;
+            this.btnMenuReviewExams.IconMarginLeft = 0;
+            this.btnMenuReviewExams.IconMarginRight = 0;
+            this.btnMenuReviewExams.IconRightVisible = true;
+            this.btnMenuReviewExams.IconRightZoom = 0D;
+            this.btnMenuReviewExams.IconVisible = true;
+            this.btnMenuReviewExams.IconZoom = 90D;
+            this.btnMenuReviewExams.IsTab = false;
+            this.btnMenuReviewExams.Location = new System.Drawing.Point(0, 160);
+            this.btnMenuReviewExams.Name = "btnMenuReviewExams";
+            this.btnMenuReviewExams.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnMenuReviewExams.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.btnMenuReviewExams.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnMenuReviewExams.selected = false;
+            this.btnMenuReviewExams.Size = new System.Drawing.Size(238, 48);
+            this.btnMenuReviewExams.TabIndex = 4;
+            this.btnMenuReviewExams.Text = "Review Exams";
+            this.btnMenuReviewExams.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuReviewExams.Textcolor = System.Drawing.Color.White;
+            this.btnMenuReviewExams.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuReviewExams.Click += new System.EventHandler(this.btnMenuReviewExams_Click);
             // 
             // btnRefresh
             // 
@@ -179,7 +217,7 @@
             this.btnMenuExam.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btnMenuExam.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMenuExam.BorderRadius = 0;
-            this.btnMenuExam.ButtonText = "Take Your Exams";
+            this.btnMenuExam.ButtonText = "Take Exams";
             this.btnMenuExam.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMenuExam.DisabledColor = System.Drawing.Color.Gray;
             this.btnMenuExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -203,7 +241,7 @@
             this.btnMenuExam.selected = false;
             this.btnMenuExam.Size = new System.Drawing.Size(238, 48);
             this.btnMenuExam.TabIndex = 0;
-            this.btnMenuExam.Text = "Take Your Exams";
+            this.btnMenuExam.Text = "Take Exams";
             this.btnMenuExam.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuExam.Textcolor = System.Drawing.Color.White;
             this.btnMenuExam.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -281,6 +319,7 @@
             this.myExamsCtrl.Name = "myExamsCtrl";
             this.myExamsCtrl.Size = new System.Drawing.Size(930, 553);
             this.myExamsCtrl.TabIndex = 109;
+            this.myExamsCtrl.Visible = false;
             // 
             // Dashboard
             // 
@@ -327,5 +366,6 @@
         public ExamCenterComponents.ExamCenterCtrl examCenterCtrl;
         private ExamCenterInstructor.ExamInstructorCtrl examInstructorCtrl;
         private ExamCenterComponents.ViewMyExams.MyExamsCtrl myExamsCtrl;
+        private Bunifu.Framework.UI.BunifuFlatButton btnMenuReviewExams;
     }
 }
