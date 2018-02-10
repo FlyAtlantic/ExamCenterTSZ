@@ -46,6 +46,7 @@
             this.processExam = new ExamCenterTSZ.UI.ExamCenterComponents.ProcessExam();
             this.epsConfirm = new ExamCenterTSZ.UI.ExamCenterComponents.EpsConfirm();
             this.examInstructorCtrl = new ExamCenterTSZ.UI.ExamCenterInstructor.ExamInstructorCtrl();
+            this.viewMyExamsCtrl = new ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExamsCtrl();
             this.panel1.SuspendLayout();
             this.pMenuBar.SuspendLayout();
             this.SuspendLayout();
@@ -274,11 +275,19 @@
             this.examInstructorCtrl.TabIndex = 108;
             this.examInstructorCtrl.Visible = false;
             // 
+            // viewMyExamsCtrl
+            // 
+            this.viewMyExamsCtrl.Location = new System.Drawing.Point(234, 130);
+            this.viewMyExamsCtrl.Name = "viewMyExamsCtrl";
+            this.viewMyExamsCtrl.Size = new System.Drawing.Size(572, 535);
+            this.viewMyExamsCtrl.TabIndex = 109;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1165, 694);
+            this.Controls.Add(this.viewMyExamsCtrl);
             this.Controls.Add(this.examInstructorCtrl);
             this.Controls.Add(this.epsConfirm);
             this.Controls.Add(this.lblClock);
@@ -317,5 +326,6 @@
         public ExamCenterComponents.ProcessExam processExam;
         public ExamCenterComponents.ExamCenterCtrl examCenterCtrl;
         private ExamCenterInstructor.ExamInstructorCtrl examInstructorCtrl;
+        private ExamCenterComponents.ViewMyExamsCtrl viewMyExamsCtrl;
     }
 }

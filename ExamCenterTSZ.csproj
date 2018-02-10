@@ -116,6 +116,37 @@
     <Compile Include="UI\ExamCenterComponents\QuestionCtrl.Designer.cs">
       <DependentUpon>QuestionCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\MyAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\MyAnswer.Designer.cs">
+      <DependentUpon>MyAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\MyExams.cs" />
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\MyQuestionCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\MyQuestionCtrl.Designer.cs">
+      <DependentUpon>MyQuestionCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\ViewMyExamPageCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\ViewMyExamPageCtrl.Designer.cs">
+      <DependentUpon>ViewMyExamPageCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\ViewMyExamsCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\ViewMyExamsCtrl.Designer.cs">
+      <DependentUpon>ViewMyExamsCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\ViewMyExamsGridCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ExamCenterComponents\ViewMyExams\ViewMyExamsGridCtrl.Designer.cs">
+      <DependentUpon>ViewMyExamsGridCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ExamCenterInstructor\ExamInstructorCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,6 +216,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExamCenterComponents\QuestionCtrl.resx">
       <DependentUpon>QuestionCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterComponents\ViewMyExams\MyAnswer.resx">
+      <DependentUpon>MyAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterComponents\ViewMyExams\MyQuestionCtrl.resx">
+      <DependentUpon>MyQuestionCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterComponents\ViewMyExams\ViewMyExamPageCtrl.resx">
+      <DependentUpon>ViewMyExamPageCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterComponents\ViewMyExams\ViewMyExamsCtrl.resx">
+      <DependentUpon>ViewMyExamsCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExamCenterComponents\ViewMyExams\ViewMyExamsGridCtrl.resx">
+      <DependentUpon>ViewMyExamsGridCtrl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ExamCenterInstructor\ExamInstructorCtrl.resx">
       <DependentUpon>ExamInstructorCtrl.cs</DependentUpon>
