@@ -112,6 +112,7 @@ namespace ExamCenterTSZ.UI
         {
             examInstructorCtrl.Hide();
             examCenterCtrl.Hide();
+            myExamsCtrl.Hide();
 
         }
         //All buttons Enabled/Disabled
@@ -145,6 +146,13 @@ namespace ExamCenterTSZ.UI
             examCenterCtrl.Show();
         }
 
+        private void btnMenuReviewExams_Click(object sender, EventArgs e)
+        {
+            CtrlsHides();
+
+            myExamsCtrl.Show();
+
+        }
 
         //Other Buttons
         private void btnRefresh_Click(object sender, EventArgs e)
@@ -162,12 +170,5 @@ namespace ExamCenterTSZ.UI
             }
         }
 
-        private void btnMenuReviewExams_Click(object sender, EventArgs e)
-        {
-            CtrlsHides();
-
-            myExamsCtrl.Show();
-
-        }
     }
 }
