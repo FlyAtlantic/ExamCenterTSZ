@@ -139,11 +139,17 @@
   <data name="104628-3d-glossy-green-orb-icon-symbols-shapes-check-mark8-sc44" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\104628-3d-glossy-green-orb-icon-symbols-shapes-check-mark8-sc44.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Fast Delete Icon Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fast Delete Icon Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Torchlight_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Torchlight_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="document" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\document.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="refreshImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\refreshImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,7 +166,7 @@
   <data name="green" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\green.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Fast Delete Icon Base" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Fast Delete Icon Base.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Files-New-File-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Files-New-File-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

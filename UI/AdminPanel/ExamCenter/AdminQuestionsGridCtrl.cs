@@ -53,6 +53,11 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
         private void gridViewQuestions_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            adminManageQuestions.btnEditQuestion.Visible = true;
+            adminManageQuestions.btnDeleteQuestion.Visible = true;
+            adminManageQuestions.adminQuestionNewEdit.Hide();
+            adminManageQuestions.adminQuestionCtrl.Show();
+
             gridViewQuestions.Hide();
 
             adminManageQuestions.Show();

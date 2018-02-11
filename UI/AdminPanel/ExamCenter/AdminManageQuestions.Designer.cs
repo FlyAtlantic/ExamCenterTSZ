@@ -178,6 +178,6 @@
         public Bunifu.Framework.UI.BunifuTileButton btnSaveEditQuestion;
         public Bunifu.Framework.UI.BunifuTileButton btnBackView;
         public Bunifu.Framework.UI.BunifuTileButton btnDeleteQuestion;
-        private AdminQuestionNewEdit adminQuestionNewEdit;
+        public AdminQuestionNewEdit adminQuestionNewEdit;
     }
 }

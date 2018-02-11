@@ -113,6 +113,16 @@ namespace ExamCenterTSZ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap document {
+            get {
+                object obj = ResourceManager.GetObject("document", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap document_edit {
             get {
                 object obj = ResourceManager.GetObject("document_edit", resourceCulture);
@@ -126,6 +136,16 @@ namespace ExamCenterTSZ.Properties {
         internal static System.Drawing.Bitmap Fast_Delete_Icon_Base {
             get {
                 object obj = ResourceManager.GetObject("Fast Delete Icon Base", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Files_New_File_icon {
+            get {
+                object obj = ResourceManager.GetObject("Files-New-File-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

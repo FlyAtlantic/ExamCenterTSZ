@@ -384,5 +384,11 @@
   <ItemGroup>
     <None Include="Resources\Fast Delete Icon Base.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Files-New-File-icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

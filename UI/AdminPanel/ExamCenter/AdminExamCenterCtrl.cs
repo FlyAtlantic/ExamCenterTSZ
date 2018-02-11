@@ -63,5 +63,28 @@ namespace ExamCenterTSZ.UI.AdminPanel
             else
                 adminQuestionsGridCtrl.FillAdminQuestions(Convert.ToInt32(cboxExams.SelectedValue));
         }
+
+        private void btnAddQuestion_Click(object sender, EventArgs e)
+        {
+            adminQuestionsGridCtrl.adminManageQuestions.btnEditQuestion.Visible = false;
+            adminQuestionsGridCtrl.adminManageQuestions.btnDeleteQuestion.Visible = false;
+            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.Show();
+            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionCtrl.Hide();
+
+
+            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtQuestion.Clear();
+            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer1.Clear();
+            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer2.Clear();
+            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer3.Clear();
+            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer4.Clear();
+
+            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtQuestion.ReadOnly = false;
+            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.cboxAnswer1.Checked = false;
+            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.cboxAnswer2.Checked = false;
+            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.cboxAnswer3.Checked = false;
+            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.cboxAnswer4.Checked = false;
+
+            adminQuestionsGridCtrl.adminManageQuestions.Show();
+        }
     }
 }

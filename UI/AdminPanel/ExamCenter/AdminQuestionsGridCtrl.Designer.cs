@@ -94,7 +94,7 @@
         }
 
         #endregion
-        private AdminManageQuestions adminManageQuestions;
         public Bunifu.Framework.UI.BunifuCustomDataGrid gridViewQuestions;
+        public AdminManageQuestions adminManageQuestions;
     }
 }
