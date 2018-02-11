@@ -104,7 +104,9 @@ namespace ExamCenterTSZ.UI
         ///Special Buttons
         private void btnAdminPanel_Click(object sender, EventArgs e)
         {
+            CtrlsHides();
 
+            adminExamCenterCtrl.Show();
         }
 
         private void btnInstructor_Click(object sender, EventArgs e)
@@ -119,7 +121,8 @@ namespace ExamCenterTSZ.UI
             examInstructorCtrl.Hide();
             examCenterCtrl.Hide();
             myExamsCtrl.Hide();
-            
+            adminExamCenterCtrl.Hide();
+
 
         }
         //All buttons Enabled/Disabled

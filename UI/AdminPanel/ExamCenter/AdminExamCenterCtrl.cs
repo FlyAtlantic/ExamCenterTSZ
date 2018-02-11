@@ -70,6 +70,7 @@ namespace ExamCenterTSZ.UI.AdminPanel
             adminQuestionsGridCtrl.adminManageQuestions.btnDeleteQuestion.Visible = false;
             adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.Show();
             adminQuestionsGridCtrl.adminManageQuestions.adminQuestionCtrl.Hide();
+            adminQuestionsGridCtrl.gridViewQuestions.Hide();
 
 
             adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtQuestion.Clear();
