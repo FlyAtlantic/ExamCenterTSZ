@@ -53,6 +53,8 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
         private void gridViewQuestions_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            gridViewQuestions.Hide();
+
             adminManageQuestions.Show();
 
             AdminViewQuestions.OnlyOneFromSql(Convert.ToInt32(gridViewQuestions.Rows[e.RowIndex].Cells["Question ID"].Value));
@@ -60,6 +62,7 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
             adminManageQuestions.adminQuestionCtrl.Update();
 
             adminManageQuestions.btnEditQuestion.TabIndex = Convert.ToInt32(gridViewQuestions.Rows[e.RowIndex].Cells["Question ID"].Value);
+            
         }
     }
 }

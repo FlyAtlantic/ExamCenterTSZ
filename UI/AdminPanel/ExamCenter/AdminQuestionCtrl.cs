@@ -29,7 +29,7 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
         public int correctAnswer;
 
-        public void Update()
+        public new void Update()
         {
 
             this.question = 0;
@@ -117,12 +117,6 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
             }
             txtQuestion.ReadOnly = false;
         }
-
-        public void SaveEditQuestionAnswerText(int questionID, int IDCheck)
-        {
-            
-
-        }       
 
         public void SendToDatabaseEditQuestionAnswer()
         {

@@ -34,6 +34,7 @@
             this.btnEditQuestion = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnBackView = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnDeleteQuestion = new Bunifu.Framework.UI.BunifuTileButton();
+            this.adminQuestionNewEdit = new ExamCenterTSZ.UI.AdminPanel.ExamCenter.AdminQuestionNewEdit();
             this.SuspendLayout();
             // 
             // adminQuestionCtrl
@@ -145,10 +146,19 @@
             this.btnDeleteQuestion.TabIndex = 8;
             this.btnDeleteQuestion.Click += new System.EventHandler(this.btnDeleteQuestion_Click);
             // 
+            // adminQuestionNewEdit
+            // 
+            this.adminQuestionNewEdit.Location = new System.Drawing.Point(3, 3);
+            this.adminQuestionNewEdit.Name = "adminQuestionNewEdit";
+            this.adminQuestionNewEdit.Size = new System.Drawing.Size(796, 396);
+            this.adminQuestionNewEdit.TabIndex = 9;
+            this.adminQuestionNewEdit.Visible = false;
+            // 
             // AdminManageQuestions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.adminQuestionNewEdit);
             this.Controls.Add(this.btnDeleteQuestion);
             this.Controls.Add(this.btnBackView);
             this.Controls.Add(this.btnSaveEditQuestion);
@@ -168,5 +178,6 @@
         public Bunifu.Framework.UI.BunifuTileButton btnSaveEditQuestion;
         public Bunifu.Framework.UI.BunifuTileButton btnBackView;
         public Bunifu.Framework.UI.BunifuTileButton btnDeleteQuestion;
+        private AdminQuestionNewEdit adminQuestionNewEdit;
     }
 }

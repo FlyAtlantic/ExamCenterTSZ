@@ -94,6 +94,12 @@
     <Compile Include="UI\AdminPanel\ExamCenter\AdminQuestionCtrl.Designer.cs">
       <DependentUpon>AdminQuestionCtrl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminQuestionNewEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminQuestionNewEdit.Designer.cs">
+      <DependentUpon>AdminQuestionNewEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\AdminPanel\ExamCenter\AdminQuestionsGridCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -250,6 +256,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AdminPanel\ExamCenter\AdminQuestionCtrl.resx">
       <DependentUpon>AdminQuestionCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AdminPanel\ExamCenter\AdminQuestionNewEdit.resx">
+      <DependentUpon>AdminQuestionNewEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\AdminPanel\ExamCenter\AdminQuestionsGridCtrl.resx">
       <DependentUpon>AdminQuestionsGridCtrl.cs</DependentUpon>
