@@ -48,6 +48,7 @@
             this.epsConfirm = new ExamCenterTSZ.UI.ExamCenterComponents.EpsConfirm();
             this.examInstructorCtrl = new ExamCenterTSZ.UI.ExamCenterInstructor.ExamInstructorCtrl();
             this.myExamsCtrl = new ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams.MyExamsCtrl();
+            this.adminExamCenterCtrl1 = new ExamCenterTSZ.UI.AdminPanel.AdminExamCenterCtrl();
             this.panel1.SuspendLayout();
             this.pMenuBar.SuspendLayout();
             this.SuspendLayout();
@@ -323,11 +324,19 @@
             this.myExamsCtrl.Visible = false;
             this.myExamsCtrl.VisibleChanged += new System.EventHandler(this.myExamsCtrl_VisibleChanged);
             // 
+            // adminExamCenterCtrl1
+            // 
+            this.adminExamCenterCtrl1.Location = new System.Drawing.Point(217, 129);
+            this.adminExamCenterCtrl1.Name = "adminExamCenterCtrl1";
+            this.adminExamCenterCtrl1.Size = new System.Drawing.Size(948, 528);
+            this.adminExamCenterCtrl1.TabIndex = 110;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1165, 694);
+            this.Controls.Add(this.adminExamCenterCtrl1);
             this.Controls.Add(this.myExamsCtrl);
             this.Controls.Add(this.examInstructorCtrl);
             this.Controls.Add(this.epsConfirm);
@@ -369,5 +378,6 @@
         private ExamCenterInstructor.ExamInstructorCtrl examInstructorCtrl;
         private ExamCenterComponents.ViewMyExams.MyExamsCtrl myExamsCtrl;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuReviewExams;
+        private AdminPanel.AdminExamCenterCtrl adminExamCenterCtrl1;
     }
 }

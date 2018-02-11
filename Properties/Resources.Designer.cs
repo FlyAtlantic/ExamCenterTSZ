@@ -93,6 +93,16 @@ namespace ExamCenterTSZ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap document_edit {
+            get {
+                object obj = ResourceManager.GetObject("document_edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap green {
             get {
                 object obj = ResourceManager.GetObject("green", resourceCulture);
@@ -136,6 +146,16 @@ namespace ExamCenterTSZ.Properties {
         internal static System.Drawing.Bitmap search_find_seek_icon {
             get {
                 object obj = ResourceManager.GetObject("search-find-seek-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Torchlight_back {
+            get {
+                object obj = ResourceManager.GetObject("Torchlight_back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

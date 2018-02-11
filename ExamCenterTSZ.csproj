@@ -63,6 +63,43 @@
     <Compile Include="StartImage.Designer.cs">
       <DependentUpon>StartImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\AdminPanel\AdminControl.cs" />
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminAnswerCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminAnswerCtrl.Designer.cs">
+      <DependentUpon>AdminAnswerCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminEditAnswer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminEditAnswer.Designer.cs">
+      <DependentUpon>AdminEditAnswer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminExamCenterCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminExamCenterCtrl.Designer.cs">
+      <DependentUpon>AdminExamCenterCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminManageQuestions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminManageQuestions.Designer.cs">
+      <DependentUpon>AdminManageQuestions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminQuestionCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminQuestionCtrl.Designer.cs">
+      <DependentUpon>AdminQuestionCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminQuestionsGridCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\AdminPanel\ExamCenter\AdminQuestionsGridCtrl.Designer.cs">
+      <DependentUpon>AdminQuestionsGridCtrl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +236,24 @@
     <EmbeddedResource Include="StartImage.resx">
       <DependentUpon>StartImage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\AdminPanel\ExamCenter\AdminAnswerCtrl.resx">
+      <DependentUpon>AdminAnswerCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AdminPanel\ExamCenter\AdminEditAnswer.resx">
+      <DependentUpon>AdminEditAnswer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AdminPanel\ExamCenter\AdminExamCenterCtrl.resx">
+      <DependentUpon>AdminExamCenterCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AdminPanel\ExamCenter\AdminManageQuestions.resx">
+      <DependentUpon>AdminManageQuestions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AdminPanel\ExamCenter\AdminQuestionCtrl.resx">
+      <DependentUpon>AdminQuestionCtrl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AdminPanel\ExamCenter\AdminQuestionsGridCtrl.resx">
+      <DependentUpon>AdminQuestionsGridCtrl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +353,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\search-find-seek-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Torchlight_back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
