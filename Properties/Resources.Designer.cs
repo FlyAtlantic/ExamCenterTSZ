@@ -63,6 +63,16 @@ namespace ExamCenterTSZ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _104628_3d_glossy_green_orb_icon_symbols_shapes_check_mark8_sc44 {
+            get {
+                object obj = ResourceManager.GetObject("104628-3d-glossy-green-orb-icon-symbols-shapes-check-mark8-sc44", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _2000px_Oxygen480_actions_system_shutdown_svg {
             get {
                 object obj = ResourceManager.GetObject("2000px-Oxygen480-actions-system-shutdown.svg", resourceCulture);
@@ -93,9 +103,29 @@ namespace ExamCenterTSZ.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Pretty_Office_7_Save_as {
+            get {
+                object obj = ResourceManager.GetObject("Custom-Icon-Design-Pretty-Office-7-Save-as", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap document_edit {
             get {
                 object obj = ResourceManager.GetObject("document_edit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Fast_Delete_Icon_Base {
+            get {
+                object obj = ResourceManager.GetObject("Fast Delete Icon Base", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +166,26 @@ namespace ExamCenterTSZ.Properties {
         internal static System.Drawing.Bitmap refreshImg {
             get {
                 object obj = ResourceManager.GetObject("refreshImg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save {
+            get {
+                object obj = ResourceManager.GetObject("save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_icon_13853 {
+            get {
+                object obj = ResourceManager.GetObject("save-icon-13853", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

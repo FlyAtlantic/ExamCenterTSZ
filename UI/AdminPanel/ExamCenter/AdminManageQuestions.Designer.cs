@@ -29,8 +29,11 @@
         private void InitializeComponent()
         {
             this.adminQuestionCtrl = new ExamCenterTSZ.UI.AdminPanel.ExamCenter.AdminQuestionCtrl();
+            this.btnSaveEditQuestion = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnBackEdit = new Bunifu.Framework.UI.BunifuTileButton();
             this.btnEditQuestion = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnBackView = new Bunifu.Framework.UI.BunifuTileButton();
+            this.btnDeleteQuestion = new Bunifu.Framework.UI.BunifuTileButton();
             this.SuspendLayout();
             // 
             // adminQuestionCtrl
@@ -39,6 +42,26 @@
             this.adminQuestionCtrl.Name = "adminQuestionCtrl";
             this.adminQuestionCtrl.Size = new System.Drawing.Size(796, 404);
             this.adminQuestionCtrl.TabIndex = 0;
+            // 
+            // btnSaveEditQuestion
+            // 
+            this.btnSaveEditQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.btnSaveEditQuestion.color = System.Drawing.Color.Transparent;
+            this.btnSaveEditQuestion.colorActive = System.Drawing.Color.Transparent;
+            this.btnSaveEditQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveEditQuestion.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnSaveEditQuestion.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSaveEditQuestion.Image = global::ExamCenterTSZ.Properties.Resources.save_icon_13853;
+            this.btnSaveEditQuestion.ImagePosition = 0;
+            this.btnSaveEditQuestion.ImageZoom = 100;
+            this.btnSaveEditQuestion.LabelPosition = 0;
+            this.btnSaveEditQuestion.LabelText = "";
+            this.btnSaveEditQuestion.Location = new System.Drawing.Point(88, 416);
+            this.btnSaveEditQuestion.Margin = new System.Windows.Forms.Padding(6);
+            this.btnSaveEditQuestion.Name = "btnSaveEditQuestion";
+            this.btnSaveEditQuestion.Size = new System.Drawing.Size(48, 45);
+            this.btnSaveEditQuestion.TabIndex = 6;
+            this.btnSaveEditQuestion.Visible = false;
             // 
             // btnBackEdit
             // 
@@ -81,10 +104,52 @@
             this.btnEditQuestion.TabIndex = 4;
             this.btnEditQuestion.Click += new System.EventHandler(this.btnEditQuestion_Click);
             // 
+            // btnBackView
+            // 
+            this.btnBackView.BackColor = System.Drawing.Color.Transparent;
+            this.btnBackView.color = System.Drawing.Color.Transparent;
+            this.btnBackView.colorActive = System.Drawing.Color.Transparent;
+            this.btnBackView.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBackView.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnBackView.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBackView.Image = global::ExamCenterTSZ.Properties.Resources.Torchlight_back;
+            this.btnBackView.ImagePosition = 0;
+            this.btnBackView.ImageZoom = 100;
+            this.btnBackView.LabelPosition = 0;
+            this.btnBackView.LabelText = "";
+            this.btnBackView.Location = new System.Drawing.Point(94, 416);
+            this.btnBackView.Margin = new System.Windows.Forms.Padding(6);
+            this.btnBackView.Name = "btnBackView";
+            this.btnBackView.Size = new System.Drawing.Size(42, 42);
+            this.btnBackView.TabIndex = 7;
+            this.btnBackView.Click += new System.EventHandler(this.btnBackView_Click);
+            // 
+            // btnDeleteQuestion
+            // 
+            this.btnDeleteQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.btnDeleteQuestion.color = System.Drawing.Color.Transparent;
+            this.btnDeleteQuestion.colorActive = System.Drawing.Color.Transparent;
+            this.btnDeleteQuestion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDeleteQuestion.Font = new System.Drawing.Font("Century Gothic", 15.75F);
+            this.btnDeleteQuestion.ForeColor = System.Drawing.Color.Transparent;
+            this.btnDeleteQuestion.Image = global::ExamCenterTSZ.Properties.Resources.Fast_Delete_Icon_Base;
+            this.btnDeleteQuestion.ImagePosition = 0;
+            this.btnDeleteQuestion.ImageZoom = 100;
+            this.btnDeleteQuestion.LabelPosition = 0;
+            this.btnDeleteQuestion.LabelText = "";
+            this.btnDeleteQuestion.Location = new System.Drawing.Point(754, 416);
+            this.btnDeleteQuestion.Margin = new System.Windows.Forms.Padding(6);
+            this.btnDeleteQuestion.Name = "btnDeleteQuestion";
+            this.btnDeleteQuestion.Size = new System.Drawing.Size(42, 42);
+            this.btnDeleteQuestion.TabIndex = 8;
+            // 
             // AdminManageQuestions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnDeleteQuestion);
+            this.Controls.Add(this.btnBackView);
+            this.Controls.Add(this.btnSaveEditQuestion);
             this.Controls.Add(this.btnBackEdit);
             this.Controls.Add(this.btnEditQuestion);
             this.Controls.Add(this.adminQuestionCtrl);
@@ -98,5 +163,8 @@
         public AdminQuestionCtrl adminQuestionCtrl;
         public Bunifu.Framework.UI.BunifuTileButton btnEditQuestion;
         public Bunifu.Framework.UI.BunifuTileButton btnBackEdit;
+        public Bunifu.Framework.UI.BunifuTileButton btnSaveEditQuestion;
+        public Bunifu.Framework.UI.BunifuTileButton btnBackView;
+        public Bunifu.Framework.UI.BunifuTileButton btnDeleteQuestion;
     }
 }

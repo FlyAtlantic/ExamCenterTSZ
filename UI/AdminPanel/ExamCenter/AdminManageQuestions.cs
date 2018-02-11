@@ -24,7 +24,11 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
             btnEditQuestion.Visible = false;
 
+            btnBackView.Visible = false;
+
             btnBackEdit.Visible = true;
+
+            btnSaveEditQuestion.Visible = true;
 
         }
 
@@ -32,11 +36,20 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
         {
             btnBackEdit.Visible = false;
 
+            btnSaveEditQuestion.Visible = false;
+
             btnEditQuestion.Visible = true;
+
+            btnBackView.Visible = true;
 
             adminQuestionCtrl.txtQuestion.ReadOnly = true;
 
             adminQuestionCtrl.Update(btnEditQuestion.TabIndex);
+        }
+
+        private void btnBackView_Click(object sender, EventArgs e)
+        {
+            Hide();
         }
     }
 }

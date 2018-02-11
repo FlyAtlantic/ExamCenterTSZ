@@ -360,5 +360,20 @@
   <ItemGroup>
     <None Include="Resources\Torchlight_back.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\104628-3d-glossy-green-orb-icon-symbols-shapes-check-mark8-sc44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Custom-Icon-Design-Pretty-Office-7-Save-as.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-icon-13853.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fast Delete Icon Base.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
