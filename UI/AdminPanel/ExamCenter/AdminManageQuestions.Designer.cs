@@ -62,6 +62,7 @@
             this.btnSaveEditQuestion.Size = new System.Drawing.Size(48, 45);
             this.btnSaveEditQuestion.TabIndex = 6;
             this.btnSaveEditQuestion.Visible = false;
+            this.btnSaveEditQuestion.Click += new System.EventHandler(this.btnSaveEditQuestion_Click);
             // 
             // btnBackEdit
             // 
@@ -142,6 +143,7 @@
             this.btnDeleteQuestion.Name = "btnDeleteQuestion";
             this.btnDeleteQuestion.Size = new System.Drawing.Size(42, 42);
             this.btnDeleteQuestion.TabIndex = 8;
+            this.btnDeleteQuestion.Click += new System.EventHandler(this.btnDeleteQuestion_Click);
             // 
             // AdminManageQuestions
             // 

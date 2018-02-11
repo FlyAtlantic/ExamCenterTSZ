@@ -71,6 +71,6 @@
         #endregion
 
         public System.Windows.Forms.CheckBox cboxAnswer;
-        private System.Windows.Forms.TextBox txtEditAnswer;
+        public System.Windows.Forms.TextBox txtEditAnswer;
     }
 }

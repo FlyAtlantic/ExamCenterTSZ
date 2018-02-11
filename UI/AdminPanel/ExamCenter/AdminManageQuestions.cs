@@ -20,7 +20,7 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
         private void btnEditQuestion_Click(object sender, EventArgs e)
         {
 
-            adminQuestionCtrl.EditQuestion(btnEditQuestion.TabIndex, 0);
+            adminQuestionCtrl.EditQuestion(0);
 
             btnEditQuestion.Visible = false;
 
@@ -44,12 +44,26 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
             adminQuestionCtrl.txtQuestion.ReadOnly = true;
 
-            adminQuestionCtrl.Update(btnEditQuestion.TabIndex);
+            adminQuestionCtrl.Update();
         }
 
         private void btnBackView_Click(object sender, EventArgs e)
         {
             Hide();
+        }
+
+        private void btnDeleteQuestion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSaveEditQuestion_Click(object sender, EventArgs e)
+        {
+            adminQuestionCtrl.SaveEditQuestion(btnEditQuestion.TabIndex, 0);
+
+            AdminViewOnlyOneQuestionToEdit.OnlyOneFromSql(btnEditQuestion.TabIndex);
+
+            adminQuestionCtrl.Update();
         }
     }
 }

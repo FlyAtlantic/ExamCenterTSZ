@@ -55,7 +55,9 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
         {
             adminManageQuestions.Show();
 
-            adminManageQuestions.adminQuestionCtrl.Update(Convert.ToInt32(gridViewQuestions.Rows[e.RowIndex].Cells["Question ID"].Value));
+            AdminViewOnlyOneQuestionToEdit.OnlyOneFromSql(Convert.ToInt32(gridViewQuestions.Rows[e.RowIndex].Cells["Question ID"].Value));
+
+            adminManageQuestions.adminQuestionCtrl.Update();
 
             adminManageQuestions.btnEditQuestion.TabIndex = Convert.ToInt32(gridViewQuestions.Rows[e.RowIndex].Cells["Question ID"].Value);
         }
