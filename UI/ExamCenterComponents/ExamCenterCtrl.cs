@@ -269,8 +269,13 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
                         switch ((int)sqlCmdRes[0])
                         {
+                            case 1:
+                                var Button = new ButtonTyperating("Admission Exam", result.ExamID, 0, result.AssignID, result.AssignFor);
+                                Button.OnClickButtonExam += E_OnButtonClickExam;
+                                fpRank.Controls.Add(Button);
+                                break;
                             case 2:
-                                var Button = new ButtonTyperating(result.Name, result.ExamID, 0, result.AssignID, result.AssignFor);
+                                Button = new ButtonTyperating(result.Name, result.ExamID, 0, result.AssignID, result.AssignFor);
                                 Button.OnClickButtonExam += E_OnButtonClickExam;
                                 fpRank.Controls.Add(Button);
                                 break;

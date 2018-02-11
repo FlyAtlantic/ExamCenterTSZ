@@ -301,6 +301,17 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
                 sqlCmd1.ExecuteNonQuery();
 
+                //Admission Exam
+                if (FinalResult >= 75 && Exam.ExamID == 1)
+                {
+                    string sqlInsertFirstQualification = "INSERT INTO `qualifications` ( `qualification` , `pilot` , `validity` , `expire` ) VALUES(0, @UserID, NOW() , NOW()+INTERVAL 100 YEAR)";
+
+                    MySqlCommand sqlCmd2 = new MySqlCommand(sqlInsertFirstQualification, conn);
+                    sqlCmd2.Parameters.AddWithValue("@UserID", PilotInfo.ID);
+
+                    sqlCmd2.ExecuteNonQuery();
+                }
+
                 //ranks
                 if (FinalResult >= 75 && Exam.ExamID <=7)
                 {

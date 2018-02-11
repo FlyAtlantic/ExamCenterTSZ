@@ -312,6 +312,7 @@
             this.examInstructorCtrl.Size = new System.Drawing.Size(882, 534);
             this.examInstructorCtrl.TabIndex = 108;
             this.examInstructorCtrl.Visible = false;
+            this.examInstructorCtrl.VisibleChanged += new System.EventHandler(this.examInstructorCtrl_VisibleChanged);
             // 
             // myExamsCtrl
             // 
@@ -320,6 +321,7 @@
             this.myExamsCtrl.Size = new System.Drawing.Size(930, 553);
             this.myExamsCtrl.TabIndex = 109;
             this.myExamsCtrl.Visible = false;
+            this.myExamsCtrl.VisibleChanged += new System.EventHandler(this.myExamsCtrl_VisibleChanged);
             // 
             // Dashboard
             // 

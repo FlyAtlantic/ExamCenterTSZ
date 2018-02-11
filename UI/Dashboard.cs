@@ -11,6 +11,7 @@ using MySql.Data.MySqlClient;
 using ExamCenterTSZ.Functions;
 using ExamCenterTSZ.UI.DashboardComponents;
 using ExamCenterTSZ.UI.ExamCenterComponents;
+using ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams;
 
 namespace ExamCenterTSZ.UI
 {
@@ -118,6 +119,7 @@ namespace ExamCenterTSZ.UI
             examInstructorCtrl.Hide();
             examCenterCtrl.Hide();
             myExamsCtrl.Hide();
+            
 
         }
         //All buttons Enabled/Disabled
@@ -153,6 +155,7 @@ namespace ExamCenterTSZ.UI
 
         private void btnMenuReviewExams_Click(object sender, EventArgs e)
         {
+
             CtrlsHides();
 
             myExamsCtrl.Show();
@@ -176,5 +179,16 @@ namespace ExamCenterTSZ.UI
             }
         }
 
+        private void myExamsCtrl_VisibleChanged(object sender, EventArgs e)
+        {
+            myExamsCtrl.viewMyExamsGridCtrl.FillMyExams();
+            myExamsCtrl.viewMyExamsGridCtrl.Show();
+            myExamsCtrl.viewMyExamPageCtrl.Hide();
+        }
+
+        private void examInstructorCtrl_VisibleChanged(object sender, EventArgs e)
+        {
+            examInstructorCtrl.re_ViewExamCtrl.Hide();
+        }
     }
 }
