@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.viewMyExamsGridCtrl2 = new ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExamsGridCtrl();
+            this.viewMyExamsGridCtrl = new ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExamsGridCtrl();
             this.SuspendLayout();
             // 
-            // viewMyExamsGridCtrl2
+            // viewMyExamsGridCtrl
             // 
-            this.viewMyExamsGridCtrl2.Location = new System.Drawing.Point(0, 0);
-            this.viewMyExamsGridCtrl2.Name = "viewMyExamsGridCtrl2";
-            this.viewMyExamsGridCtrl2.Size = new System.Drawing.Size(569, 530);
-            this.viewMyExamsGridCtrl2.TabIndex = 0;
+            this.viewMyExamsGridCtrl.Location = new System.Drawing.Point(0, 0);
+            this.viewMyExamsGridCtrl.Name = "viewMyExamsGridCtrl";
+            this.viewMyExamsGridCtrl.Size = new System.Drawing.Size(717, 530);
+            this.viewMyExamsGridCtrl.TabIndex = 0;
             // 
             // ViewMyExamsCtrl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.viewMyExamsGridCtrl2);
+            this.Controls.Add(this.viewMyExamsGridCtrl);
             this.Name = "ViewMyExamsCtrl";
-            this.Size = new System.Drawing.Size(572, 535);
+            this.Size = new System.Drawing.Size(720, 535);
             this.ResumeLayout(false);
 
         }
@@ -52,6 +52,6 @@
         #endregion
 
         private ViewMyExamsGridCtrl viewMyExamsGridCtrl1;
-        private ViewMyExamsGridCtrl viewMyExamsGridCtrl2;
+        private ViewMyExamsGridCtrl viewMyExamsGridCtrl;
     }
 }

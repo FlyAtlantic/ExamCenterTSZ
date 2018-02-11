@@ -36,7 +36,7 @@
             // 
             this.viewMyExamsGridCtrl.Location = new System.Drawing.Point(15, 19);
             this.viewMyExamsGridCtrl.Name = "viewMyExamsGridCtrl";
-            this.viewMyExamsGridCtrl.Size = new System.Drawing.Size(589, 530);
+            this.viewMyExamsGridCtrl.Size = new System.Drawing.Size(867, 530);
             this.viewMyExamsGridCtrl.TabIndex = 0;
             // 
             // viewMyExamPageCtrl

@@ -50,13 +50,15 @@ namespace ExamCenterTSZ.UI
             { get; set; }
             public int AdminLevel
             { get; set; }
+            public int UserEps
+            { get; set; }
 
         }
 
         public void PilotInformations()
         {
 
-            string sqlPilotInformations = "SELECT user_nome, user_apelido, utilizadores.rank, ranks.rank, utilizadores.user_id, utilizadores.levelid from utilizadores left join ranks on utilizadores.rank = ranks.rankid where user_email=@PilotId";
+            string sqlPilotInformations = "SELECT user_nome, user_apelido, utilizadores.rank, ranks.rank, utilizadores.user_id, utilizadores.levelid, utilizadores.eps from utilizadores left join ranks on utilizadores.rank = ranks.rankid where user_email=@PilotId";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
 
             try
@@ -75,6 +77,7 @@ namespace ExamCenterTSZ.UI
                         result.Rank = (string)sqlCmdRes[3];
                         result.UserID = (int)sqlCmdRes[4];
                         result.AdminLevel = (int)sqlCmdRes[5];
+                        result.UserEps = (int)sqlCmdRes[6];
                     }
 
                 lblWelcome.Text = String.Format("Have a nice {0},{1} {2} {3}", DateTime.UtcNow.DayOfWeek.ToString(), result.Rank, result.UserName, result.UserSurname);

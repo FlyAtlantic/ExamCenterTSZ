@@ -34,8 +34,8 @@
             // 
             // btnTyperating
             // 
-            this.btnTyperating.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnTyperating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.btnTyperating.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(75)))), ((int)(((byte)(100)))));
+            this.btnTyperating.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(75)))), ((int)(((byte)(100)))));
             this.btnTyperating.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTyperating.BorderRadius = 0;
             this.btnTyperating.ButtonText = "bunifuFlatButton1";
@@ -55,8 +55,8 @@
             this.btnTyperating.IsTab = false;
             this.btnTyperating.Location = new System.Drawing.Point(0, 0);
             this.btnTyperating.Name = "btnTyperating";
-            this.btnTyperating.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.btnTyperating.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.btnTyperating.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(75)))), ((int)(((byte)(100)))));
+            this.btnTyperating.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
             this.btnTyperating.OnHoverTextColor = System.Drawing.Color.White;
             this.btnTyperating.selected = false;
             this.btnTyperating.Size = new System.Drawing.Size(173, 48);

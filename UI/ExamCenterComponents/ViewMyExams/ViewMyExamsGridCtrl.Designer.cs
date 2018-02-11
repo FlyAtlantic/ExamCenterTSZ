@@ -48,7 +48,7 @@
             this.btnViewExam.ImageZoom = 100;
             this.btnViewExam.LabelPosition = 0;
             this.btnViewExam.LabelText = "";
-            this.btnViewExam.Location = new System.Drawing.Point(463, 49);
+            this.btnViewExam.Location = new System.Drawing.Point(590, 47);
             this.btnViewExam.Margin = new System.Windows.Forms.Padding(6);
             this.btnViewExam.Name = "btnViewExam";
             this.btnViewExam.Size = new System.Drawing.Size(62, 58);
@@ -89,7 +89,7 @@
             this.gridViewExams.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.gridViewExams.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gridViewExams.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridViewExams.Size = new System.Drawing.Size(433, 524);
+            this.gridViewExams.Size = new System.Drawing.Size(524, 524);
             this.gridViewExams.TabIndex = 0;
             this.gridViewExams.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewExams_CellClick);
             this.gridViewExams.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridViewExams_CellContentClick);
@@ -101,7 +101,7 @@
             this.Controls.Add(this.btnViewExam);
             this.Controls.Add(this.gridViewExams);
             this.Name = "ViewMyExamsGridCtrl";
-            this.Size = new System.Drawing.Size(589, 530);
+            this.Size = new System.Drawing.Size(711, 530);
             ((System.ComponentModel.ISupportInitialize)(this.gridViewExams)).EndInit();
             this.ResumeLayout(false);
 
