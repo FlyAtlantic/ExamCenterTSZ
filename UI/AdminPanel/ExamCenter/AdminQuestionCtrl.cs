@@ -12,6 +12,7 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 {
     public partial class AdminQuestionCtrl : UserControl
     {
+
         int question;
 
         public AdminQuestionCtrl()
@@ -20,11 +21,13 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
         }
 
-        int IDQuest = 0;
+        public int IDQuest = 0;
 
-        int AnswerCorrect = 0;
+        public int AnswerCorrect = 0;
 
-        string AnswerText = null;
+        public int QuestionID;   
+
+        public int correctAnswer;
 
         public void Update()
         {
@@ -75,8 +78,6 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
                 AdminEditAnswer e = new AdminEditAnswer(a);
 
                 e.OnAnswerSelected += E_OnAnswerSelected;
-                e.OnATextChanged += Answer_OnATextChanged;
-
 
                 fpAnswers.Controls.Add(e);
 
@@ -86,6 +87,7 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
                     IDQuest = 0;
 
                 e.cboxAnswer.TabIndex = IDQuest;
+                e.txtEditAnswer.TabIndex = IDQuest;
 
                 AnswerCorrect = AdminViewQuestions.AdminQuestions[question].AnswerCorrect;
 
@@ -107,7 +109,7 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
                     }
                 }
 
-                e.cboxAnswer.Enabled = true;
+                e.cboxAnswer.Enabled = false;
                 
 
                 if (IDQuest == 4)
@@ -116,66 +118,27 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
             txtQuestion.ReadOnly = false;
         }
 
-        public void SaveEditQuestion(int questionID, int IDCheck)
+        public void SaveEditQuestionAnswerText(int questionID, int IDCheck)
         {
+            
 
-            string questionText = txtQuestion.Text;
+        }       
 
-            int correctAnswer = AnswerCorrect;
-
-            string answer1 = null;
-
-            string answer2 = null;
-
-            string answer3 = null;
-
-            string answer4 = null;
-
-            string test = AnswerText;
-
-            foreach (AdminAnswer a in AdminViewQuestions.AdminQuestions[question].AdminAnswers)
-            {
-                                
-                AdminEditAnswer Answer = new AdminEditAnswer(a);
-
-                Answer.OnATextChanged += Answer_OnATextChanged;
-
-                if (test == null)
-                    test = Answer.txtEditAnswer.Text;
-
-                int yyyy = fpAnswers.TabIndex;
-
-                if (answer1 == null)
-                    answer1 = test;
-                if (answer2 == null && test != answer1)
-                    answer2 = test;
-                if (answer3 == null && test != answer1 && test != answer2)
-                    answer3 = test;
-                if (answer4 == null && test != answer1 && test != answer2 && test != answer3)
-                    answer4 = test;
-
-            }
-
-            fpAnswers.Controls.Clear();
-
-            //SaveQuestion.SaveEditQuestion(questionID, txtQuestion.Text, answer1, answer2, answer3, answer4, correctAnswer);
+        public void SendToDatabaseEditQuestionAnswer()
+        {
+            AdminViewQuestions.SaveEditQuestion(QuestionID, txtQuestion.Text, AdminAnswer.EditAnswer1, AdminAnswer.EditAnswer2, AdminAnswer.EditAnswer3, AdminAnswer.EditAnswer4, correctAnswer);
 
             Update();
 
             txtQuestion.ReadOnly = true;
-
         }
-
-        private void Answer_OnATextChanged(object sender, string textAnswer)
-        {
-            AnswerText = textAnswer;
-        }
+      
 
         private void E_OnAnswerSelected(object sender, int IDCheck)
         {
-            AdminViewOnlyOneQuestionToEdit.OnlyOneFromSql(AdminViewQuestions.AdminQuestions[question].QuestionID);
+            AdminViewQuestions.OnlyOneFromSql(AdminViewQuestions.AdminQuestions[question].QuestionID);
 
-            EditQuestion(IDCheck);
+            //EditQuestion(IDCheck);
 
             AnswerCorrect = IDCheck;
         }

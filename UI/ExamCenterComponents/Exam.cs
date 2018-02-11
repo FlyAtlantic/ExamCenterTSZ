@@ -35,6 +35,9 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             this.Correct = Correct;
         }
 
+        public bool Selected
+        { get; set; }
+
     }
 
     public class LastAnswer

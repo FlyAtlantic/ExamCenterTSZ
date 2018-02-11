@@ -14,6 +14,17 @@ namespace ExamCenterTSZ.UI.AdminPanel
         public string Text
         { get; set; }
 
+        public static string EditAnswer1
+        { get; set; }
+
+        public static string EditAnswer2
+        { get; set; }
+
+        public static string EditAnswer3
+        { get; set; }
+
+        public static string EditAnswer4
+        { get; set; }
 
         public AdminAnswer(string Text)
         {
@@ -23,19 +34,6 @@ namespace ExamCenterTSZ.UI.AdminPanel
 
     }
 
-    public class AdminEditAnswer
-    {
-        public string Text
-        { get; set; }
-
-
-        public AdminEditAnswer(string Text)
-        {
-            this.Text = Text;
-        }
-
-
-    }
 
     public class AdminQuestion
     {
@@ -115,15 +113,6 @@ namespace ExamCenterTSZ.UI.AdminPanel
                 conn.Close();
             }
         }
-    }
-
-    public static class AdminViewOnlyOneQuestionToEdit
-    {
-        public static string Text
-        { get; set; }
-
-        public static List<AdminQuestion> AdminQuestion
-        { get; set; }
 
         public static void OnlyOneFromSql(int questionID)
         {
@@ -195,11 +184,8 @@ namespace ExamCenterTSZ.UI.AdminPanel
                 conn.Close();
             }
         }
-    }
 
-    public static class SaveQuestion
-    {
-        public static void SaveEditQuestion(int questionID, string questionText, string answer1, string answer2, string answer3, string answer4, int correctAnswer )
+        public static void SaveEditQuestion(int questionID, string questionText, string answer1, string answer2, string answer3, string answer4, int correctAnswer)
         {
             string sqlSaveEditQuestion = "UPDATE exam_questions SET question=@QuestionText, answer1=@Answer1, answer2=@Answer2, answer3=@Answer3, answer4=@Answer4, answer_correct=@AnswerCorrect where question_id=@QuestionID LIMIT 1";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
@@ -229,5 +215,7 @@ namespace ExamCenterTSZ.UI.AdminPanel
                 conn.Close();
             }
         }
-    }
+
+    }    
+
 }

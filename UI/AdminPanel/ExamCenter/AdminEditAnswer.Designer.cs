@@ -35,7 +35,6 @@
             // cboxAnswer
             // 
             this.cboxAnswer.AutoSize = true;
-            this.cboxAnswer.Enabled = false;
             this.cboxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cboxAnswer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cboxAnswer.Location = new System.Drawing.Point(3, 3);
@@ -54,7 +53,7 @@
             this.txtEditAnswer.Name = "txtEditAnswer";
             this.txtEditAnswer.Size = new System.Drawing.Size(636, 37);
             this.txtEditAnswer.TabIndex = 19;
-            this.txtEditAnswer.TextChanged += new System.EventHandler(this.txtEditAnswer_TextChanged);
+            this.txtEditAnswer.Leave += new System.EventHandler(this.txtEditAnswer_Leave);
             // 
             // AdminEditAnswer
             // 

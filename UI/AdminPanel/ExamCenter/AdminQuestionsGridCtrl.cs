@@ -55,7 +55,7 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
         {
             adminManageQuestions.Show();
 
-            AdminViewOnlyOneQuestionToEdit.OnlyOneFromSql(Convert.ToInt32(gridViewQuestions.Rows[e.RowIndex].Cells["Question ID"].Value));
+            AdminViewQuestions.OnlyOneFromSql(Convert.ToInt32(gridViewQuestions.Rows[e.RowIndex].Cells["Question ID"].Value));
 
             adminManageQuestions.adminQuestionCtrl.Update();
 

@@ -20,8 +20,6 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
         private void btnEditQuestion_Click(object sender, EventArgs e)
         {
 
-            adminQuestionCtrl.EditQuestion(0);
-
             btnEditQuestion.Visible = false;
 
             btnBackView.Visible = false;
@@ -30,6 +28,7 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
             btnSaveEditQuestion.Visible = true;
 
+            adminQuestionCtrl.SaveEditQuestionAnswerText(btnEditQuestion.TabIndex, 0);
         }
 
         private void btnBackEdit_Click(object sender, EventArgs e)
@@ -45,6 +44,7 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
             adminQuestionCtrl.txtQuestion.ReadOnly = true;
 
             adminQuestionCtrl.Update();
+
         }
 
         private void btnBackView_Click(object sender, EventArgs e)
@@ -54,18 +54,23 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
         private void btnDeleteQuestion_Click(object sender, EventArgs e)
         {
-            AdminViewOnlyOneQuestionToEdit.OnlyDeleteOneQuestionFromSql(btnEditQuestion.TabIndex);
+            AdminViewQuestions.OnlyDeleteOneQuestionFromSql(btnEditQuestion.TabIndex);
 
             adminQuestionCtrl.Update();
         }
 
         private void btnSaveEditQuestion_Click(object sender, EventArgs e)
         {
-            adminQuestionCtrl.SaveEditQuestion(btnEditQuestion.TabIndex, 0);
+            adminQuestionCtrl.SendToDatabaseEditQuestionAnswer();
 
-            AdminViewOnlyOneQuestionToEdit.OnlyOneFromSql(btnEditQuestion.TabIndex);
+            AdminViewQuestions.OnlyOneFromSql(btnEditQuestion.TabIndex);
 
             adminQuestionCtrl.Update();
+
+            adminQuestionCtrl.txtQuestion.ReadOnly = true;
+
+            btnSaveEditQuestion.Visible = false;
+
         }
     }
 }
