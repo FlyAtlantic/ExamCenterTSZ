@@ -54,7 +54,9 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
         private void btnDeleteQuestion_Click(object sender, EventArgs e)
         {
+            AdminViewOnlyOneQuestionToEdit.OnlyDeleteOneQuestionFromSql(btnEditQuestion.TabIndex);
 
+            adminQuestionCtrl.Update();
         }
 
         private void btnSaveEditQuestion_Click(object sender, EventArgs e)

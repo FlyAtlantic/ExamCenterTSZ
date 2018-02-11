@@ -24,6 +24,8 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
         int AnswerCorrect = 0;
 
+        string AnswerText = null;
+
         public void Update()
         {
 
@@ -73,6 +75,8 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
                 AdminEditAnswer e = new AdminEditAnswer(a);
 
                 e.OnAnswerSelected += E_OnAnswerSelected;
+                e.OnATextChanged += Answer_OnATextChanged;
+
 
                 fpAnswers.Controls.Add(e);
 
@@ -127,30 +131,44 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
             string answer4 = null;
 
+            string test = AnswerText;
+
             foreach (AdminAnswer a in AdminViewQuestions.AdminQuestions[question].AdminAnswers)
             {
-
+                                
                 AdminEditAnswer Answer = new AdminEditAnswer(a);
 
+                Answer.OnATextChanged += Answer_OnATextChanged;
+
+                if (test == null)
+                    test = Answer.txtEditAnswer.Text;
+
+                int yyyy = fpAnswers.TabIndex;
+
                 if (answer1 == null)
-                    answer1 = Answer.txtEditAnswer.Text;
-                if (answer2 == null && Answer.txtEditAnswer.Text != answer1)
-                    answer2 = Answer.txtEditAnswer.Text;
-                if (answer3 == null && Answer.txtEditAnswer.Text != answer1 && Answer.txtEditAnswer.Text != answer2)
-                    answer3 = Answer.txtEditAnswer.Text;
-                if (answer4 == null && Answer.txtEditAnswer.Text != answer1 && Answer.txtEditAnswer.Text != answer2 && Answer.txtEditAnswer.Text != answer3)
-                    answer4 = Answer.txtEditAnswer.Text;
+                    answer1 = test;
+                if (answer2 == null && test != answer1)
+                    answer2 = test;
+                if (answer3 == null && test != answer1 && test != answer2)
+                    answer3 = test;
+                if (answer4 == null && test != answer1 && test != answer2 && test != answer3)
+                    answer4 = test;
 
             }
 
             fpAnswers.Controls.Clear();
 
-            SaveQuestion.SaveEditQuestion(questionID, txtQuestion.Text, answer1, answer2, answer3, answer4, correctAnswer);
+            //SaveQuestion.SaveEditQuestion(questionID, txtQuestion.Text, answer1, answer2, answer3, answer4, correctAnswer);
 
             Update();
 
             txtQuestion.ReadOnly = true;
 
+        }
+
+        private void Answer_OnATextChanged(object sender, string textAnswer)
+        {
+            AnswerText = textAnswer;
         }
 
         private void E_OnAnswerSelected(object sender, int IDCheck)
@@ -161,5 +179,6 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
             AnswerCorrect = IDCheck;
         }
+
     }
 }

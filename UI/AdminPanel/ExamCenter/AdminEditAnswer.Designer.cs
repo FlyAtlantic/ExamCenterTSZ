@@ -54,6 +54,7 @@
             this.txtEditAnswer.Name = "txtEditAnswer";
             this.txtEditAnswer.Size = new System.Drawing.Size(636, 37);
             this.txtEditAnswer.TabIndex = 19;
+            this.txtEditAnswer.TextChanged += new System.EventHandler(this.txtEditAnswer_TextChanged);
             // 
             // AdminEditAnswer
             // 

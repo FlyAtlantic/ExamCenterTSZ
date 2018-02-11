@@ -170,6 +170,31 @@ namespace ExamCenterTSZ.UI.AdminPanel
                 conn.Close();
             }
         }
+
+        public static void OnlyDeleteOneQuestionFromSql(int questionID)
+        {
+            string sqlOnlyOneQuestionToEdit = "DELETE FROM exam_questions where question_id = @QuestionID LIMIT 1";
+            MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
+
+            try
+            {
+                conn.Open();
+
+                MySqlCommand sqlCmd = new MySqlCommand(sqlOnlyOneQuestionToEdit, conn);
+                sqlCmd.Parameters.AddWithValue("@QuestionID", questionID);
+
+                sqlCmd.ExecuteNonQuery();
+            }
+            catch (Exception crap)
+            {
+                throw new ApplicationException("Failed to load exam @Exam.FromSQL()", crap);
+            }
+            finally
+            {
+
+                conn.Close();
+            }
+        }
     }
 
     public static class SaveQuestion

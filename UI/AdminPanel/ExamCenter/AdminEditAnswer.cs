@@ -31,6 +31,9 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
         public delegate void AnswerSelected(object sender, int IDChk);
         public event AnswerSelected OnAnswerSelected;
 
+        public delegate void TextChanged1(object sender, string textAnswer);
+        public event TextChanged1 OnATextChanged;
+
         private void cboxAnswer_Click(object sender, EventArgs e)
         {
             if (cboxAnswer.Checked)
@@ -38,6 +41,12 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
                 if (OnAnswerSelected != null)
                     OnAnswerSelected(this, cboxAnswer.TabIndex);
             }
+        }
+
+        private void txtEditAnswer_TextChanged(object sender, EventArgs e)
+        {
+                if (OnATextChanged != null)
+                    OnATextChanged(this, txtEditAnswer.Text);
         }
     }
 }
