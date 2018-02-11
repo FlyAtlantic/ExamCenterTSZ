@@ -301,7 +301,7 @@
             this.epsConfirm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.epsConfirm.Location = new System.Drawing.Point(320, 220);
             this.epsConfirm.Name = "epsConfirm";
-            this.epsConfirm.Size = new System.Drawing.Size(541, 262);
+            this.epsConfirm.Size = new System.Drawing.Size(551, 262);
             this.epsConfirm.TabIndex = 107;
             this.epsConfirm.Visible = false;
             // 

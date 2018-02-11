@@ -47,6 +47,8 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
         {
             GetUserEps();
 
+            txtExamInfo.Text = String.Format("This exam has {0} questions and you have 60 minutes to complete it.", Exam.Questions.Count.ToString());
+
             txtEpsInfo.Text = String.Format("Will be removed {0} ep's from your account to begin the exam!", eps.ToString());
 
             ExamEps = eps;

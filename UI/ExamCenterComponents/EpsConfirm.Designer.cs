@@ -33,16 +33,17 @@
             this.lblSureQst = new System.Windows.Forms.Label();
             this.btnYes = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnNo = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.txtExamInfo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtEpsInfo
             // 
             this.txtEpsInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEpsInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEpsInfo.Location = new System.Drawing.Point(1, 60);
+            this.txtEpsInfo.Location = new System.Drawing.Point(-1, 86);
             this.txtEpsInfo.Name = "txtEpsInfo";
             this.txtEpsInfo.ReadOnly = true;
-            this.txtEpsInfo.Size = new System.Drawing.Size(538, 19);
+            this.txtEpsInfo.Size = new System.Drawing.Size(552, 19);
             this.txtEpsInfo.TabIndex = 0;
             this.txtEpsInfo.Text = "Will be removed 50ep\'s from your account to begin the exam.";
             this.txtEpsInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -52,7 +53,7 @@
             this.lblSureQst.AutoSize = true;
             this.lblSureQst.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSureQst.ForeColor = System.Drawing.Color.Red;
-            this.lblSureQst.Location = new System.Drawing.Point(170, 109);
+            this.lblSureQst.Location = new System.Drawing.Point(173, 117);
             this.lblSureQst.Name = "lblSureQst";
             this.lblSureQst.Size = new System.Drawing.Size(201, 18);
             this.lblSureQst.TabIndex = 1;
@@ -76,7 +77,7 @@
             this.btnYes.IdleFillColor = System.Drawing.Color.White;
             this.btnYes.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnYes.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnYes.Location = new System.Drawing.Point(55, 152);
+            this.btnYes.Location = new System.Drawing.Point(58, 140);
             this.btnYes.Margin = new System.Windows.Forms.Padding(5);
             this.btnYes.Name = "btnYes";
             this.btnYes.Size = new System.Drawing.Size(181, 41);
@@ -102,7 +103,7 @@
             this.btnNo.IdleFillColor = System.Drawing.Color.White;
             this.btnNo.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnNo.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnNo.Location = new System.Drawing.Point(308, 152);
+            this.btnNo.Location = new System.Drawing.Point(311, 140);
             this.btnNo.Margin = new System.Windows.Forms.Padding(5);
             this.btnNo.Name = "btnNo";
             this.btnNo.Size = new System.Drawing.Size(181, 41);
@@ -110,17 +111,31 @@
             this.btnNo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnNo.Click += new System.EventHandler(this.btnNo_Click);
             // 
+            // txtExamInfo
+            // 
+            this.txtExamInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtExamInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExamInfo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtExamInfo.Location = new System.Drawing.Point(-1, 61);
+            this.txtExamInfo.Name = "txtExamInfo";
+            this.txtExamInfo.ReadOnly = true;
+            this.txtExamInfo.Size = new System.Drawing.Size(552, 19);
+            this.txtExamInfo.TabIndex = 4;
+            this.txtExamInfo.Text = "This exam has 30 questions and you have 60 minutes to complete it.";
+            this.txtExamInfo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // EpsConfirm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.txtEpsInfo);
+            this.Controls.Add(this.txtExamInfo);
             this.Controls.Add(this.btnNo);
             this.Controls.Add(this.btnYes);
             this.Controls.Add(this.lblSureQst);
-            this.Controls.Add(this.txtEpsInfo);
             this.Name = "EpsConfirm";
-            this.Size = new System.Drawing.Size(539, 260);
+            this.Size = new System.Drawing.Size(550, 260);
             this.Load += new System.EventHandler(this.EpsConfirm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -133,5 +148,6 @@
         private System.Windows.Forms.Label lblSureQst;
         private Bunifu.Framework.UI.BunifuThinButton2 btnYes;
         private Bunifu.Framework.UI.BunifuThinButton2 btnNo;
+        private System.Windows.Forms.TextBox txtExamInfo;
     }
 }
