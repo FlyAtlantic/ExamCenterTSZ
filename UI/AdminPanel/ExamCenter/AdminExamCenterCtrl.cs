@@ -90,6 +90,8 @@ namespace ExamCenterTSZ.UI.AdminPanel
             adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer3.Clear();
             adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer4.Clear();
 
+            ExamQuestionsNewEdit.AnswerCorrect = 0;
+
             adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtQuestion.ReadOnly = false;
             adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.cboxAnswer1.Checked = false;
             adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.cboxAnswer2.Checked = false;
@@ -114,25 +116,31 @@ namespace ExamCenterTSZ.UI.AdminPanel
 
         private void btnAddQuestion_Click_1(object sender, EventArgs e)
         {
-            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.Hide();
+            if ((adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtQuestion.Text != null) && (adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer1.Text != null) && (adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer2.Text != null) && (adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer3.Text != null) && (adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer4.Text != null) && (ExamQuestionsNewEdit.AnswerCorrect != 0) && (Convert.ToInt32(AdminExamCenterCtrl.ExamValueCbox) != 0)) {
+                adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.Hide();
 
-            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.NewQuestion(adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtQuestion.Text, adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer1.Text, adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer2.Text, adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer3.Text, adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer4.Text, ExamQuestionsNewEdit.AnswerCorrect, Convert.ToInt32(AdminExamCenterCtrl.ExamValueCbox));
+                adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.NewQuestion(adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtQuestion.Text, adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer1.Text, adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer2.Text, adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer3.Text, adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.txtEditAnswer4.Text, ExamQuestionsNewEdit.AnswerCorrect, Convert.ToInt32(AdminExamCenterCtrl.ExamValueCbox));
 
-            adminQuestionsGridCtrl.Show();
+                adminQuestionsGridCtrl.Show();
 
-            adminQuestionsGridCtrl.adminManageQuestions.Hide();
+                adminQuestionsGridCtrl.adminManageQuestions.Hide();
 
-            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.Hide();
-            adminQuestionsGridCtrl.adminManageQuestions.adminQuestionCtrl.Show();
-            adminQuestionsGridCtrl.gridViewQuestions.Show();
+                adminQuestionsGridCtrl.adminManageQuestions.adminQuestionNewEdit.Hide();
+                adminQuestionsGridCtrl.adminManageQuestions.adminQuestionCtrl.Show();
+                adminQuestionsGridCtrl.gridViewQuestions.Show();
 
-            btnBackAddQst.Hide();
+                btnBackAddQst.Hide();
 
-            btnAddQuestion.Hide();
+                btnAddQuestion.Hide();
 
-            btnAddQuestionMain.Show();
+                btnAddQuestionMain.Show();
 
-            adminQuestionsGridCtrl.FillAdminQuestions(Convert.ToInt32(cboxExams.SelectedValue));
+                adminQuestionsGridCtrl.FillAdminQuestions(Convert.ToInt32(cboxExams.SelectedValue));
+            }
+            else
+            {
+                MessageBox.Show("You must enter all fields.");
+            }
         }
     }
 }
