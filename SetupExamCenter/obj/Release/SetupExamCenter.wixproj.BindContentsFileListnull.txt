@@ -1,0 +1,3 @@
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterTSZ\bin\Release\\Bunifu_UI_v1.5.3.dll
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterTSZ\bin\Release\ExamCenterTSZ.exe
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterTSZ\bin\Release\\MySql.Data.dll
