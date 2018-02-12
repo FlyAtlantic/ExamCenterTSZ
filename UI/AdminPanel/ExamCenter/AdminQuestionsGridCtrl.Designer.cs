@@ -68,7 +68,7 @@
             this.gridViewQuestions.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.gridViewQuestions.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.gridViewQuestions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridViewQuestions.Size = new System.Drawing.Size(897, 481);
+            this.gridViewQuestions.Size = new System.Drawing.Size(879, 466);
             this.gridViewQuestions.TabIndex = 1;
             this.gridViewQuestions.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridViewQuestions_CellMouseDoubleClick);
             // 

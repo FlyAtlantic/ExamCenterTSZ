@@ -37,7 +37,8 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
         }
 
         private void btnBackEdit_Click(object sender, EventArgs e)
-        {
+        {           
+
             btnBackEdit.Visible = false;
 
             btnSaveEditQuestion.Visible = false;
@@ -50,16 +51,21 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
 
             adminQuestionCtrl.Update();
 
+            adminQuestionNewEdit.Hide();
+
         }
 
         private void btnBackView_Click(object sender, EventArgs e)
         {
+
             var QControl = this.Parent as AdminQuestionsGridCtrl;
 
             QControl.gridViewQuestions.Show();
 
+
             Hide();
         }
+
 
         private void btnDeleteQuestion_Click(object sender, EventArgs e)
         {
@@ -89,5 +95,6 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
             btnSaveEditQuestion.Visible = false;
 
         }
+
     }
 }

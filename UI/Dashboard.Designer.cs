@@ -379,6 +379,6 @@
         private ExamCenterInstructor.ExamInstructorCtrl examInstructorCtrl;
         private ExamCenterComponents.ViewMyExams.MyExamsCtrl myExamsCtrl;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuReviewExams;
-        private AdminPanel.AdminExamCenterCtrl adminExamCenterCtrl;
+        public AdminPanel.AdminExamCenterCtrl adminExamCenterCtrl;
     }
 }

@@ -131,6 +131,40 @@ namespace ExamCenterTSZ.UI.AdminPanel.ExamCenter
             }
         }
 
+        public void NewQuestion(string questionText, string answer1, string answer2, string answer3, string answer4, int correctAnswer, int exam)
+        {
+            ExamQuestionsNewEdit result = new ExamQuestionsNewEdit();
+
+            string sqlAdminFromSql = "INSERT INTO exam_questions(question, answer1, answer2, answer3, answer4, answer_correct, examby) VALUES(@QuestionText, @Answer1, @Answer2, @Answer3, @Answer4, @CorrectAnswer, @ExamID) ";
+            MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
+
+            try
+            {
+                conn.Open();
+
+                MySqlCommand sqlCmd = new MySqlCommand(sqlAdminFromSql, conn);
+
+                sqlCmd.Parameters.AddWithValue("@QuestionText", questionText);
+                sqlCmd.Parameters.AddWithValue("@Answer1", answer1);
+                sqlCmd.Parameters.AddWithValue("@Answer2", answer2);
+                sqlCmd.Parameters.AddWithValue("@Answer3", answer3);
+                sqlCmd.Parameters.AddWithValue("@Answer4", answer4);
+                sqlCmd.Parameters.AddWithValue("@CorrectAnswer", correctAnswer);
+                sqlCmd.Parameters.AddWithValue("@ExamID", exam);
+
+                sqlCmd.ExecuteNonQuery();
+
+            }
+            catch (Exception crap)
+            {
+                throw new ApplicationException("Failed to load exam @Exam.FromSQL()", crap);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
         private void cboxAnswer1_CheckedChanged(object sender, EventArgs e)
         {
             if (cboxAnswer1.Checked)
