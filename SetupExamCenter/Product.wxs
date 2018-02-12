@@ -42,18 +42,6 @@
 			<Component Id="MySql.Data">
 				<File Name="MySql.Data.dll" Source="$(var.ExamCenterTSZ.TargetDir)\MySql.Data.dll" />
 			</Component>
-
-			<!-- Auto-start via Registry -->
-			<Component Id="ExamCenterTSZAutostart" Guid="290768e7-73e1-4432-a118-bde25c5a3cc9">
-				<RegistryValue Id="FlyAtlanticExamCenterTSZ.Autostart" Root="HKMU" Action="write"
-							   Key="Software\Microsoft\Windows\CurrentVersion\Run"
-							   Name="FlyAtlantic ExamCenterTSZ"
-							   Value="[INSTALLFOLDER]Fly Atlantic ExamCenterTSZ"
-							   Type="string" />
-				<Condition>ASSISTANCE_START_VIA_REGISTRY</Condition>
-			</Component>
-
-			<ComponentRef Id="ExamCenterTSZAutostart" />
 		</ComponentGroup>
 	</Fragment>
 
