@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?define ProductName="$(fileVersion.ProductName($(var.ExamCenterTSZ.TargetPath)))" ?>
+<?define CompanyName="$(fileVersion.CompanyName($(var.ExamCenterTSZ.TargetPath)))" ?>
+<?define ProductVersion="$(fileVersion.ProductVersion($(var.ExamCenterTSZ.TargetPath)))" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*"
+           Name="$(var.ProductName)"
+           Language="1033"
+           Version="$(var.ProductVersion)"
+           Manufacturer="$(var.CompanyName)"
+           UpgradeCode="fed35ab1-b790-4e1f-8b37-ae0ec6919464">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+		
+		<MajorUpgrade DowngradeErrorMessage="A newer version of FlyAtlantic ExamCenter is already installed." />
+		<MediaTemplate />
+
+			<Feature Id="ProductFeature" Title="FlyAtlantic ExamCenter" Level="1">
+				<ComponentGroupRef Id="ProductComponents" />
+			</Feature>
+
+	<Property Id="ASSISTANCE_START_VIA_REGISTRY">1</Property>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="FlyAtlantic ExamCenter" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component Id="ExamCenterTSZ">
+				<File Source="$(var.ExamCenterTSZ.TargetPath)" />
+			</Component>
+			<Component Id="Bunifu_UI_v1.5.3">
+				<File Name="Bunifu_UI_v1.5.3.dll" Source="$(var.ExamCenterTSZ.TargetDir)\Bunifu_UI_v1.5.3.dll" />
+			</Component>
+			<Component Id="MySql.Data">
+				<File Name="MySql.Data.dll" Source="$(var.ExamCenterTSZ.TargetDir)\MySql.Data.dll" />
+			</Component>
+
+			<!-- Auto-start via Registry -->
+			<Component Id="ExamCenterTSZAutostart" Guid="290768e7-73e1-4432-a118-bde25c5a3cc9">
+				<RegistryValue Id="FlyAtlanticExamCenterTSZ.Autostart" Root="HKMU" Action="write"
+							   Key="Software\Microsoft\Windows\CurrentVersion\Run"
+							   Name="FlyAtlantic ExamCenterTSZ"
+							   Value="[INSTALLFOLDER]Fly Atlantic ExamCenterTSZ"
+							   Type="string" />
+				<Condition>ASSISTANCE_START_VIA_REGISTRY</Condition>
+			</Component>
+
+			<ComponentRef Id="ExamCenterTSZAutostart" />
+		</ComponentGroup>
+	</Fragment>
+
+	<Fragment>
+		<DirectoryRef Id="ApplicationProgramsFolder">
+
+			<Component Id="RegistryEntries" Guid="1efc6d21-bf25-498d-b293-0f4ed02b6fbF">
+				<RegistryKey Root="HKCU"
+							 Key="Software\Microsoft\Windows\CurrentVersion\Run"
+					  Action="createAndRemoveOnUninstall">
+					<RegistryValue Type="string" Name="FlyAtlantic ExamCenterTSZ" Value="[#Fly Altantic ExamCenterTSZ.exe]" KeyPath="yes"/>
+				</RegistryKey>
+			</Component>
+		</DirectoryRef>
+	</Fragment>
+</Wix>
