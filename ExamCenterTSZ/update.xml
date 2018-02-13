@@ -3,6 +3,9 @@
 	<update appId="ExamCenterTSZ">
 		<version>1.0.0.8</version>
 		<url>https://github.com/FlyAtlantic/ExamCenterTSZ/releases/download/1.0.0.8/SetupExamCenter.msi</url>
-		
+		<filename>SetupExamCenter.msi</filename>
+		<md5>64277034e37ba2a6a4dcab3c17d71471</md5>
+		<description>Initial update</description>
+		<lauchArgs></lauchArgs>
 	</update>
 </ExamCenterUpdate>
