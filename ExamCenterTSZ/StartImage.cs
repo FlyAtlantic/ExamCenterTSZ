@@ -24,9 +24,9 @@ namespace ExamCenterTSZ
             InitializeComponent();
 
             label1.Text = String.Format("Version: {0}", this.ApplicationAssembly.GetName().Version.ToString());
-            //updater = new ExamCenterUpdater(this);
+            updater = new ExamCenterUpdater(this);
 
-            //updater.DoUpdate();
+            updater.DoUpdate();
         }
 
         public string ApplicationName
