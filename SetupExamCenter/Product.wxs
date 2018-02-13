@@ -36,6 +36,9 @@
 			<Component Id="ExamCenterTSZ">
 				<File Source="$(var.ExamCenterTSZ.TargetPath)" />
 			</Component>
+			<Component Id="TSZTools">
+				<File Source="$(var.TSZTools.TargetPath)" />
+			</Component>
 			<Component Id="Bunifu_UI_v1.5.3">
 				<File Name="Bunifu_UI_v1.5.3.dll" Source="$(var.ExamCenterTSZ.TargetDir)\Bunifu_UI_v1.5.3.dll" />
 			</Component>
