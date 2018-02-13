@@ -1,6 +1,5 @@
 C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\bin\Debug\ExamCenterUpdate.dll
 C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\bin\Debug\ExamCenterUpdate.pdb
-C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.csprojResolveAssemblyReference.cache
 C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.ExamCenterUpdateAcceptForm.resources
 C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.ExamCenterUpdateDownloadFrm.resources
 C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.ExamCenterUpdateInfo.resources

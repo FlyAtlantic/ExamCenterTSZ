@@ -1,0 +1,11 @@
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Debug\TSZTools.MetarsCtrl.resources
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Debug\TSZTools.OceanicReportCtrl.resources
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Debug\TSZTools.ToolControlFrm.resources
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Debug\TSZTools.Properties.Resources.resources
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Debug\TSZTools.csproj.GenerateResource.Cache
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\bin\Debug\TSZTools.exe.config
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\bin\Debug\TSZTools.exe
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\bin\Debug\TSZTools.pdb
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Debug\TSZTools.exe
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Debug\TSZTools.pdb
