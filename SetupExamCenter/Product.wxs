@@ -10,7 +10,7 @@
            Language="1033"
            Version="$(var.ProductVersion)"
            Manufacturer="$(var.CompanyName)"
-           UpgradeCode="fed35ab1-b790-4e1f-8b37-ae0ec6919464">
+           UpgradeCode="2c71cb8b-1e83-4383-8471-6c4c07e887f3">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 		
 		<MajorUpgrade DowngradeErrorMessage="A newer version of FlyAtlantic ExamCenter is already installed." />

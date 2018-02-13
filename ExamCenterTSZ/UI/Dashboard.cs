@@ -34,6 +34,8 @@ namespace ExamCenterTSZ.UI
             ShowInTaskbar = false;
 
             lblClock.Text = DateTime.UtcNow.ToString();
+
+            lblWelcome.Text = String.Format("Have a nice {0},{1} {2} {3}", DateTime.UtcNow.DayOfWeek.ToString(), result.Rank, result.UserName, result.UserSurname);
         }
 
         UserInformations result = new UserInformations();
@@ -80,8 +82,7 @@ namespace ExamCenterTSZ.UI
                         result.AdminLevel = (int)sqlCmdRes[5];
                         result.UserEps = (int)sqlCmdRes[6];
                     }
-
-                lblWelcome.Text = String.Format("Have a nice {0},{1} {2} {3}", DateTime.UtcNow.DayOfWeek.ToString(), result.Rank, result.UserName, result.UserSurname);
+                
 
                 PilotInfo.PilotInfos(result.UserID);
             }

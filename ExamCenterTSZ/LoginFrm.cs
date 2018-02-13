@@ -33,7 +33,13 @@ namespace ExamCenterTSZ.UI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
-            {
+            {               
+
+                Properties.Settings.Default.Email = txtEmail.Text;
+                Properties.Settings.Default.Password = txtPassword.Text;
+
+                Properties.Settings.Default.Save();
+
                 if (Login.ValidateLogin(txtEmail.Text, txtPassword.Text))
                 {
                     Dashboard d = new Dashboard();
@@ -47,11 +53,6 @@ namespace ExamCenterTSZ.UI
                 {
                     MessageBox.Show("Login Failed", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                Properties.Settings.Default.Email = txtEmail.Text;
-                Properties.Settings.Default.Password = txtPassword.Text;
-
-                Properties.Settings.Default.Save();
 
             }
             catch (Exception crap)
