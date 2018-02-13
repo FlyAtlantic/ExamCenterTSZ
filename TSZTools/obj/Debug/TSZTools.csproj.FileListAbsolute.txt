@@ -9,3 +9,5 @@ C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\bin\Debug\TSZTools.pdb
 C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Debug\TSZTools.exe
 C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Debug\TSZTools.pdb
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Debug\TSZTools.MenuCtrl.resources
+C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Debug\TSZTools.csprojResolveAssemblyReference.cache
