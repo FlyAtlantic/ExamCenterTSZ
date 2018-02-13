@@ -45,6 +45,18 @@
 			<Component Id="ExamCenterUpdate">
 				<File Name="ExamCenterUpdate.dll" Source="$(var.ExamCenterTSZ.TargetDir)\ExamCenterUpdate.dll" />
 			</Component>
+
+			<!-- Auto-start via Registry -->
+			<Component Id="ExamCenterTSZAutostart" Guid="290768e7-73e1-4432-a118-bde25c5a3cc9">
+				<RegistryValue Id="ExamCenterTSZ.Autostart" Root="HKMU" Action="write"
+							   Key="Software\Microsoft\Windows\CurrentVersion\Run"
+							   Name="FlyAtlantic ExamCenter"
+							   Value="[INSTALLFOLDER]ExamCenterTSZ"
+							   Type="string" />
+				<Condition>ASSISTANCE_START_VIA_REGISTRY</Condition>
+			</Component>
+
+			<ComponentRef Id="ExamCenterTSZAutostart" />
 		</ComponentGroup>
 	</Fragment>
 
@@ -55,7 +67,7 @@
 				<RegistryKey Root="HKCU"
 							 Key="Software\Microsoft\Windows\CurrentVersion\Run"
 					  Action="createAndRemoveOnUninstall">
-					<RegistryValue Type="string" Name="FlyAtlantic ExamCenterTSZ" Value="[#Fly Altantic ExamCenterTSZ.exe]" KeyPath="yes"/>
+					<RegistryValue Type="string" Name="FlyAtlantic ExamCenter" Value="[#ExamCenterTSZ.exe]" KeyPath="yes"/>
 				</RegistryKey>
 			</Component>
 		</DirectoryRef>
