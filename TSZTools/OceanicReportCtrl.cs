@@ -15,6 +15,7 @@ namespace TSZTools
         public OceanicReportCtrl()
         {
             InitializeComponent();
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace TSZTools
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            OceanicReport.OceanicReports(txtCallsign.Text, txtPosition.Text, cboxHourPosition.SelectedIndex, cboxMinutesPosition.SelectedIndex, cboxFlightLevel.SelectedIndex, txtNextPosition.Text, cboxHoursNextETA.SelectedIndex, cboxMinutesNextETA.SelectedIndex, txtThen.Text, cboxMach.SelectedIndex);
+            OceanicReport.OceanicReports(txtCallsign.Text, txtPosition.Text,Convert.ToInt32(cboxHourPosition.SelectedValue), Convert.ToInt32(cboxMinutesPosition.SelectedValue), cboxFlightLevel.SelectedValue.ToString(), txtNextPosition.Text, Convert.ToInt32(cboxHoursNextETA.SelectedValue), Convert.ToInt32(cboxMinutesNextETA.SelectedValue), txtThen.Text, Convert.ToInt32(cboxMach.SelectedValue));
 
             txtReport.Text = OceanicReport.GeneratedReport;
         }

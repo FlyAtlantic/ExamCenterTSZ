@@ -15,6 +15,7 @@ namespace TSZTools
         public MetarsCtrl()
         {
             InitializeComponent();
+
         }
 
         private void btnViewMetar_Click(object sender, EventArgs e)
