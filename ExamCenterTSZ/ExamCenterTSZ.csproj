@@ -415,5 +415,11 @@
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExamCenterUpdate\ExamCenterUpdate.csproj">
+      <Project>{2b047db0-e6ae-4a01-974e-d1253d73ca51}</Project>
+      <Name>ExamCenterUpdate</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

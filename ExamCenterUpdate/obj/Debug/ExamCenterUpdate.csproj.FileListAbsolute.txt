@@ -1,0 +1,9 @@
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\bin\Debug\ExamCenterUpdate.dll
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\bin\Debug\ExamCenterUpdate.pdb
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.ExamCenterUpdateAcceptForm.resources
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.ExamCenterUpdateDownloadFrm.resources
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.ExamCenterUpdateInfo.resources
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.Properties.Resources.resources
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.csproj.GenerateResource.Cache
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.dll
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.pdb

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ExamCenterUpdate>
+	<update appId="ExamCenterTSZ">
+		<version>1.0.0.8</version>
+		<url>https://github.com/FlyAtlantic/ExamCenterTSZ/releases/download/1.0.0.8/SetupExamCenter.msi</url>
+		
+	</update>
+</ExamCenterUpdate>

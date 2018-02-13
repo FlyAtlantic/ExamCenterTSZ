@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.imgStartImage = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.imgStartImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,11 +42,24 @@
             this.imgStartImage.TabIndex = 0;
             this.imgStartImage.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(678, 284);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 18);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Version 1.0.0.0";
+            // 
             // StartImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 311);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.imgStartImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StartImage";
@@ -53,11 +67,13 @@
             this.Text = "StartImage";
             ((System.ComponentModel.ISupportInitialize)(this.imgStartImage)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         public System.Windows.Forms.PictureBox imgStartImage;
+        private System.Windows.Forms.Label label1;
     }
 }
