@@ -7,4 +7,3 @@ C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Release\ExamCenterUp
 C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Release\ExamCenterUpdate.ExamCenterUpdateInfo.resources
 C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Release\ExamCenterUpdate.Properties.Resources.resources
 C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Release\ExamCenterUpdate.csproj.GenerateResource.Cache
-C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Release\ExamCenterUpdate.csprojResolveAssemblyReference.cache

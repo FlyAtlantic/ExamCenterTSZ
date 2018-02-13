@@ -12,6 +12,7 @@ using ExamCenterTSZ.Functions;
 using ExamCenterTSZ.UI.DashboardComponents;
 using ExamCenterTSZ.UI.ExamCenterComponents;
 using ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams;
+using TSZTools;
 
 namespace ExamCenterTSZ.UI
 {
@@ -198,6 +199,13 @@ namespace ExamCenterTSZ.UI
         private void examInstructorCtrl_VisibleChanged(object sender, EventArgs e)
         {
             examInstructorCtrl.re_ViewExamCtrl.Hide();
+        }
+
+        private void btnTSZTools_Click(object sender, EventArgs e)
+        {
+            ToolControlFrm a = new ToolControlFrm();
+
+            a.Show();
         }
     }
 }

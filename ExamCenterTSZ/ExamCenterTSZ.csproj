@@ -420,6 +420,10 @@
       <Project>{2b047db0-e6ae-4a01-974e-d1253d73ca51}</Project>
       <Name>ExamCenterUpdate</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TSZTools\TSZTools.csproj">
+      <Project>{3988dfca-7354-4b44-8c95-c7a808d0288b}</Project>
+      <Name>TSZTools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

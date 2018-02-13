@@ -49,6 +49,7 @@
             this.examInstructorCtrl = new ExamCenterTSZ.UI.ExamCenterInstructor.ExamInstructorCtrl();
             this.myExamsCtrl = new ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams.MyExamsCtrl();
             this.adminExamCenterCtrl = new ExamCenterTSZ.UI.AdminPanel.AdminExamCenterCtrl();
+            this.btnTSZTools = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.pMenuBar.SuspendLayout();
             this.SuspendLayout();
@@ -124,6 +125,7 @@
             // pMenuBar
             // 
             this.pMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.pMenuBar.Controls.Add(this.btnTSZTools);
             this.pMenuBar.Controls.Add(this.btnMenuReviewExams);
             this.pMenuBar.Controls.Add(this.btnRefresh);
             this.pMenuBar.Controls.Add(this.btnInstructor);
@@ -332,6 +334,42 @@
             this.adminExamCenterCtrl.TabIndex = 110;
             this.adminExamCenterCtrl.Visible = false;
             // 
+            // btnTSZTools
+            // 
+            this.btnTSZTools.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.btnTSZTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnTSZTools.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTSZTools.BorderRadius = 0;
+            this.btnTSZTools.ButtonText = "Tools";
+            this.btnTSZTools.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTSZTools.DisabledColor = System.Drawing.Color.Gray;
+            this.btnTSZTools.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTSZTools.Iconcolor = System.Drawing.Color.Transparent;
+            this.btnTSZTools.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnTSZTools.Iconimage")));
+            this.btnTSZTools.Iconimage_right = null;
+            this.btnTSZTools.Iconimage_right_Selected = null;
+            this.btnTSZTools.Iconimage_Selected = null;
+            this.btnTSZTools.IconMarginLeft = 0;
+            this.btnTSZTools.IconMarginRight = 0;
+            this.btnTSZTools.IconRightVisible = true;
+            this.btnTSZTools.IconRightZoom = 0D;
+            this.btnTSZTools.IconVisible = true;
+            this.btnTSZTools.IconZoom = 90D;
+            this.btnTSZTools.IsTab = false;
+            this.btnTSZTools.Location = new System.Drawing.Point(0, 214);
+            this.btnTSZTools.Name = "btnTSZTools";
+            this.btnTSZTools.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(46)))), ((int)(((byte)(59)))));
+            this.btnTSZTools.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(60)))), ((int)(((byte)(100)))));
+            this.btnTSZTools.OnHoverTextColor = System.Drawing.Color.White;
+            this.btnTSZTools.selected = false;
+            this.btnTSZTools.Size = new System.Drawing.Size(238, 48);
+            this.btnTSZTools.TabIndex = 5;
+            this.btnTSZTools.Text = "Tools";
+            this.btnTSZTools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTSZTools.Textcolor = System.Drawing.Color.White;
+            this.btnTSZTools.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTSZTools.Click += new System.EventHandler(this.btnTSZTools_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -380,5 +418,6 @@
         private ExamCenterComponents.ViewMyExams.MyExamsCtrl myExamsCtrl;
         private Bunifu.Framework.UI.BunifuFlatButton btnMenuReviewExams;
         public AdminPanel.AdminExamCenterCtrl adminExamCenterCtrl;
+        private Bunifu.Framework.UI.BunifuFlatButton btnTSZTools;
     }
 }
