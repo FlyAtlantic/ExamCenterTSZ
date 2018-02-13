@@ -28,7 +28,8 @@ namespace TSZTools
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            var tools = this.Parent as ToolControlFrm;
+            tools.Hide();
         }
 
         private void btnOcenicReport_Click(object sender, EventArgs e)

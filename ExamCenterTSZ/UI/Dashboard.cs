@@ -18,7 +18,7 @@ namespace ExamCenterTSZ.UI
 {
     public partial class Dashboard : Form
     {
-
+        private ToolControlFrm toolFrm;
         public Dashboard()
         {
 
@@ -201,11 +201,12 @@ namespace ExamCenterTSZ.UI
             examInstructorCtrl.re_ViewExamCtrl.Hide();
         }
 
+
         private void btnTSZTools_Click(object sender, EventArgs e)
         {
-            ToolControlFrm a = new ToolControlFrm();
+            toolFrm = new ToolControlFrm();
 
-            a.Show();
+            toolFrm.Show();
         }
     }
 }
