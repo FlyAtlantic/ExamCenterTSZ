@@ -1,3 +1,2 @@
-C:\Users\Tiago\Source\Repos\ExamCenter\SetupExamCenter\bin\Release\cab1.cab
 C:\Users\Tiago\Source\Repos\ExamCenter\SetupExamCenter\bin\Release\SetupExamCenter.msi
 C:\Users\Tiago\Source\Repos\ExamCenter\SetupExamCenter\bin\Release\SetupExamCenter.wixpdb
