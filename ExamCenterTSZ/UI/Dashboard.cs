@@ -99,7 +99,7 @@ namespace ExamCenterTSZ.UI
         private void Clock_Tick(object sender, EventArgs e)
         {
             lblClock.Text = DateTime.UtcNow.ToString();
-
+            lblWelcome.Text = String.Format("Have a nice {0},{1} {2} {3}", DateTime.UtcNow.DayOfWeek.ToString(), result.Rank, result.UserName, result.UserSurname);
         }                                         
 
         ///
