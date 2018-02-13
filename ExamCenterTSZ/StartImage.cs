@@ -59,11 +59,5 @@ namespace ExamCenterTSZ
             get { return this; }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            updater = new ExamCenterUpdater(this);
-
-            updater.DoUpdate();
-        }
     }
 }

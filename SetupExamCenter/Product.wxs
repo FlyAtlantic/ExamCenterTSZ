@@ -42,6 +42,9 @@
 			<Component Id="MySql.Data">
 				<File Name="MySql.Data.dll" Source="$(var.ExamCenterTSZ.TargetDir)\MySql.Data.dll" />
 			</Component>
+			<Component Id="ExamCenterUpdate">
+				<File Name="ExamCenterUpdate.dll" Source="$(var.ExamCenterTSZ.TargetDir)\ExamCenterUpdate.dll" />
+			</Component>
 		</ComponentGroup>
 	</Fragment>
 
