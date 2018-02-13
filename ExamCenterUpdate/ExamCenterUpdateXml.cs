@@ -86,14 +86,14 @@ namespace ExamCenterUpdate
                 XmlDocument doc = new XmlDocument();
                 doc.Load(location.AbsoluteUri);
 
-                XmlNode node = doc.DocumentElement.SelectSingleNode("//update[@appID='" + appID + ";]");
+                XmlNode node = doc.DocumentElement.SelectSingleNode("//update[@appID='" + appID + "']");
 
                 if (node == null)
                     return null;
 
-                version = Version.Parse(node["latestVersion"].InnerText);
+                version = Version.Parse(node["version"].InnerText);
                 url = node["url"].InnerText;
-                fileName = node["fileName"].InnerText;
+                fileName = node["filename"].InnerText;
                 md5 = node["md5"].InnerText;
                 description = node["description"].InnerText;
                 launchArgs = node["launchArgs"].InnerText;

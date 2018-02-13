@@ -7,3 +7,4 @@ C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpda
 C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.csproj.GenerateResource.Cache
 C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.dll
 C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.pdb
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterUpdate\obj\Debug\ExamCenterUpdate.csprojResolveAssemblyReference.cache

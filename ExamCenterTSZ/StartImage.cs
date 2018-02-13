@@ -24,19 +24,19 @@ namespace ExamCenterTSZ
             InitializeComponent();
 
             label1.Text = String.Format("Version: {0}", this.ApplicationAssembly.GetName().Version.ToString());
-            updater = new ExamCenterUpdater(this);
+            //updater = new ExamCenterUpdater(this);
 
-            updater.DoUpdate();
+            //updater.DoUpdate();
         }
 
         public string ApplicationName
         {
-            get { return "TestApp"; }
+            get { return "ExamCenterTSZ"; }
         }
 
         public string ApplicationID
         {
-            get { return "TestApp"; }
+            get { return "ExamCenterTSZ"; }
         }
 
         public Assembly ApplicationAssembly
@@ -51,12 +51,19 @@ namespace ExamCenterTSZ
 
         public Uri UpdateXmlLocation
         {
-            get { return new Uri("https://github.com/FlyAtlantic/ExamCenterTSZ/blob/master/ExamCenterTSZ/update.xml"); }
+            get { return new Uri("http://flyatlantic-va.com/site/programsC/update.xml"); }
         }
 
         public Form Context
         {
             get { return this; }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            updater = new ExamCenterUpdater(this);
+
+            updater.DoUpdate();
         }
     }
 }
