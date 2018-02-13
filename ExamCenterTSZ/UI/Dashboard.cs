@@ -99,6 +99,7 @@ namespace ExamCenterTSZ.UI
         private void Clock_Tick(object sender, EventArgs e)
         {
             lblClock.Text = DateTime.UtcNow.ToString();
+
         }                                         
 
         ///
@@ -169,8 +170,12 @@ namespace ExamCenterTSZ.UI
         //Other Buttons
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+           PilotInformations();
+
            examCenterCtrl.Actions();
            myExamsCtrl.viewMyExamsGridCtrl.FillMyExams();
+
+            lblWelcome.Text = String.Format("Have a nice {0},{1} {2} {3}", DateTime.UtcNow.DayOfWeek.ToString(), result.Rank, result.UserName, result.UserSurname);
         }  
 
         private void btnExitApp_Click(object sender, EventArgs e)
