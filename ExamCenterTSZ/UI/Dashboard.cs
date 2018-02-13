@@ -24,6 +24,7 @@ namespace ExamCenterTSZ.UI
 
             InitializeComponent();
             Clock.Start();
+            UpdatePilotOnline.Start();
             PilotInformations();
 
             if (result.AdminLevel <= 2)
@@ -37,6 +38,9 @@ namespace ExamCenterTSZ.UI
             lblClock.Text = DateTime.UtcNow.ToString();
 
             lblWelcome.Text = String.Format("Have a nice {0},{1} {2} {3}", DateTime.UtcNow.DayOfWeek.ToString(), result.Rank, result.UserName, result.UserSurname);
+
+            OnlinePilots();
+            UpdateLastLoginPilots();
         }
 
         UserInformations result = new UserInformations();
@@ -45,6 +49,8 @@ namespace ExamCenterTSZ.UI
         {
           
             public int UserID
+            { get; set; }
+            public int Callsign
             { get; set; }
             public string UserName
             { get; set; }
@@ -101,8 +107,68 @@ namespace ExamCenterTSZ.UI
         {
             lblClock.Text = DateTime.UtcNow.ToString();
             lblWelcome.Text = String.Format("Have a nice {0},{1} {2} {3}", DateTime.UtcNow.DayOfWeek.ToString(), result.Rank, result.UserName, result.UserSurname);
-        }                                         
 
+            OnlinePilots();
+            
+        }
+
+        public void OnlinePilots()
+        {
+            string sqlOnlinePIlots = "SELECT * FROM `utilizadores` WHERE ((NOW() - lastlogin)<70)";
+            MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
+
+            try
+            {
+                conn.Open();
+
+                MySqlCommand sqlCmd = new MySqlCommand(sqlOnlinePIlots, conn);
+
+                MySqlDataReader sqlCmdRes = sqlCmd.ExecuteReader();
+                if (sqlCmdRes.HasRows)
+                    while (sqlCmdRes.Read())
+                    {
+                        result.Callsign = (int)sqlCmdRes[1];
+                        result.UserName = (string)sqlCmdRes[2];
+                        result.UserSurname = (string)sqlCmdRes[3];
+
+                    }
+
+
+                lblPilotsOnlineNow.Text = String.Format("TSZ{0} - {1} {2}\n",result.Callsign, result.UserName ,result.UserSurname);
+            }
+            catch (Exception crap)
+            {
+                MessageBox.Show(crap.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        public void UpdateLastLoginPilots()
+        {
+            string sqlUpdateLastLoginPilots = "UPDATE utilizadores SET lastlogin=NOW() where user_email=@Email";
+            MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
+
+            try
+            {
+                conn.Open();
+
+                MySqlCommand sqlCmd = new MySqlCommand(sqlUpdateLastLoginPilots, conn);
+                sqlCmd.Parameters.AddWithValue("@Email", Properties.Settings.Default.Email);
+
+                sqlCmd.ExecuteNonQuery();
+            }
+            catch (Exception crap)
+            {
+                MessageBox.Show(crap.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         ///
         ///Special Buttons
         private void btnAdminPanel_Click(object sender, EventArgs e)
@@ -207,6 +273,11 @@ namespace ExamCenterTSZ.UI
             toolFrm = new ToolControlFrm();
 
             toolFrm.Show();
+        }
+
+        private void UpdatePilotOnline_Tick(object sender, EventArgs e)
+        {
+            UpdateLastLoginPilots();
         }
     }
 }
