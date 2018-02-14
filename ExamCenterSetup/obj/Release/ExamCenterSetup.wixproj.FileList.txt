@@ -1,0 +1,6 @@
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterSetup\bin\Release\ExamCenterSetup.msi
+C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterSetup\bin\Release\ExamCenterSetup.wixpdb
+obj\Release\Product.wixobj
+obj\Release\ExamCenterSetup.wixproj.BindContentsFileListnull.txt
+obj\Release\ExamCenterSetup.wixproj.BindOutputsFileListnull.txt
+obj\Release\ExamCenterSetup.wixproj.BindBuiltOutputsFileListnull.txt
