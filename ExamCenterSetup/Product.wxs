@@ -18,6 +18,7 @@
 
 		<Feature Id="ProductFeature" Title="ExamCenterSetup" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentRef Id="ApplicationShortcutDesktop" />
 		</Feature>
 
 		<InstallExecuteSequence>
@@ -31,9 +32,25 @@
 		   Impersonate="yes"
 		   Return="asyncNoWait" />
 	</Product>
-
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="DesktopFolder" Name="Desktop">
+				<Component Id="ApplicationShortcutDesktop" Guid="*">
+					<Shortcut Id="ApplicationDesktopShortcut"
+						Name="FlyAtlantic ExamCenter"
+						Description="Comment field in your shortcut"
+						Target="[INSTALLFOLDER]ExamCenterTSZ.exe"
+						WorkingDirectory="INSTALLFOLDER"/>
+					<RemoveFolder Id="DesktopFolder" On="uninstall"/>
+					<RegistryValue
+						Root="HKCU"
+						Key="Software/ExamCenterTSZ"
+						Name="installed"
+						Type="integer"
+						Value="1"
+						KeyPath="yes"/>
+				</Component>
+			</Directory>
 			<Directory Id="ProgramFilesFolder">
 				<Directory Id="INSTALLFOLDER" Name="ExamCenterSetup" />
 			</Directory>
