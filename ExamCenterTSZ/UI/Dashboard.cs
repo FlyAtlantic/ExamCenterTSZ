@@ -131,10 +131,10 @@ namespace ExamCenterTSZ.UI
                         result.UserName = (string)sqlCmdRes[2];
                         result.UserSurname = (string)sqlCmdRes[3];
 
+
+                        lblPilotsOnlineNow.Text = String.Format("TSZ{0} - {1} {2} \r\n", result.Callsign, result.UserName, result.UserSurname);
                     }
 
-
-                lblPilotsOnlineNow.Text = String.Format("TSZ{0} - {1} {2}\n",result.Callsign, result.UserName ,result.UserSurname);
             }
             catch (Exception crap)
             {

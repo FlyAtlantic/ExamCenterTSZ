@@ -21,6 +21,8 @@ namespace ExamCenterTSZ.UI
         {
             InitializeComponent();
 
+            this.BringToFront();
+
             this.AcceptButton = btnLogin;
 
             ShowInTaskbar = false;
