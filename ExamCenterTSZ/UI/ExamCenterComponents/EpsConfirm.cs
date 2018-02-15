@@ -59,7 +59,10 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
             var DBoard = this.Parent as Dashboard;
 
             if (UserEps >= ExamEps) {
+                int updateEps = UserEps - ExamEps;
+
                 string sqlUpdatePilotAssign = "UPDATE `exam_assigns` SET `avaiable`=0 where assign_id = @AssignID";
+                string sqlUpdateEps = "UPDATE `utilizadores` SET `eps`=@UpdateEps where user_email = @Email";
                 MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
 
                 conn.Open();
@@ -68,6 +71,12 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
                 sqlCmd2.Parameters.AddWithValue("@AssignID", Exam.AssignID);
 
                 sqlCmd2.ExecuteNonQuery();
+
+                MySqlCommand sqlCmd3 = new MySqlCommand(sqlUpdateEps, conn);
+                sqlCmd3.Parameters.AddWithValue("@UpdateEps", updateEps);
+                sqlCmd3.Parameters.AddWithValue("@Email", Properties.Settings.Default.Email);
+
+                sqlCmd3.ExecuteNonQuery();
                 conn.Close();
 
 
