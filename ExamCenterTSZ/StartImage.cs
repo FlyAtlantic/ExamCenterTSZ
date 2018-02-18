@@ -51,7 +51,7 @@ namespace ExamCenterTSZ
 
         public Uri UpdateXmlLocation
         {
-            get { return new Uri("http://flyatlantic-va.com/site/programsC/update.xml"); }
+            get { return new Uri("http://flyatlantic-va.com/site/programsC/updateExamCenter.xml"); }
         }
 
         public Form Context
