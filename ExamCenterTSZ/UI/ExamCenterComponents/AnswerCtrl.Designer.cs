@@ -33,14 +33,14 @@
             // 
             // cboxAnswer
             // 
-            this.cboxAnswer.AutoSize = true;
             this.cboxAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cboxAnswer.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cboxAnswer.Location = new System.Drawing.Point(3, 3);
             this.cboxAnswer.Name = "cboxAnswer";
-            this.cboxAnswer.Size = new System.Drawing.Size(84, 19);
+            this.cboxAnswer.Size = new System.Drawing.Size(654, 42);
             this.cboxAnswer.TabIndex = 15;
-            this.cboxAnswer.Text = "Awnser 1";
+            this.cboxAnswer.Text = "Awnser1hsdhsdfksdfkdkdfkgsdfghksdfghksdfghksdfghksdfghksdfghksdfghksdfghksdfghksd" +
+    "fghksdfghksdfghksdfghks dfghksdfghk";
             this.cboxAnswer.UseVisualStyleBackColor = true;
             this.cboxAnswer.Click += new System.EventHandler(this.cboxAnswer_Click);
             // 
@@ -50,9 +50,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.cboxAnswer);
             this.Name = "AnswerCtrl";
-            this.Size = new System.Drawing.Size(660, 27);
+            this.Size = new System.Drawing.Size(660, 48);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

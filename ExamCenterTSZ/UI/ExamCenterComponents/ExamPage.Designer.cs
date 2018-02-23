@@ -46,7 +46,7 @@
             this.qstControl.CheckPossibleSelect = null;
             this.qstControl.Location = new System.Drawing.Point(12, 46);
             this.qstControl.Name = "qstControl";
-            this.qstControl.Size = new System.Drawing.Size(800, 330);
+            this.qstControl.Size = new System.Drawing.Size(800, 390);
             this.qstControl.TabIndex = 1;
             // 
             // lblCountQuestions
@@ -97,7 +97,7 @@
             this.btnFinish.ImageZoom = 50;
             this.btnFinish.LabelPosition = 33;
             this.btnFinish.LabelText = "Send";
-            this.btnFinish.Location = new System.Drawing.Point(279, 384);
+            this.btnFinish.Location = new System.Drawing.Point(282, 444);
             this.btnFinish.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnFinish.Name = "btnFinish";
             this.btnFinish.Size = new System.Drawing.Size(106, 48);
@@ -119,7 +119,7 @@
             this.btnNext.ImageZoom = 50;
             this.btnNext.LabelPosition = 36;
             this.btnNext.LabelText = "Next >>";
-            this.btnNext.Location = new System.Drawing.Point(163, 384);
+            this.btnNext.Location = new System.Drawing.Point(166, 444);
             this.btnNext.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(107, 48);
@@ -140,7 +140,7 @@
             this.btnPrevious.ImageZoom = 50;
             this.btnPrevious.LabelPosition = 36;
             this.btnPrevious.LabelText = "<< Previous";
-            this.btnPrevious.Location = new System.Drawing.Point(46, 384);
+            this.btnPrevious.Location = new System.Drawing.Point(49, 444);
             this.btnPrevious.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.btnPrevious.Name = "btnPrevious";
             this.btnPrevious.Size = new System.Drawing.Size(107, 48);
@@ -178,7 +178,7 @@
             this.Controls.Add(this.lblCountQuestions);
             this.Controls.Add(this.qstControl);
             this.Name = "ExamPage";
-            this.Size = new System.Drawing.Size(882, 441);
+            this.Size = new System.Drawing.Size(882, 497);
             this.Load += new System.EventHandler(this.ExamPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
