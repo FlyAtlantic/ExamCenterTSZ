@@ -41,7 +41,9 @@ namespace ExamCenterUpdate
             bgWorker.DoWork += new DoWorkEventHandler(BgWorker_DoWork);
             bgWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BgWorker_RunWorkerCompleted);
 
-            try { webClient.DownloadFileAsync(location, this.tempFile); }
+            System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            try {
+                webClient.DownloadFileAsync(location, this.tempFile); }
             catch { this.DialogResult = DialogResult.No; this.Close(); }
         }
 
