@@ -308,11 +308,17 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
                 if (FinalResult >= 75 && Exam.ExamID == 1)
                 {
                     string sqlInsertFirstQualification = "INSERT INTO `qualifications` ( `qualification` , `pilot` , `validity` , `expire` ) VALUES(0, @UserID, NOW() , NOW()+INTERVAL 100 YEAR)";
+                    string sqlInsertFirstTyperating = "INSERT INTO `typeratings` ( `typerating` , `pilot` , `validity` , `expire` ) VALUES(1, @UserID, NOW() , NOW()+INTERVAL 3 MONTH)";
 
                     MySqlCommand sqlCmd2 = new MySqlCommand(sqlInsertFirstQualification, conn);
                     sqlCmd2.Parameters.AddWithValue("@UserID", PilotInfo.ID);
 
                     sqlCmd2.ExecuteNonQuery();
+
+                    MySqlCommand sqlCmd3 = new MySqlCommand(sqlInsertFirstTyperating, conn);
+                    sqlCmd3.Parameters.AddWithValue("@UserID", PilotInfo.ID);
+
+                    sqlCmd3.ExecuteNonQuery();
                 }
 
                 //ranks
