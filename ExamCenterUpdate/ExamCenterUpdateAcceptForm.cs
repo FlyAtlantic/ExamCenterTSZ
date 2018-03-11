@@ -37,6 +37,7 @@ namespace ExamCenterUpdate
         {
             this.DialogResult = DialogResult.Yes;
             this.Close();
+
         }
 
         private void btnNo_Click(object sender, EventArgs e)

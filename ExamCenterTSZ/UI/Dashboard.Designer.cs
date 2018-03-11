@@ -36,6 +36,8 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.btnAdminPanel = new Bunifu.Framework.UI.BunifuTileButton();
             this.pMenuBar = new System.Windows.Forms.Panel();
+            this.lblPilotsOnlineNow = new System.Windows.Forms.Label();
+            this.lblPilotsOnline = new System.Windows.Forms.Label();
             this.btnTSZTools = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnMenuReviewExams = new Bunifu.Framework.UI.BunifuFlatButton();
             this.btnRefresh = new Bunifu.Framework.UI.BunifuTileButton();
@@ -50,8 +52,6 @@
             this.examInstructorCtrl = new ExamCenterTSZ.UI.ExamCenterInstructor.ExamInstructorCtrl();
             this.myExamsCtrl = new ExamCenterTSZ.UI.ExamCenterComponents.ViewMyExams.MyExamsCtrl();
             this.adminExamCenterCtrl = new ExamCenterTSZ.UI.AdminPanel.AdminExamCenterCtrl();
-            this.lblPilotsOnline = new System.Windows.Forms.Label();
-            this.lblPilotsOnlineNow = new System.Windows.Forms.Label();
             this.UpdatePilotOnline = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.pMenuBar.SuspendLayout();
@@ -141,6 +141,27 @@
             this.pMenuBar.Name = "pMenuBar";
             this.pMenuBar.Size = new System.Drawing.Size(211, 617);
             this.pMenuBar.TabIndex = 96;
+            // 
+            // lblPilotsOnlineNow
+            // 
+            this.lblPilotsOnlineNow.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPilotsOnlineNow.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblPilotsOnlineNow.Location = new System.Drawing.Point(20, 365);
+            this.lblPilotsOnlineNow.Name = "lblPilotsOnlineNow";
+            this.lblPilotsOnlineNow.Size = new System.Drawing.Size(179, 187);
+            this.lblPilotsOnlineNow.TabIndex = 7;
+            this.lblPilotsOnlineNow.Text = "Pilots Online:";
+            // 
+            // lblPilotsOnline
+            // 
+            this.lblPilotsOnline.AutoSize = true;
+            this.lblPilotsOnline.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPilotsOnline.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblPilotsOnline.Location = new System.Drawing.Point(20, 337);
+            this.lblPilotsOnline.Name = "lblPilotsOnline";
+            this.lblPilotsOnline.Size = new System.Drawing.Size(92, 17);
+            this.lblPilotsOnline.TabIndex = 6;
+            this.lblPilotsOnline.Text = "Pilots Online:";
             // 
             // btnTSZTools
             // 
@@ -327,7 +348,7 @@
             this.examPage.CurrentQuestion = 0;
             this.examPage.Location = new System.Drawing.Point(234, 153);
             this.examPage.Name = "examPage";
-            this.examPage.Size = new System.Drawing.Size(882, 441);
+            this.examPage.Size = new System.Drawing.Size(882, 529);
             this.examPage.TabIndex = 104;
             this.examPage.Visible = false;
             // 
@@ -374,27 +395,6 @@
             this.adminExamCenterCtrl.Size = new System.Drawing.Size(948, 528);
             this.adminExamCenterCtrl.TabIndex = 110;
             this.adminExamCenterCtrl.Visible = false;
-            // 
-            // lblPilotsOnline
-            // 
-            this.lblPilotsOnline.AutoSize = true;
-            this.lblPilotsOnline.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPilotsOnline.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblPilotsOnline.Location = new System.Drawing.Point(20, 337);
-            this.lblPilotsOnline.Name = "lblPilotsOnline";
-            this.lblPilotsOnline.Size = new System.Drawing.Size(92, 17);
-            this.lblPilotsOnline.TabIndex = 6;
-            this.lblPilotsOnline.Text = "Pilots Online:";
-            // 
-            // lblPilotsOnlineNow
-            // 
-            this.lblPilotsOnlineNow.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPilotsOnlineNow.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblPilotsOnlineNow.Location = new System.Drawing.Point(20, 365);
-            this.lblPilotsOnlineNow.Name = "lblPilotsOnlineNow";
-            this.lblPilotsOnlineNow.Size = new System.Drawing.Size(179, 187);
-            this.lblPilotsOnlineNow.TabIndex = 7;
-            this.lblPilotsOnlineNow.Text = "Pilots Online:";
             // 
             // UpdatePilotOnline
             // 

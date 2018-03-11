@@ -45,7 +45,7 @@
             // 
             this.fpAnswers.Location = new System.Drawing.Point(24, 182);
             this.fpAnswers.Name = "fpAnswers";
-            this.fpAnswers.Size = new System.Drawing.Size(770, 139);
+            this.fpAnswers.Size = new System.Drawing.Size(770, 212);
             this.fpAnswers.TabIndex = 24;
             // 
             // txtQuestion
@@ -77,7 +77,7 @@
             this.Controls.Add(this.txtQuestion);
             this.Controls.Add(this.lblQuestion);
             this.Name = "QuestionCtrl";
-            this.Size = new System.Drawing.Size(800, 330);
+            this.Size = new System.Drawing.Size(800, 397);
             this.ResumeLayout(false);
             this.PerformLayout();
 

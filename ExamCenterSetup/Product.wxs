@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?define ProductName="$(fileVersion.ProductName($(var.ExamCenterTSZ.TargetPath)))" ?>
+<?define CompanyName="$(fileVersion.CompanyName($(var.ExamCenterTSZ.TargetPath)))" ?>
+<?define ProductVersion="$(fileVersion.ProductVersion($(var.ExamCenterTSZ.TargetPath)))" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*"
+           Name="$(var.ProductName)"
+           Language="1033"
+           Version="$(var.ProductVersion)"
+           Manufacturer="$(var.CompanyName)"
+           UpgradeCode="2c71cb8b-1e83-4383-8471-6c4c07e887f3">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." AllowSameVersionUpgrades="yes"/>
+		<MediaTemplate EmbedCab="yes"/>
+
+		<Feature Id="ProductFeature" Title="ExamCenterSetup" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentRef Id="ApplicationShortcutDesktop" />
+		</Feature>
+
+		<InstallExecuteSequence>
+			<Custom Action='LaunchInstalledExe' After='InstallFinalize'/>
+		</InstallExecuteSequence>
+
+		<CustomAction Id="LaunchInstalledExe"
+		   FileKey="ExamCenterTSZ.exe"
+		   ExeCommand=""
+		   Execute="immediate"
+		   Impersonate="yes"
+		   Return="asyncNoWait" />
+	</Product>
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="DesktopFolder" Name="Desktop">
+				<Component Id="ApplicationShortcutDesktop" Guid="*">
+					<Shortcut Id="ApplicationDesktopShortcut"
+						Name="FlyAtlantic ExamCenter"
+						Description="Comment field in your shortcut"
+						Target="[INSTALLFOLDER]ExamCenterTSZ.exe"
+						WorkingDirectory="INSTALLFOLDER"/>
+					<RemoveFolder Id="DesktopFolder" On="uninstall"/>
+					<RegistryValue
+						Root="HKCU"
+						Key="Software/ExamCenterTSZ"
+						Name="installed"
+						Type="integer"
+						Value="1"
+						KeyPath="yes"/>
+				</Component>
+			</Directory>
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="ExamCenterSetup" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component Id="ExamCenterTSZ">
+				<File Source="$(var.ExamCenterTSZ.TargetPath)" />
+			</Component>
+			<Component Id="TSZTools">
+				<File Source="$(var.TSZTools.TargetPath)" />
+			</Component>
+			<Component Id="Bunifu_UI_v1.5.3">
+				<File Name="Bunifu_UI_v1.5.3.dll" Source="$(var.ExamCenterTSZ.TargetDir)\Bunifu_UI_v1.5.3.dll" />
+			</Component>
+			<Component Id="MySql.Data">
+				<File Name="MySql.Data.dll" Source="$(var.ExamCenterTSZ.TargetDir)\MySql.Data.dll" />
+			</Component>
+			<Component Id="ExamCenterUpdate">
+				<File Name="ExamCenterUpdate.dll" Source="$(var.ExamCenterTSZ.TargetDir)\ExamCenterUpdate.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>
