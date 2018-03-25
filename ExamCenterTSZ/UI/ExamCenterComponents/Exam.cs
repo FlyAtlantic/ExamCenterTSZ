@@ -147,7 +147,7 @@ namespace ExamCenterTSZ.UI.ExamCenterComponents
 
             AssignFor = assignFor;
 
-            string sqlPilotInformations = "SELECT * from exam_questions where examby=@ExamID ORDER BY rand() LIMIT 20";
+            string sqlPilotInformations = "SELECT DISTINCT * from exam_questions where examby=@ExamID ORDER BY rand() LIMIT 20";
             MySqlConnection conn = new MySqlConnection(Login.ConnectionString);
 
             try
