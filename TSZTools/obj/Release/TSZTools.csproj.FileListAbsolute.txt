@@ -11,3 +11,17 @@ C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Release\TSZTools.csproj.Gene
 C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Release\TSZTools.exe
 C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Release\TSZTools.pdb
 C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\obj\Release\TSZTools.csprojResolveAssemblyReference.cache
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\bin\Release\TSZTools.exe.config
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\bin\Release\TSZTools.exe
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\bin\Release\TSZTools.pdb
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\obj\Release\TSZTools.csprojResolveAssemblyReference.cache
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\obj\Release\TSZTools.MenuCtrl.resources
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\obj\Release\TSZTools.MetarsCtrl.resources
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\obj\Release\TSZTools.OceanicReportCtrl.resources
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\obj\Release\TSZTools.ToolControlFrm.resources
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\obj\Release\TSZTools.Properties.Resources.resources
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\obj\Release\TSZTools.csproj.GenerateResource.cache
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\obj\Release\TSZTools.csproj.CoreCompileInputs.cache
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\obj\Release\TSZTools.csproj.CopyComplete
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\obj\Release\TSZTools.exe
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\obj\Release\TSZTools.pdb

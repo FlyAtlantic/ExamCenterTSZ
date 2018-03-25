@@ -1,2 +1,2 @@
-C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterSetup\bin\Release\ExamCenterSetup.msi
-C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterSetup\bin\Release\ExamCenterSetup.wixpdb
+C:\Users\Tiago\source\repos\ExamCenterTSZ\ExamCenterSetup\bin\Release\ExamCenterSetup.msi
+C:\Users\Tiago\source\repos\ExamCenterTSZ\ExamCenterSetup\bin\Release\ExamCenterSetup.wixpdb

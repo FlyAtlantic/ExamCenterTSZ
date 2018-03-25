@@ -1,5 +1,5 @@
-C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterTSZ\bin\Release\\Bunifu_UI_v1.5.3.dll
-C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterTSZ\bin\Release\ExamCenterTSZ.exe
-C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterTSZ\bin\Release\\ExamCenterUpdate.dll
-C:\Users\Tiago\Source\Repos\ExamCenter\ExamCenterTSZ\bin\Release\\MySql.Data.dll
-C:\Users\Tiago\Source\Repos\ExamCenter\TSZTools\bin\Release\TSZTools.exe
+C:\Users\Tiago\source\repos\ExamCenterTSZ\ExamCenterTSZ\bin\Release\\Bunifu_UI_v1.5.3.dll
+C:\Users\Tiago\source\repos\ExamCenterTSZ\ExamCenterTSZ\bin\Release\ExamCenterTSZ.exe
+C:\Users\Tiago\source\repos\ExamCenterTSZ\ExamCenterTSZ\bin\Release\\ExamCenterUpdate.dll
+C:\Users\Tiago\source\repos\ExamCenterTSZ\ExamCenterTSZ\bin\Release\\MySql.Data.dll
+C:\Users\Tiago\source\repos\ExamCenterTSZ\TSZTools\bin\Release\TSZTools.exe
